@@ -3,20 +3,33 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="NUESTRO LOGO" type="image/gif">
+        <link rel="icon" href="elementos-web/logo-cine-chileno.png" type="image/png">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <title>El cine chileno: una mirada retrospectiva </title>
-        <link rel="stylesheet" type="text/css" href="/Users/silviamatamala/Downloads/GRÁFICA/primer-sitio-web/docs/styles.css">
+        <!-- ruta relativa para GitHub Pages cuando usas main /docs -->
+        <link rel="stylesheet" type="text/css" href="styles.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script src="/Users/silviamatamala/Downloads/GRÁFICA/primer-sitio-web/docs/script.js"></script>
+        <script src="script.js"></script>
     </head>
     <body>
+        <!-- pantalla de inicio (animación de CodePen) -->
+        <div class="cinema-count-screen">
+          <div class="cinema-count animated">
+            <i>
+              <i></i>
+            </i>
+            <span id="numbercnt" class="number">5</span>
+          </div>
+        </div>
+
         <header>
             <div class="contenedor_logo">
-                <img src="/Users/silviamatamala/Downloads/GRÁFICA/primer-sitio-web/docs/elementos-web/logo-cine-chileno.png" id="logo1" alt="Logo">
+                <img src="elementos-web/logo-cine-chileno.png" id="logo1" alt="Logo">
+            </div>
         </header>
+        
         <section id="intro">
             <h1 class="titulo_mayor">
                 ¿Conocemos <span>nuestro</span>
@@ -24,11 +37,13 @@
             </h1>
             <p id="links_rrss">
                 Por 
-        <a href="IG 1" target="_blank">Renato Quevedo</a>
-        <a href="LINK IG 2" target="_blank">Silvia Matamala</a>
-        <a href="LINK IG 3" target="_blank">Blanca Ríos</a>
+                <a href="https://www.instagram.com/renatoquevedo_/" target="_blank">Renato Quevedo</a>
+                <a href="https://www.instagram.com/silviamtml/" target="_blank">Silvia Matamala</a>
+                <a href="https://www.instagram.com/_blancarios/" target="_blank">Blanca Ríos</a>
             </p>
- <main class="page-content">
+        </section>
+
+        <main class="page-content">
 
  
   <div class="card">
@@ -67,6 +82,8 @@
     </div>
   </div>
 </main>
+    </body>
+</html>
 
 
 
