@@ -26,7 +26,7 @@ body {
 /* Header / logo */
 header {
     background-color: #F6F4ED;
-    color: #fff;
+    color: #000; /* cambiado a negro para mayor contraste */
     padding: 10px;
     display: flex;
     align-items: center;
@@ -45,7 +45,7 @@ header {
     flex: 0 0 auto;
     display: flex;
     align-items: center;
-    opacity: 0;
+    opacity: 1; /* mostrar logo */
 }
 
 /* Utilities */
