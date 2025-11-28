@@ -1,10 +1,523 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head> 
-<meta charset="utf-8"/>
-<title>Mi Primer Sitio</title>
-</head>
-<body>
-    Aquí va el contenido visible
-</body>
-<html></html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="NUESTRO LOGO" type="image/gif">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <title>El cine chileno: una mirada retrospectiva </title>
+        <link rel="stylesheet" type="text/css" href="/Users/silviamatamala/Downloads/GRÁFICA/primer-sitio-web/docs/styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="/Users/silviamatamala/Downloads/GRÁFICA/primer-sitio-web/docs/script.js"></script>
+    </head>
+    <body>
+        <header>
+            <div class="contenedor_logo">
+                <img src="/Users/silviamatamala/Downloads/GRÁFICA/primer-sitio-web/docs/elementos-web/logo-cine-chileno.png" id="logo1" alt="Logo">
+        </header>
+        <section id="intro">
+            <h1 class="titulo_mayor">
+                ¿Conocemos <span>nuestro</span>
+                cine?
+            </h1>
+            <p id="links_rrss">
+                Por 
+        <a href="IG 1" target="_blank">Renato Quevedo</a>
+        <a href="LINK IG 2" target="_blank">Silvia Matamala</a>
+        <a href="LINK IG 3" target="_blank">Blanca Ríos</a>
+            </p>
+           - var cards = [{ title: 'Mountain View',
+            copy: 'Check out all of these gorgeous 
+            mountain trips with beautiful views of, 
+            you guessed it, the mountains', button: 
+            'View Trips' }, { title: 'To The Beach',
+             copy: 'Plan your next beach trip with 
+             these fabulous destinations', button: 
+             'View Trips' }, { title: 'Desert 
+             Destinations', copy: 'It\'s the desert 
+             you\'ve always dreamed of', button: 'Book 
+             Now' }, { title: 'Explore The Galaxy', 
+             copy: 'Seriously, straight up, just blast 
+             off into outer space today', button: 'Book Now' }]
+
+
+mixin card(title, copy, button)
+  .card
+    .content
+      h2.title= title
+      p.copy= copy
+      button.btn= button
+
+main.page-content
+  each card in cards
+    +card(card.title, card.copy, card.button)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+<video id="anteto" controls muted>
+    <source src="Giannis_exito.mp4" type="video/mp4">
+</video>
+<p class="parrafo_video">
+    El griego respondió diciendo que no existe el fracaso en los deportes,
+                     ya que cada derrota es una oportunidad para mejorar y son pasos para el <span>éxito</span>
+    . 
+                     Las derrotas no es algo en lo que debamos detenernos al evaluar el <span>éxito</span>
+    de una temporada.
+</p>
+<h3 class="titulos">Russell Westbrook y la presión de los anillos
+</h4>
+<p class="parrafo_video">
+    Russell Westbrook es una de las caras más reconocidas de la NBA, mayormente conocido por su paso por los Oklahoma City Thunder. 
+                A lo largo de su carrera ha sido elegido como All-Star nueve veces, ha sido convocado para los equipos All NBA nueve veces también. Ha sido máximo anotador y máximo asisitidor multiples veces. Ha sido elegido como el "Jugador Más Valioso" y, la NBA lo incluyó en la lista de los 75 mejores jugadores de la <span>historia</span>
+    .
+            
+</p>
+<p class="parrafo_video">Respecto de un tema similar, y en respuesta a las declaraciones de Stephen A. Smith,
+                    reconocida cara en el mundo de la NBA, quien dijo que el legado de Westbrook sería haber perdido todo lo que jugó,
+                el famoso base respondió:</p>
+<p class="cita">"Un campeonato no me cambia la vida. Soy feliz. Me convertí en un campeón cuando llegué a la NBA. Crecí en las calles. Yo soy un campeón.
+                     No tengo que tener un anillo de la NBA. Conozco mucha gente que lo tiene y son miserables".
+                </p>
+<video controls muted>
+    <source src="westbrook_exito.mp4" type="video/mp4">
+</video>
+<h2 class="titulos" id="largo">
+    ¿Acaso las palabras de Giannis y Westbrook tienen sentido en una liga como la NBA,
+                     donde las victorias y derrotas parecieran ser el único indicador de <span>éxito</span>
+    ?
+</h3>
+<h2 class="titulos">
+    Este proyecto es para reforzar la idea que no, <span>las victorias no son la única manera de medir el éxito</span>
+</h2>
+</section>
+<section class="seccion">
+    <p class="parrafos">
+        Para comprobar esto, veremos el caso de tres equipos considerados <span>exitosos</span>
+        de la NBA: Los <span id="mavs">Dallas Mavericks</span>
+        , los <span id="rockets">Houston Rockets</span>
+        y los <span id="spurs">San Antonio Spurs</span>
+        . Estos tres equipos representan al estado de Texas en Estados Unidos y han ganado el campeonato de la NBA al menos una vez cada uno. Sin embargo, su <span>éxito</span>
+        en la liga varia considerablemente. 
+    </p>
+    <div class="contenedor_imagen">
+        <a href="https://www.nba.com/spurs/" target="_blank">
+            <img src="spurs.png" class="imagen" alt="San Antonio Spurs">
+        </a>
+    </div>
+    <p class="parrafos">
+        Los <span id="spurs">San Antonio Spurs</span>
+        , bajo la dirección del legendario entrenador Gregg Popovich, han cosechado ya cinco títulos de la NBA, siendo el último de estos en 2014. Los <span id="spurs">Spurs</span>
+        han establecido una cultura de equipo en la que la disciplina, el trabajo en equipo y el desarrollo de jugadores son primordiales. A lo largo de las décadas, han demostrado que el <span>éxito</span>
+        sostenido no solo se mide por los campeonatos, sino también por la capacidad de mantenerse competitivos y relevantes año tras año. Actualmente, los <span id="spurs">Spurs</span>
+        se han vuelto poco relevantes en el ambito deportivo, pero la llegada de Victor Wembanyama busca cambiar esta dinámica y devolver a los <span id="spurs">Spurs</span>
+        al pedestal donde estuvieron en un pasado.
+    </p>
+    <div class="contenedor_imagen">
+        <a href="https://www.nba.com/rockets/" target="_blank">
+            <img src="rockets.png" class="imagen" alt="Houston Rockets">
+        </a>
+    </div>
+    <p class="parrafos">
+        Por otro lado, los <span id="rockets">Houston Rockets</span>
+        , a pesar de contar con dos títulos de la NBA en su historia, han experimentado altibajos significativos. En los años 90, bajo el liderazgo de Hakeem Olajuwon, alcanzaron la gloria con campeonatos consecutivos. En las últimas décadas han luchado por encontrar esa misma consistencia, a pesar de contar con una de las grandes estrellas de la liga como James Harden. El <span>éxito</span>
+        de los <span id="rockets">Rockets</span>
+        ha sido más intermitente, demostrando que la presencia de talento individual no siempre garantiza el <span>éxito</span>
+        continuo, gloria que busca retomar de un joven equipo que tiene mucho que ganar y poco que perder en estas próximas temporadas. 
+    </p>
+    <div class="contenedor_imagen">
+        <a href="https://www.mavs.com/" target="_blank">
+            <img src="mavs.png" class="imagen" alt="Dallas Mavericks">
+        </a>
+    </div>
+    <p class="parrafos">
+        Finalmente, los <span id="mavs">Dallas Mavericks</span>
+        , liderados por  una estrella como Dirk Nowitzki, lograron su primer y único campeonato en 2011. Este título fue un testimonio del valor de la perseverancia y la construcción cuidadosa de un equipo y un premio para el aleman, quien permanecio toda su carrera en el equipo que lo drafteo en 1998. A pesar de no tener la misma cantidad de títulos que los <span id="spurs">Spurs</span>
+        y los <span id="rockets">Rockets</span>
+        , los <span id="mavs">Mavericks</span>
+        han cultivado una base de fanáticos leales y una cultura de resiliencia y adaptación que los mantienen como uno de los equipos más competitivos de la liga de la mano del esloveno Luka Dončić, quien ya llevó a los <span id="mavs">Mavericks</span>
+        a otra final y que buscará hacer lo mismo que Nowitzki en 2011.
+    </p>
+    <h4 class="titulos">
+        Introduciendo nuestro proyecto, si las victorias no son lo único que define el <span>éxito</span>
+    </h4>
+    <h2 id="definicion">
+        ¿Qué define el <span>éxito</span>
+        ?
+</h3></section>
+<section class="seccion">
+    <h2 class="titulos">Rendimiento deportivo</h2>
+    <p class="parrafos" id="rendimiento">
+        Si bien afirmamos que no lo es todo en cuanto a la definición del <span>éxito</span>
+        , es innegable la importancia del rendimiento deportivo en la ponderación que se hace cuando se determina si un equipo es <span>exitoso</span>
+        o no. No se hablaría de Michael Jordan como el ganador que fue si no hubiese ganado seis campeonatos. Lo mismo pasa con Lebron James y su indudable dominancia a lo largo de toda su carrera. Al final, el punto del deporte es la competición, y ésta se mide a través de victorias y trofeos. En el caso de la NBA, la temporada se divide en dos: temporada regular y Playoffs, en ambos con mucho que ganar.
+    </p>
+    <p class="parrafos">La temporada regular consiste en 82 partidos en los que los equipos compiten para conseguir la mejor clasificación posible. Al final de la temporada, los equipos con los mejores registros avanzan a los playoffs. La relevancia de la temporada regular radica en determinar qué equipos se clasifican y en qué posición a los playoffs, lo cual influye en sus enfrentamientos y ventajas de localía durante la postemporada. Por ejemplo, el primer clasificado de cada conferencia se enfrentará al octavo clasificado, lo que en el papel sería un partido fácil, después de todo se enfrentan el equipo que más partidos ganó con el que a duras penas se clasificó, pero vemos que no en todos los casos es así.</p>
+    <div class="grafico_1">
+        <div class="flourish-embed flourish-chart" data-src="visualisation/18598501">
+            <script src="https://public.flourish.studio/resources/embed.js"></script>
+        </div>
+        <div class="flourish-embed flourish-chart" data-src="visualisation/18604786">
+            <script src="https://public.flourish.studio/resources/embed.js"></script>
+        </div>
+    </div>
+    <p class="parrafos">
+        Como se puede apreciar en los gráficos, cada uno de los tres equipos han tenido épocas en las que destacan notablemente sobre el resto en términos de victorias en la Temporada Regular. Los <span id="spurs">Spurs</span>
+        en el periodo entre 2013-2017, los <span id="rockets">Rockets</span>
+        entre el 2018 y el 2020 y los <span id="mavs">Mavericks</span>
+        dominan Texas entre los años 2021-2023.
+    </p>
+    <p class="parrafos">
+        Es interesante notar que, a pesar de estas victorias en la Temporada Regular, estos números pueden resultar engañosos o parecer vacíos cuando se analizan desde una perspectiva de <span>éxito</span>
+        final en la temporada. Por ejemplo, solo en una de estas temporadas uno de los equipos logró coronarse campeón. Este hecho ocurrió en 2014, cuando los <span id="spurs">San Antonio Spurs</span>
+        consiguieron el anillo tras ganarle al Miami Heat de Lebron James y Dwayne Wade. Este dato subraya la idea de que un buen desempeño en la temporada regular no siempre se traduce en <span>éxito</span>
+        en los playoffs, donde las dinámicas y presiones son distintas.
+    </p>
+    <p class="parrafos">Esta situación se asemeja a la expuesta por Giannis Antetokounmpo, que a pesar del dominio de su equipo en la temporada regular, no logró traspasar este "éxito" a los playoffs, quedando la eliminación del equipo como un fracaso deportivo. Para poder visualizar de mejor manera la traducción del desempeño en Temporada Regular, abajo comparamos las victorias de cada equipo en esta fase con el nivel alcanzado en los Playoffs.</p>
+    <div class="grafico_rendimiento">
+        <div class="flourish-embed flourish-scatter" data-src="visualisation/18693939">
+            <script src="https://public.flourish.studio/resources/embed.js"></script>
+        </div>
+    </div>
+    <p class="parrafos">Además, al analizar las épocas de dominio de estos equipos, es fundamental considerar factores como las estrategias de los entrenadores, las lesiones de jugadores clave, los cambios en las plantillas y las dinámicas de otros equipos. Estos elementos pueden influir significativamente en el desempeño de un equipo a lo largo de una temporada y su capacidad para mantener ese rendimiento en la postemporada.</p>
+    <p class="parrafos">
+        Este es el caso de los <span id="spurs">Spurs</span>
+        , quienes en la temporada 2016 ganaron 67 de 82 partidos durante la temporada regular, esto en cualquier otra temporada los convertiría en el mejor récord de la liga, sin embargo otro equipo superó esta cantidad de victorias e incluso establecio una nueva marca en la competición, siendo estos los Golden State Warriors, quienes ganaron 73 partidos y solo perdieron 9. En las finales de conferencia estos dos equipos se vieron las caras y los Warriors barrieron a los <span id="spurs">Spurs</span>
+        4-0, quitandole a <span id="spurs">San Antonio</span>
+        la esperanza de obtener un sexto anillo.
+    </p>
+    <p class="parrafos">
+        Los Warriors vuelven a ser protagonistas en 2018, cuando los <span id="rockets">Rockets</span>
+        consiguieron el mejor récord de la NBA con 65 victorias y 17 derrotas. Se esperaba mucho de los <span id="rockets">Rockets</span>
+        para este año, sin embargo no solo no lo consiguieron, sino que en el último partido de la serie contra los Warriors, los <span id="rockets">Rockets</span>
+        vivieron uno de los peores momentos en ofensiva de la historia de la NBA, fallando 27 triples consecutivos que terminarían con la derrota de <span id="rockets">Houston</span>
+        . Golden State volvía a arruinar los sueños de los <span id="rockets">Rockets</span>
+        , lo que provocó que años más tarde la estrella del equipo, James Harden, optara por salir del equipo.
+    </p>
+</section>
+<section class="comunidad">
+    <h2 class="titulos">Creación de una comunidad comprometida </h2>
+    <p class="parrafos">Sumado al rendimiento deportivo, está la creación de una comunidad comprometida. ¿Qué son los logros si no hay fans en las gradas que te alienten y los festejen? Nosotros creemos que nada. Al final, los deportes y, por tanto, la NBA, son productos culturales hechos por y para el disfrute de la gente común. </p>
+    <p class="parrafos">En este ámbito, reconocemos dos áreas de desarrollo en las cuales las fanbases hacen presencia en el mundo de los deportes: la asistencia a los partidos y el fandom en redes sociales.</p>
+    <h3 class="titulos">Asistencia a partidos</h3>
+    <p class="parrafos">La asistencia a los partidos es parte fundamental de la NBA. Ver las arenas llenas coreando frases como “MVP” o “Defense” son cosas que forman parte del folclore de la liga. Sin embargo, no todos los equipos llevan la misma cantidad de gente a sus partidos, o en algunos casos, la asistencia de público desciende con el pasar de las temporadas.
+        Casos que ocurren principalmente cuando los equipos deciden “tankear", la cual es una estrategia en la que el equipo pierde intencionalmente o no compite al máximo de sus capacidades durante la temporada regular. Esto con el objetivo de terminar con uno de los peores registros de la liga, lo que aumenta las probabilidades de obtener una selección alta en el Draft de la NBA, permitiendo al equipo elegir a jugadores jóvenes y talentosos con la esperanza de mejorar su rendimiento a largo plazo.
+     </p>
+    <div class="grafico_2">
+        <div class="flourish-embed flourish-chart" data-src="visualisation/18612978">
+            <script src="https://public.flourish.studio/resources/embed.js"></script>
+        </div>
+    </div>
+    <p class="parrafos">
+        Como se puede ver en los gráficos, los <span id="mavs">Mavericks</span>
+        siempre se han mostrado constantes en cuanto al público que asistió al American Airlines Center. ¿A qué se puede deber esto? La localización de la arena en el centro de Dallas puede ser uno de los factores, pero también puede ser el hecho de que desde 1998, los hinchas de los <span id="mavs">Mavericks</span>
+        han sido testigos de jugadores de clase mundial en su equipo como Dirk Nowitzki, estrella alemana que le dio su primer y único título a los <span id="mavs">Mavericks</span>
+        en 2011. Cuando anunció su retiro en 2019, y cuando el “tanking” del equipo era evidente, una joven estrella aparecería para hacer soñar a los fanáticos de <span id="mavs">Dallas</span>
+        en el futuro. Luka Doncic, estrella de la NBA en la actualidad, haría su debut en la liga en el 2019 junto a Dirk Nowitzki, marcando el paso de testigo de la vieja guardia de Dallas al futuro de la liga y de los <span id="mavs">Mavericks</span>
+        .
+
+    
+    <p class="parrafos">
+        En el caso de los <span id="spurs">San Antonio Spurs</span>
+        , el inicio de la década en cuanto a público asistente al AT&T Center se ve bastante influenciado por el rendimiento deportivo con el cual destacan durante este periodo. Sin embargo, pronto sus estrellas irían cambiando de equipo o retirándose de la liga, tal como Tim Duncan, quien se retiró de la NBA en el año 2016 o Manu Ginobilli, quien jugaría su último partido en la liga en el año 2018. Otros jugadores que destacaron en este periodo como Tony Parker o Kawhi Leonard también abandonarían el equipo en 2018, emprendiendo rumbo a Charlotte Hornets y Toronto Raptors, respectivamente. La única persona que se mantendría en el equipo durante todo este tiempo es el entrenador Greg Popovich. Posterior a esto, los <span id="spurs">Spurs</span>
+        entrarían en un periodo de “tanking” en donde ganarían muy pocos partidos con el fin de tener un pick alto en el draft y encontrar una futura estrella de la NBA, la cual consiguió con el nombre de Victor Wembanyama. 
+    </p>
+    <p class="parrafos">
+        El caso de los <span id="rockets">Rockets</span>
+        es particular, ya que pese a no ganar nada durante este periodo, contaron con grandes estrellas que motivaban a la gente a asistir al Toyota Center a ver a los <span id="rockets">Rockets</span>
+        . Uno de estos jugadores fue James Harden, quien estuvo en el equipo desde el 2012 hasta el 2021, y convirtió a los <span id="rockets">Rockets</span>
+        en un equipo competitivo y uno de los más vistosos de la liga. Harden fue condecorado con el MVP en el año 2018, siendo en esta temporada donde en promedio más gente fue a ver a los <span id="rockets">Rockets</span>
+        desde 2015. Pero esta temporada no es solo similar en cuanto el marco de asistencia, ya que en ambos años Houston solamente llegaría a la tercera ronda de los playoffs perdiendo con los Golden State Warriors, uno de sus verdugos favoritos en playoffs. 
+    </p>
+    <p class="parrafos">En el periodo entre 2020 y 2021, la NBA se vio obligada a suspender la liga por un tiempo, para después retomarla con todos los jugadores y equipos encerrados bajo el mismo complejo, conocido como la burbuja de Orlando. Es por esto que durante estos años la asistencia a los partidos de local se vio disminuida.</p>
+</p><h3 class="titulos">Comunidad digital</h3>
+<p class="parrafos">
+    Las Redes Sociales se han vuelto importantes para medir el <span>éxito</span>
+    de distintas cosas, después de todo con más seguidores y más visitas es posible atraer distintas marcas, así como también	un nuevo mundo de fanáticos que esperan ver más de su equipo 
+</p>
+<p class="parrafos">En este caso vimos los seguidores de los tres equipos en cuatro de las redes sociales más famosas, siendo estas Instagram, Facebook, Tik Tok y X, para ver cómo cambia su número de seguidores entre red social o de cuanto es la diferencia entre los otros equipos.</p>
+<div class="grafico_3">
+    <div class="flourish-embed flourish-chart" data-src="visualisation/18605285">
+        <script src="https://public.flourish.studio/resources/embed.js"></script>
+    </div>
+</div>
+<p class="parrafos">
+    De estás cuatro redes sociales podemos comprobar que los <span id="rockets">Rockets</span>
+    son el equipo con más seguidores en la gran mayoría, además de contar con una inmensa cantidad solamente en Facebook. Esta gran cantidad de seguidores se puede deber al modo de juego vistoso de triples que destacó a los <span id="rockets">Rockets</span>
+    durante estos últimos diez años, además de lo famoso que fue James Harden dentro de está época.
+</p>
+<p class="parrafos">
+    La asistencia tan alta de los <span id="mavs">Mavericks</span>
+    a su arena no coincide con su arrastre en el mundo de las redes sociales, demostrando que este equipo tiene un fanbase muy marcado dentro de los Estados Unidos, específicamente en la ciudad de Dallas. Sin embargo destacan los seguidores en Tik Tok, puesto que es una red social mucho más reciente que las otras tres y por esto mismo puede ser que los <span id="mavs">Mavericks</span>
+    sean los que más seguidores tengan por lo competitivo y vistoso que ha sido el equipo durante estos últimos cinco años. 
+    
+</p>
+<p class="parrafos">
+    Por otra parte, el equipo más ganador de los tres tampoco destaca mucho en las redes sociales, lo que se puede deber a que los <span id="spurs">Spurs</span>
+    no son un equipo productor de highlights o que siempre han sido considerados un equipo de nicho para los fanáticos del basket. Además de que nunca han podido catapultar su fama como lo hicieron otros equipos <span>exitosos</span>
+    en lo deportivo como los Golden State Warriors estos últimos años o los Chicago Bulls en la época de Jordan.
+</p>
+</section>
+<section id="tradición">
+    <h2 class="titulos">Tradición e historia</h2>
+    <p class="parrafos">
+        Finalmente, pero no por eso menos importante, el último factor de <span>éxito</span>
+        que reconocemos en este introductorio proyecto es la tradición de los equipos y franquicias. Algo deben pesar en la percepción de <span>éxito</span>
+        los 6 campeonatos y todos los MVPs que ganó Michael Jordan y sus Chicago Bulls durante los 90. Si lo extrapolamos a otros deportes, algo deben valer también las quince Copas de Europa que tiene el Real Madrid en la percepción de la comunidad deportiva sobre su <span>éxito</span>
+        .
+    
+    </p>
+    <p class="parrafos">Es por eso que, dentro de nuestra ponderación debemos incluir los hitos históricos y la tradición construida por los equipos en particular. Puede parecerle injusto a ciertas fanbases, pero encontramos impreciso el posicionar en el mismo nivel a Chicago Bulls y Charlotte Hornets (nivel deportivo similar en el último tiempo), considerando que un equipo es histórico de la liga y el otro es relativamente nuevo.
+    </p>
+    <p class="parrafos">La historia en la NBA puede ser medida a través de varias métricas. Resulta particularmente útil la existencia de un Salón de la Fama del Basketball y la existencia de un juego de All-Stars. Ambas situaciones donde se reconocen talentos excepcionales, el primero históricamente y el segundo en temporadas determinadas. En la tabla de abajo observamos la tradición de los tres equipos medida a través de estas dos métricas y la cantidad de anillos que tienen.</p>
+    <div class="tabla_tradicion">
+        <div class="flourish-embed flourish-table" data-src="visualisation/18707373">
+            <script src="https://public.flourish.studio/resources/embed.js"></script>
+        </div>
+    </div>
+    <p class="parrafos">
+        Como podemos observar en lo anterior, y como dirían muchos fans del deporte, la historia pesa y no se cambia de un día para otro. Ni siquiera de una temporada para otra. Aquí presenciamos la grandeza que tienen los <span id="spurs">San Antonio Spurs</span>
+        y el <span>éxito</span>
+        histórico del que han gozado de la mano de Greg Popovich. Consistentemente tiene el nivel más alto en nuestro puntaje de tradición y es que, es muy difícil cambiar eso, menos en un período muestral de una década como el de nosotros.
+    </p>
+</section>
+<section class="economía">
+    <h2 class="titulos">Prosperidad económica</h2>
+    <p class="parrafos">
+        En la época en la que los equipos deportivos ponen el mismo esfuerzo en su desarrollo de su juego como en el desarrollo de su marca, los indicadores de prosperidad económica deben estar dentro de una ponderación de <span>éxito</span>
+        . Además, la NBA es una de las ligas deportivas internacionales que más dinero mueve, por lo que se demuestra que el factor dinero es uno importantísimo a considerar.
+    </p>
+    <p class="parrafos">Las sumas que manejan las franquicias de la NBA son exorbitantes y muy difíciles de acceder transparentemente. Afortunadamente, Forbes confecciona anualmente una lista con el ránking económico de los equipos de la NBA, en donde ponen sobre la balanza todos los aspectos: ganancias, deuda, capital activo y muchos factores más.</p>
+    <p class="parrafos">Aún cuando a algunos acérrimos fans de cualquier deporte no les gusta admitirlo, el dinero es una dimensión importantísima en el deporte contemporáneo, sea cual sea. Y es que, en la actualidad, los jugadores y equipos no son solo referentes deportivos, si no que sujetos comerciales que mueven industrias completas. No es coincidenica que Mbappé gane 72 millones de euros al año. </p>
+    <p class="parrafos">
+        Abajo vemos una evolución del valor estimado de Forbes en su reporte anual <a href="https://www.forbes.com/lists/nba-valuations/" target="_blank">"NBA Valuations"</a>
+        de los tres equipos analizados en la ultima década. Al pasar el mouse por arriba vemos también las ganancias de cada equipo en el año indicado.
+    </p>
+    <div class="grafico_economia">
+        <div class="flourish-embed flourish-scatter" data-src="visualisation/18707901">
+            <script src="https://public.flourish.studio/resources/embed.js"></script>
+        </div>
+    </div>
+    <p class="parrafos">
+        Con el gráfico podemos ver que los tres equipos han aumentado su valor en el mercado de manera exponencial, pero sin duda lo que más destaca es lo atrás que se queda <span id="spurs">San Antonio Spurs</span>
+        del resto de equipos de Texas. Y es que los dos otros equipos, <span id="mavs">Dallas Mavericks</span>
+        y <span id="rockets">Houston Rockets</span>
+        , han sido vendidos por grandes sumas de dinero a otros dueños, aumentando significativamente el valor de las franquicias ya no solo por lo deportivo y por la constante que se puede apreciar en la liga.
+    </p>
+    <p class="parrafos">
+        Por su parte <span id="spurs">San Antonio</span>
+        solamente ha vendido parte de sus acciones a algunos grupos inversores, pero no han cambiado de dueño ni se ha puesto a la venta el equipo, por lo que el valor del mercado de los <span id="spurs">Spurs</span>
+        solamente ha aumentado por el constante aumento del valor de los equipos de la NBA y por su desempeño deportivo.
+    </p>
+</section>
+<h2 id="ahora">Ahora...</h2>
+<p class="parrafos">
+    Con todo lo anterior hemos podido evidenciar que el rendimiento deportivo no lo es todo en cuanto a <span>éxito</span>
+    en la NBA. En esta categoría los tres equipos han tenido su período de dominio, por lo que no hay un ganador claro. En nuestro segundo parámetro, los <span id="mavs">Mavericks</span>
+    se escapan con la asistencia a los partidos mientras que los <span id="rockets">Rockets</span>
+    son los mejores en cuanto a la confección de un fandom digital. Estos dos últimos también le sacan diferencia a los <span id="spurs">Spurs</span>
+    en cuanto a crecimiento económico en la última década. Sin embargo, la tradición e historia del equipo de <span id="spurs">San Antonio</span>
+    pasa por encima la trayectoria de los otros dos.
+</p>
+<h3 class="titulos" id="ganador">
+    No hay un claro ganador, todos tienen <span>éxito</span>
+    en algún área
+</h3>
+<h3 class="titulos" id="cual">
+    ¿Cuál de los tres equipos de Texas es el más <span>exitoso</span>
+    ?
+</h3>
+<p class="parrafos">
+    Aquí en Definiendo Éxito no nos queremos quedar conformes con la conclusión de que hay distintas formas de <span>éxito</span>
+    en la NBA. Es por lo mismo que decidimos crear una herramienta para poder juntar las cuatro variables antes mencionadas para poder cuantificar objetivamente el <span>éxito</span>
+    de las franquicias de la NBA.
+</p>
+<section id="índice"></section>
+<h1 id="indice_titulo">
+    El Índice de <span>éxito</span>
+    de Definiendo Éxito
+</h1>
+<p class="parrafos">
+    En este índice completamente original confeccionado por <span>Definiendo Éxito</span>
+    , cada uno de los parámetros que hemos abordado tiene un valor e incide directamente en la concepción de <span>éxito</span>
+    que se tiene sobre <span id="mavs">Mavericks</span>
+    , <span id="rockets">Rockets</span>
+    y <span id="spurs">Spurs</span>
+    .
+</p>
+<p class="parrafos">
+    El objetivo de este es poder definir de una manera íntegra y objetiva cual equipo fue el más <span>exitoso</span>
+    cada temporada y así, dejar de lado las definiciones absurdas y simplistas que tanto repudian Antetokounmpo y Westbrook al <a href="#anteto" id="smooth">inicio</a>
+    del proyecto.
+</p>
+<div id="tabla_indice">
+    <div class="flourish-embed flourish-table" data-src="visualisation/18708832">
+        <script src="https://public.flourish.studio/resources/embed.js"></script>
+    </div>
+</div>
+<p class="parrafos">
+    Sabemos que lo anterior se puede ver abrumador, pero es para, transparentemente, evidenciar todo lo que influye dentro de nuestro índice de <span>éxito</span>
+    .
+</p>
+<p class="parrafos">
+    Para situar mejor al lector dentro de nuestro instrumento, en el gráfico de abajo se ve la evolución de nuestro índice de <span>éxito</span>
+    en la última década, con énfasis en los tres equipos analizados. Al pasar el cursor por cada punto, se puede observar como cada parámetro afecta a índice total. A partir de este diseño se pueden visualizar fenómenos muy claros.
+</p>
+<div id="grafico_final">
+    <div class="flourish-embed flourish-scatter" data-src="visualisation/18709050">
+        <script src="https://public.flourish.studio/resources/embed.js"></script>
+    </div>
+</div>
+<section id="historias_final">
+    <div id="spurs-final">
+        <h2 class="titulos">
+            ¿Qué pasó con los <span id="spurs">San Antonio Spurs?</span>
+        </h2>
+        <h3 class="titulos" id="ganador">El fin de una era dorada y el desafío del "small market"</h3>
+        <p class="parrafos">
+            Como se puede observar en el gráfico, los <span id="spurs">Spurs</span>
+            alcanzaron la gloria el 2014 y tuvieron una caída constante que hasta el día de hoy se mantiene. Esto fue causa del fin de una camada histórica en su roster. Tim Duncan, Tony Parker y Manu Ginobili fueron el trío sobre el cual la dinastía de <span id="spurs">San Antonio</span>
+            sentaba su <span>éxito</span>
+            . Sin embargo, el tiempo no espera a nadie y así fue también para este trío. Una clara caída en el rendimiento de los tres culminó con esta bonita historia el 2016, cuando Tim Duncan, el más importante de los tres anunció su retiro.
+        </p>
+        <p class="parrafos">
+            De esta manera, la franquicia de San Antonio emprendió un proceso de reorganización, en el cual trataron de buscar nuevas caras que pudiesen hacer repuntar el equipo. Kawhi Leonard, Lamarcu Aldridge y DeMar DeRozan fueron algunos que fueron llamados a ser la nueva cara de los <span id="spurs">Spurs</span>
+            , ninguno de ellos estuvo a la altura.
+        </p>
+        <p class="parrafos">En nada ayudó que la franquicia, como vimos en el parámetro económico, se encontrase en un mercado "pequeño", lo que hacía sumamente difícil atraer a jugadores de calidad debido al poco atractivo que tiene la ciudad y el bajo potencial económico de la organización.</p>
+        <p class="parrafos">Si bien, la última década ha estado marcada por la decadencia, la temporada pasada eligieron con el número uno del draft a Victor Wembanyama, un joven francés que está llamado a ser la próxima cara de la NBA. El freak galo sólo ha jugado una temporada en la liga y ya está haciendo ruido. Si bien el pasado cercano no ha sido el mejor en San Antonio, el futuro inmediato se ve brillante de la mano de "Wemby".</p>
+    </div>
+    <video id="sas-vid" controls muted>
+        <source src="sas-vid.mp4" type="video/mp4">
+    </video>
+    <div id="rockets-final">
+        <h2 class="titulos">
+            James Harden se va y los <span id="rockets">Rockets</span>
+            se desploman
+        </h2>
+        <h3 class="titulos" id="ganador">Tocando fondo y volviendo a nacer</h3>
+        <p class="parrafos">
+            Llegando a la temporada 2017-18, James Harden, concocido en el mundo de la NBA como "La Barba" ya se había asentado como la estrella en <span id="rockets">Houston</span>
+            . Esta temporada, "La Barba" tuvo una temporada increíble que terminó por traerle un premo al Jugador Más Valioso y liderando a los <span id="rockets">Rockets</span>
+            al mejor récord en la liga. Sin embargo, y como fué una tónica en su paso por el equipo, ese éxito no se tradujo en la postemporada.
+        </p>
+        <p class="parrafos">
+            Varios fueron los intentos para conseguir el tan preciado anillo, pero ninguno fructífero, encontrándose seguidamente con los Golden State Warriors. Estos intentos fallidos llevaron a Harden a, eventualmente, solicitar la salida de <span id="rockets">Houston</span>
+            . Esto significó el inicio de un terrible proceso para la franquicia.
+        </p>
+        <p class="parrafos">Luego de que Harden fuese traspasado a los Brooklyn Nets, el equipo de Houston se desplomó en el nivel deportivo. Tanta fue la caída que se adjudicaron el peor récord de la liga tres años seguidos, una marca nunca antes vista.</p>
+        <p class="parrafos">
+            Sin embargo, y en un caso muy parecido a los <span id="spurs">Spurs</span>
+            , los <span id="rockets">Rockets</span>
+            han podido mostrar indicios de un repunte juntando una variedad de talento joven, como Jalen Green, Alperen Sengün y Amen Thompson. A diferencia del equipo gris, el repunte ha sido algo más concreto, ya que la temporada estuvieron compitiendo por spot en los Playoffs hasta los últimos partidos de la Temporada Regular. El futuro es optimista para los de H-Town.
+        </p>
+    </div>
+    <video id="hou-vid" controls muted>
+        <source src="hou-vid.mp4" type="video/mp4">
+    </video>
+    <div id="mavs-final">
+        <h2 class="titulos">
+            ¿Un incipiente éxito para los <span id="mavs">Dallas Mavericks</span>
+            ?
+        </h2>
+        <h3 class="titulos" id="ganador">El paso de la antorcha y el demonio esloveno</h3>
+        <p class="parrafos">
+            Similar a lo que le sucedió a los <span id="spurs">Spurs</span>
+            y su tridente, los <span id="mavs">Mavericks</span>
+            entraron en un período turbulento y oscuro luego de alcanzar la cima máxima el año 2011 de la mano de Dirk Nowitzki, la estrella alemana. Nowitzki no se estaba haciendo más joven y los de Dallas empezaron a mostrar un rendimiento deplorable.
+        </p>
+        <p class="parrafos">
+            El fin de uno de los íconos más grandes de la historia de los <span id="mavs">Dallas Mavericks</span>
+            se acercaba. Sin embargo, en un acto digno de ser retratado cinematográficamente, el paupérrimo desempeño les permitió, en la temporada 2018, elegir a un tal Luka Doncic, quien venía de ser Jugador Más Valioso de la EuroLiga, la segunda liga más importante del mundo, con sólo 19 años.
+        </p>
+        <p class="parrafos">
+            Y así fue como, en la temporada 2018-19, se juntaron el último ídolo de Dallas y un joven prodigio para una temporada icónica para los fans de los <span id="mavs">Mavericks</span>
+            .
+        </p>
+        <p class="parrafos">
+            En la actualidad, Doncic es uno de los mejores jugadores de la liga y ha logrado poner a los de Dallas en el mapa de nuevo, llegando a las últimas finales de la NBA, en la cual cayeron ante los Boston Celtics. Aún no es el anillo de 2011 junto a Dirk, pero de la mano de Doncic, los <span id="mavs">Mavericks</span>
+            tienen argumentos para poder ilusionarse con el futuro cercano. Más aun considerando que tienen a Kyrie Irving en sus filas. Da miedo Dallas y sus fans lo saben, llenando sus gradas cada partido.
+        </p>
+    </div>
+    <video id="dallas-vid" controls muted>
+        <source src="mavs-vid.mp4" type="video/mp4">
+    </video>
+    <div id="final">
+        <p class="parrafos">Luego de recorrer todo el proyecto, creemos haber podido evidenciar de gran forma nuestra hipótesis:</p>
+        <h3 class="titulos">
+            Las victorias no lo son todo para definir el <span>éxito</span>
+            .
+</h2><p class="parrafos">Juzgar un jugador, equipo u organización solo y exclusivamente por la cantidad de victorias que consiguieron es una manera completamente errónea e imprecisa de evaluar el deporte. Haciendo esto, se dejan de lado aspectos cruciales como el impacto que el deporte puede tener en una comunidad de personas, la cantidad de dinero que puede generar a una industria o, el legado histórico que construye y perdurará por siempre.</p>
+<h2 class="titulos" id="ganador">Juzgar por victorias sólo hace obviar la belleza e impacto del deporte</h2>
+<h3 class="titulos" id="finalfinal">
+    Y eso lo que define el define el <span>éxito</span>
+    según nosotros.
+</h3>
+</div>
+<div id="logo-final">
+    <img src="logo_exito.gif" id="logo2" alt="Logo">
+</div>
+<footer>
+    ©️ Todos los derechos reservados. Definiendo Éxito. Felipe Mateluna y Mario Ortiz.
+    Revisa <a href=referencias.html target="_blank">aquí</a>
+    nnuestras referencias.
+
+</footer>
+</section><footer></footer>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="principal.js"></script>
+</body></html>
