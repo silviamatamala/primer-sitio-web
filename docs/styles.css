@@ -257,10 +257,10 @@ header {
     }
 }
 
-/* cinema-count-screen — CSS corregido */
-body { width: 100%; height: 100%; margin: 0; }
+/* cinema-count-screen — CSS completo y corregido */
+body { width:100%; height:100%; margin:0; }
 
-.cinema-count-screen {
+.cinema-count-screen{
   position: fixed;
   inset: 0;
   display: flex;
@@ -273,154 +273,91 @@ body { width: 100%; height: 100%; margin: 0; }
   pointer-events: auto;
 }
 
+/* cruz central */
 .cinema-count-screen::before,
 .cinema-count-screen::after {
   content: '';
-  background: rgba(5,5,5,0.5);
+  background: rgba(5,5,5,0.15);
   position: absolute;
-  left: 0; top: 0; right: 0; bottom: 0; margin: auto;
+  left:0; right:0; top:0; bottom:0; margin:auto;
 }
-.cinema-count-screen::before { width: 2px; height: 100%; }
-.cinema-count-screen::after  { height: 2px; width: 100%; }
+.cinema-count-screen::before { width:2px; height:100%; }
+.cinema-count-screen::after  { height:2px; width:100%; }
 
 .cinema-count {
-  width: 300px;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin: auto;
+  width: 320px;
+  height: 320px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  margin:auto;
 }
 
-.cinema-count .number {
-  position: absolute;
-  height: 240px;
-  width: 240px;
-  font-size: clamp(3rem, 10vw, 8rem);
-  text-align: center;
-  line-height: 240px;
-  font-family: 'Anton', Arial, sans-serif;
-  color: #fff;
-  font-weight: 700;
-  left: 50%; top: 50%; transform: translate(-50%, -50%);
-}
-
+/* círculo exterior (anilllos animados como en CodePen) */
 .cinema-count i {
-  display: block;
-  margin: 15px;
-  position: absolute;
-  left: 0; top: 0; bottom: 0; right: 0;
-  border: 3px solid rgba(240,240,240,0.7);
+  position:absolute;
+  left:0; right:0; top:0; bottom:0;
+  margin:auto;
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
+  border: 3px solid rgba(240,240,240,0.7);
+  box-sizing: border-box;
+  transform: scale(1);
+  opacity: 0.9;
 }
 
-/* radar keyframes (mantén tu definición) */
+/* inner ring */
+.cinema-count i i {
+  position:absolute;
+  left:0; right:0; top:0; bottom:0;
+  margin:auto;
+  width: 200px;
+  height: 200px;
+  border-radius:50%;
+  border: 2px solid rgba(240,240,240,0.5);
+  transform: scale(1);
+}
+
+/* animaciones tipo pulso / rotación suave */
+.cinema-count.animated i {
+  animation: pulseScale 1.8s ease-in-out infinite;
+}
+.cinema-count.animated i i {
+  animation: pulseScale 2.1s ease-in-out infinite reverse;
+}
+
+@keyframes pulseScale {
+  0% { transform: scale(1); opacity: 0.95; }
+  50% { transform: scale(1.06); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.95; }
+}
+
+/* número centrado */
+.cinema-count .number{
+  font-family: 'Anton', Arial, sans-serif;
+  font-size: clamp(3rem, 10vw, 8rem);
+  color: #fff;
+  font-weight: 800;
+  line-height: 1;
+  text-align:center;
+  position: relative;
+  z-index: 2;
+  user-select: none;
+}
+
+/* radar background keyframes (mantén tu versión si la prefieres) */
 @keyframes radar {
   0% {
     background-image:
       linear-gradient(90deg, transparent 50%, #dee2ba 50%),
       linear-gradient(90deg, #dee2ba 50%, transparent 50%);
   }
-  5% {
-    background-image:
-      linear-gradient(108deg, transparent 50%, #dee2ba 50%),
-      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
-  }
-  10% {
-    background-image:
-      linear-gradient(126deg, transparent 50%, #dee2ba 50%),
-      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
-  }
-  15% {
-    background-image:
-      linear-gradient(144deg, transparent 50%, #dee2ba 50%),
-      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
-  }
-  20% {
-    background-image:
-      linear-gradient(162deg, transparent 50%, #dee2ba 50%),
-      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
-  }
-  25% {
-    background-image:
-      linear-gradient(180deg, transparent 50%, #dee2ba 50%),
-      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
-  }
-  30% {
-    background-image:
-      linear-gradient(198deg, transparent 50%, #dee2ba 50%),
-      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
-  }
-  35% {
-    background-image:
-      linear-gradient(216deg, transparent 50%, #dee2ba 50%),
-      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
-  }
-  40% {
-    background-image:
-      linear-gradient(234deg, transparent 50%, #dee2ba 50%),
-      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
-  }
-  45% {
-    background-image:
-      linear-gradient(252deg, transparent 50%, #dee2ba 50%),
-      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
-  }
   50% {
     background-image:
-      linear-gradient(270deg, transparent 50%, #dee2ba 50%),
+      linear-gradient(270deg, transparent 50%, #afada2 50%),
       linear-gradient(90deg, #dee2ba 50%, transparent 50%);
   }
-  55% {
-    background-image:
-      linear-gradient(108deg, transparent 50%, #afada2 50%),
-      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
-  }
-  60% {
-    background-image:
-      linear-gradient(126deg, transparent 50%, #afada2 50%),
-      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
-  }
-  65% {
-    background-image:
-      linear-gradient(144deg, transparent 50%, #afada2 50%),
-      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
-  }
-  70% {
-    background-image:
-      linear-gradient(162deg, transparent 50%, #afada2 50%),
-      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
-  }
-  75% {
-    background-image:
-      linear-gradient(180deg, transparent 50%, #afada2 50%),
-      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
-  }
-  80% {
-    background-image:
-      linear-gradient(188deg, transparent 50%, #afada2 50%),
-      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
-  }
-  85% {
-    background-image:
-      linear-gradient(206deg, transparent 50%, #afada2 50%),
-      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
-  }
-  90% {
-    background-image:
-      linear-gradient(224deg, transparent 50%, #afada2 50%),
-      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
-  }
-  95% {
-    background-image:
-      linear-gradient(242deg, transparent 50%, #afada2 50%),
-      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
-  }
-  99% {
-    background-image: none;
-  }
-  100% {
-    background-image: none;
-  }
+  100% { background-image: none; }
 }

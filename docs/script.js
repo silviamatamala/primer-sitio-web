@@ -51,23 +51,23 @@ $(document).ready(function() {
     // --- replace countdown block with this plain JS fallback ---
     // COUNTDOWN robusto en JS puro
     (function() {
+        // Si ya está corriendo, no arrancar otra vez
         if (window._cinemaCountdownRunning) return;
         window._cinemaCountdownRunning = true;
 
-        // Esperar a que el DOM esté listo si el script se ejecuta muy pronto
-        function init() {
+        function initCountdown() {
             const el = document.getElementById('numbercnt');
             let sec = el ? parseInt(el.textContent.trim(), 10) : NaN;
             if (!Number.isInteger(sec) || isNaN(sec)) sec = 10;
-            if (el) el.textContent = sec;
+            if (el) el.textContent = sec; // mostrar valor inicial
 
-            // Intervalo que decrementa cada segundo
+            // Usamos setInterval para evitar problemas de setTimeout en cascada
             const id = setInterval(() => {
                 sec -= 1;
                 if (el) el.textContent = sec;
                 if (sec <= 0) {
                     clearInterval(id);
-                    hideScreen();
+                    hideCinemaScreen();
                 }
             }, 1000);
 
@@ -76,24 +76,28 @@ $(document).ready(function() {
             if (screen) {
                 screen.addEventListener('click', () => {
                     clearInterval(id);
-                    hideScreen();
+                    hideCinemaScreen();
                 }, { once: true });
             }
 
-            function hideScreen() {
+            function hideCinemaScreen() {
                 const s = document.querySelector('.cinema-count-screen');
                 if (!s) return;
-                // animación de salida simple (sin jQuery)
-                s.style.transition = 'opacity 0.6s ease';
+                // salida suave
+                s.style.transition = 'opacity 0.5s ease';
                 s.style.opacity = '0';
-                setTimeout(() => { s.remove(); if (window.revealLogos) window.revealLogos(); }, 650);
+                setTimeout(() => {
+                    s.remove();
+                    // si tienes una función global revealLogos, llámala
+                    if (typeof revealLogos === 'function') revealLogos();
+                }, 600);
             }
         }
 
-        if (document.readyState === 'complete' || document.readyState === 'interactive') {
-            setTimeout(init, 50);
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initCountdown);
         } else {
-            document.addEventListener('DOMContentLoaded', init);
+            initCountdown();
         }
     })();
 });
