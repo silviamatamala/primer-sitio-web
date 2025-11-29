@@ -41,17 +41,25 @@ header {
 
 #logo1 {
   opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 500ms ease, transform 500ms ease;
-  max-width: 300px; /* ajustar según diseño */
+  transform: translateY(-16px);
+  transition: opacity 450ms ease, transform 550ms ease;
+  max-width: 300px;
   display: block;
-  z-index: 10000; /* encima de la pantalla inicial */
+  z-index: 10000;
   position: relative;
 }
 
+/* al mostrarse, además del GIF animado, el logo "flota" */
 #logo1.show {
   opacity: 1;
   transform: translateY(0);
+  animation: logoFloat 3.2s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
 }
 
 /* Utilities */

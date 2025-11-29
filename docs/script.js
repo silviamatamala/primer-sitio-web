@@ -31,19 +31,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Animar logos
   function revealLogos() {
-      // asegúrate que el elemento existe
       const logo = document.getElementById('logo1');
       if (!logo) return;
-
-      // si necesitas forzar el GIF (a veces el navegador muestra primer frame),
-      // reasigna el src para reiniciar la animación
-      const src = logo.getAttribute('data-gif-src') || logo.src;
-      logo.setAttribute('data-gif-src', src); // guarda si no existe
-      logo.src = '';           // forzar recarga
-      setTimeout(() => { logo.src = src; }, 50);
-
-      // mostrar con clase
-      logo.classList.add('show');
+      // asegurar ruta relativa guardada
+      const src = logo.getAttribute('data-gif-src') || 'elementos-web/logo-animado.gif';
+      logo.setAttribute('data-gif-src', src);
+      // reiniciar GIF (forzar recarga)
+      logo.src = '';
+      setTimeout(() => {
+        logo.src = src;
+        // añadir clase que muestra y anima el logo
+        logo.classList.add('show');
+      }, 60);
   }
 
   // Hover handlers
