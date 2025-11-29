@@ -257,12 +257,8 @@ header {
     }
 }
 
-/* cinema-count-screen corregido */
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-}
+/* cinema-count-screen — CSS corregido */
+body { width: 100%; height: 100%; margin: 0; }
 
 .cinema-count-screen {
   position: fixed;
@@ -271,7 +267,6 @@ body {
   align-items: center;
   justify-content: center;
   background: #afada2;
-  -webkit-animation: radar 1s infinite linear;
   animation: radar 1s infinite linear;
   overflow: hidden;
   z-index: 9999;
@@ -283,8 +278,7 @@ body {
   content: '';
   background: rgba(5,5,5,0.5);
   position: absolute;
-  left: 0; top: 0; right: 0; bottom: 0;
-  margin: auto;
+  left: 0; top: 0; right: 0; bottom: 0; margin: auto;
 }
 .cinema-count-screen::before { width: 2px; height: 100%; }
 .cinema-count-screen::after  { height: 2px; width: 100%; }
@@ -300,14 +294,28 @@ body {
 }
 
 .cinema-count .number {
+  position: absolute;
+  height: 240px;
+  width: 240px;
   font-size: clamp(3rem, 10vw, 8rem);
-  color: #fff;
-  font-family: 'Anton', Arial, sans-serif;
-  font-weight: 700;
   text-align: center;
+  line-height: 240px;
+  font-family: 'Anton', Arial, sans-serif;
+  color: #fff;
+  font-weight: 700;
+  left: 50%; top: 50%; transform: translate(-50%, -50%);
 }
 
-/* keyframes radar (mantener tu definición) */
+.cinema-count i {
+  display: block;
+  margin: 15px;
+  position: absolute;
+  left: 0; top: 0; bottom: 0; right: 0;
+  border: 3px solid rgba(240,240,240,0.7);
+  border-radius: 50%;
+}
+
+/* radar keyframes (mantén tu definición) */
 @keyframes radar {
   0% {
     background-image:
