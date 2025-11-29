@@ -51,7 +51,6 @@ $(document).ready(function() {
     // --- replace countdown block with this plain JS fallback ---
     // COUNTDOWN robusto en JS puro
     (function() {
-        // Si ya está corriendo, no arrancar otra vez
         if (window._cinemaCountdownRunning) return;
         window._cinemaCountdownRunning = true;
 
@@ -61,7 +60,6 @@ $(document).ready(function() {
             if (!Number.isInteger(sec) || isNaN(sec)) sec = 10;
             if (el) el.textContent = sec; // mostrar valor inicial
 
-            // Usamos setInterval para evitar problemas de setTimeout en cascada
             const id = setInterval(() => {
                 sec -= 1;
                 if (el) el.textContent = sec;
@@ -71,7 +69,6 @@ $(document).ready(function() {
                 }
             }, 1000);
 
-            // click para saltar
             const screen = document.querySelector('.cinema-count-screen');
             if (screen) {
                 screen.addEventListener('click', () => {
@@ -83,12 +80,10 @@ $(document).ready(function() {
             function hideCinemaScreen() {
                 const s = document.querySelector('.cinema-count-screen');
                 if (!s) return;
-                // salida suave
                 s.style.transition = 'opacity 0.5s ease';
                 s.style.opacity = '0';
                 setTimeout(() => {
                     s.remove();
-                    // si tienes una función global revealLogos, llámala
                     if (typeof revealLogos === 'function') revealLogos();
                 }, 600);
             }
