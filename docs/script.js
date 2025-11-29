@@ -48,30 +48,22 @@ $(document).ready(function() {
         });
     });
 
-    // COUNTDOWN (función CodePen)
-    let sec = parseInt($('#numbercnt').text(), 10);
-    if (!Number.isInteger(sec) || isNaN(sec)) sec = 10;
-    function contar() {
-        $('#numbercnt').text(sec);
-        if (sec > 0) {
-            sec = sec - 1;
-            setTimeout(contar, 1000);
-        } else {
-            $('.cinema-count-screen').fadeOut(600, function() {
-                $(this).remove();
-                revealLogos();
-            });
-        }
-    }
-
-    // click para saltar animación
-    $('.cinema-count-screen').on('click', function() {
-        $('.cinema-count-screen').stop(true,true).fadeOut(200, function() {
-            $(this).remove();
-            revealLogos();
+    // COUNTDOWN (CodePen) usando la función solicitada
+    var sec = 10;
+    function contar(){
+      sec = sec - 1;
+      var obj = document.getElementById("numbercnt");
+      if (obj) obj.innerHTML = sec;
+      if (sec > 0) {
+        setTimeout(contar, 1000);
+      } else {
+        // al terminar, ocultar pantalla de inicio y revelar logos
+        $('.cinema-count-screen').fadeOut(600, function() {
+          $(this).remove();
+          revealLogos();
         });
-    });
-
-    // iniciar cuenta con pequeño retardo
+      }
+    }
+    // iniciar la cuenta con pequeño retardo
     setTimeout(contar, 300);
 });

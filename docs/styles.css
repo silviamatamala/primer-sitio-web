@@ -257,20 +257,189 @@ header {
     }
 }
 
-/* Forzar visibilidad de la pantalla de inicio (temporal) */
+/* cinema-count-screen — CSS corregido y listo para CodePen */
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
 .cinema-count-screen {
     position: fixed;
-    inset: 0;
+    inset: 0; /* ocupa toda la ventana */
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(0,0,0,0.85);
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-animation: radar 1s infinite linear;
+    animation: radar 1s infinite linear;
+    overflow: hidden;
+    border: none;
+    background: #afada2;
     z-index: 9999;
     pointer-events: auto;
 }
 
+.cinema-count-screen::before,
+.cinema-count-screen::after {
+    content: '';
+    background: rgba(5, 5, 5, 0.5);
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+.cinema-count-screen::before { width: 2px; height: 100%; }
+.cinema-count-screen::after  { height: 2px; width: 100%;  }
+
+.cinema-count {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin: auto;
+}
+
 .cinema-count .number {
-    font-size: 5rem;
+    position: absolute;
+    height: 240px;
+    width: 240px;
+    font-size: clamp(3rem, 10vw, 10rem);
+    text-align: center;
+    line-height: 240px;
+    font-family: 'Anton', Arial, sans-serif;
     color: #fff;
     font-weight: 700;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.cinema-count i {
+    display: block;
+    margin: 15px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    border: 3px solid rgba(240, 240, 240, 0.7);
+    border-radius: 50%;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+}
+
+/* radar keyframes (tal cual tu CodePen) */
+@keyframes radar {
+  0% {
+    background-image:
+      linear-gradient(90deg, transparent 50%, #dee2ba 50%),
+      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
+  }
+  5% {
+    background-image:
+      linear-gradient(108deg, transparent 50%, #dee2ba 50%),
+      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
+  }
+  10% {
+    background-image:
+      linear-gradient(126deg, transparent 50%, #dee2ba 50%),
+      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
+  }
+  15% {
+    background-image:
+      linear-gradient(144deg, transparent 50%, #dee2ba 50%),
+      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
+  }
+  20% {
+    background-image:
+      linear-gradient(162deg, transparent 50%, #dee2ba 50%),
+      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
+  }
+  25% {
+    background-image:
+      linear-gradient(180deg, transparent 50%, #dee2ba 50%),
+      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
+  }
+  30% {
+    background-image:
+      linear-gradient(198deg, transparent 50%, #dee2ba 50%),
+      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
+  }
+  35% {
+    background-image:
+      linear-gradient(216deg, transparent 50%, #dee2ba 50%),
+      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
+  }
+  40% {
+    background-image:
+      linear-gradient(234deg, transparent 50%, #dee2ba 50%),
+      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
+  }
+  45% {
+    background-image:
+      linear-gradient(252deg, transparent 50%, #dee2ba 50%),
+      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
+  }
+  50% {
+    background-image:
+      linear-gradient(270deg, transparent 50%, #dee2ba 50%),
+      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
+  }
+  55% {
+    background-image:
+      linear-gradient(108deg, transparent 50%, #afada2 50%),
+      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
+  }
+  60% {
+    background-image:
+      linear-gradient(126deg, transparent 50%, #afada2 50%),
+      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
+  }
+  65% {
+    background-image:
+      linear-gradient(144deg, transparent 50%, #afada2 50%),
+      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
+  }
+  70% {
+    background-image:
+      linear-gradient(162deg, transparent 50%, #afada2 50%),
+      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
+  }
+  75% {
+    background-image:
+      linear-gradient(180deg, transparent 50%, #afada2 50%),
+      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
+  }
+  80% {
+    background-image:
+      linear-gradient(188deg, transparent 50%, #afada2 50%),
+      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
+  }
+  85% {
+    background-image:
+      linear-gradient(206deg, transparent 50%, #afada2 50%),
+      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
+  }
+  90% {
+    background-image:
+      linear-gradient(224deg, transparent 50%, #afada2 50%),
+      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
+  }
+  95% {
+    background-image:
+      linear-gradient(242deg, transparent 50%, #afada2 50%),
+      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
+  }
+  99% {
+    background-image: none;
+  }
+  100% {
+    background-image: none;
+  }
 }
