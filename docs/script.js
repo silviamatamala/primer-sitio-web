@@ -48,35 +48,53 @@ $(document).ready(function() {
         });
     });
 
-    // COUNTDOWN (versión robusta)
+    // COUNTDOWN robusto (no se queda pegado en 10)
     if (!window._cinemaCountdownRunning) {
         window._cinemaCountdownRunning = true;
 
-        // lee el valor inicial desde el DOM si existe, si no usa 10
-        let sec = parseInt($('#numbercnt').text(), 10);
-        if (!Number.isInteger(sec) || isNaN(sec)) sec = 10;
-        $('#numbercnt').text(sec);
+        // Obtener elemento y valor inicial
+        const el = document.getElementById('numbercnt');
+        let sec = 10;
+        if (el) {
+            const parsed = parseInt(el.textContent.trim(), 10);
+            if (Number.isInteger(parsed) && !isNaN(parsed)) sec = parsed;
+            el.textContent = sec; // mostrar valor inicial
+        }
 
-        // interval seguro
-        const countdownInterval = setInterval(() => {
+        // Intervalo que decrementa UNA vez por segundo
+        const id = setInterval(() => {
             sec -= 1;
-            $('#numbercnt').text(sec);
+            if (el) el.textContent = sec;
             if (sec <= 0) {
-                clearInterval(countdownInterval);
-                $('.cinema-count-screen').fadeOut(600, function() {
-                    $(this).remove();
-                    if (typeof revealLogos === 'function') revealLogos();
-                });
+                clearInterval(id);
+                // ocultar pantalla e invocar revealLogos si existe
+                const $screen = document.querySelector('.cinema-count-screen');
+                if ($screen) {
+                    // si jQuery está presente usa fadeOut, si no, remueve directamente
+                    if (window.jQuery) {
+                        window.jQuery($screen).fadeOut(600, function () { this.remove(); if (typeof revealLogos === 'function') revealLogos(); });
+                    } else {
+                        $screen.remove();
+                        if (typeof revealLogos === 'function') revealLogos();
+                    }
+                } else if (typeof revealLogos === 'function') {
+                    revealLogos();
+                }
             }
         }, 1000);
 
-        // permitir saltar con click (limpia interval)
-        $('.cinema-count-screen').on('click', function() {
-            clearInterval(countdownInterval);
-            $('.cinema-count-screen').stop(true, true).fadeOut(200, function() {
-                $(this).remove();
-                if (typeof revealLogos === 'function') revealLogos();
-            });
-        });
+        // click para saltar (limpia interval)
+        const screen = document.querySelector('.cinema-count-screen');
+        if (screen) {
+            screen.addEventListener('click', () => {
+                clearInterval(id);
+                if (window.jQuery) {
+                    window.jQuery(screen).stop(true,true).fadeOut(200, function() { this.remove(); if (typeof revealLogos === 'function') revealLogos(); });
+                } else {
+                    screen.remove();
+                    if (typeof revealLogos === 'function') revealLogos();
+                }
+            }, { once: true });
+        }
     }
 });
