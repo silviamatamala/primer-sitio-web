@@ -48,53 +48,37 @@ $(document).ready(function() {
         });
     });
 
-    // COUNTDOWN robusto (no se queda pegado en 10)
-    if (!window._cinemaCountdownRunning) {
+    // --- replace countdown block with this plain JS fallback ---
+    (function() {
+        if (window._cinemaCountdownRunning) return;
         window._cinemaCountdownRunning = true;
 
-        // Obtener elemento y valor inicial
         const el = document.getElementById('numbercnt');
-        let sec = 10;
-        if (el) {
-            const parsed = parseInt(el.textContent.trim(), 10);
-            if (Number.isInteger(parsed) && !isNaN(parsed)) sec = parsed;
-            el.textContent = sec; // mostrar valor inicial
-        }
+        let sec = el ? parseInt(el.textContent.trim(), 10) : NaN;
+        if (!Number.isInteger(sec) || isNaN(sec)) sec = 10;
+        if (el) el.textContent = sec;
 
-        // Intervalo que decrementa UNA vez por segundo
-        const id = setInterval(() => {
+        const tick = () => {
             sec -= 1;
             if (el) el.textContent = sec;
             if (sec <= 0) {
                 clearInterval(id);
-                // ocultar pantalla e invocar revealLogos si existe
-                const $screen = document.querySelector('.cinema-count-screen');
-                if ($screen) {
-                    // si jQuery está presente usa fadeOut, si no, remueve directamente
-                    if (window.jQuery) {
-                        window.jQuery($screen).fadeOut(600, function () { this.remove(); if (typeof revealLogos === 'function') revealLogos(); });
-                    } else {
-                        $screen.remove();
-                        if (typeof revealLogos === 'function') revealLogos();
-                    }
-                } else if (typeof revealLogos === 'function') {
-                    revealLogos();
-                }
+                const screen = document.querySelector('.cinema-count-screen');
+                if (screen) screen.remove();
+                if (typeof revealLogos === 'function') revealLogos();
             }
-        }, 1000);
+        };
 
-        // click para saltar (limpia interval)
+        const id = setInterval(tick, 1000);
+
+        // permitir salto con click
         const screen = document.querySelector('.cinema-count-screen');
         if (screen) {
             screen.addEventListener('click', () => {
                 clearInterval(id);
-                if (window.jQuery) {
-                    window.jQuery(screen).stop(true,true).fadeOut(200, function() { this.remove(); if (typeof revealLogos === 'function') revealLogos(); });
-                } else {
-                    screen.remove();
-                    if (typeof revealLogos === 'function') revealLogos();
-                }
+                screen.remove();
+                if (typeof revealLogos === 'function') revealLogos();
             }, { once: true });
         }
-    }
+    })();
 });
