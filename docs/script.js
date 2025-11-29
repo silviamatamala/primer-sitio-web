@@ -48,22 +48,35 @@ $(document).ready(function() {
         });
     });
 
-    // COUNTDOWN (CodePen) usando la función solicitada
-    var sec = 10;
-    function contar(){
-      sec = sec - 1;
-      var obj = document.getElementById("numbercnt");
-      if (obj) obj.innerHTML = sec;
-      if (sec > 0) {
-        setTimeout(contar, 1000);
-      } else {
-        // al terminar, ocultar pantalla de inicio y revelar logos
-        $('.cinema-count-screen').fadeOut(600, function() {
-          $(this).remove();
-          revealLogos();
+    // COUNTDOWN (versión robusta)
+    if (!window._cinemaCountdownRunning) {
+        window._cinemaCountdownRunning = true;
+
+        // lee el valor inicial desde el DOM si existe, si no usa 10
+        let sec = parseInt($('#numbercnt').text(), 10);
+        if (!Number.isInteger(sec) || isNaN(sec)) sec = 10;
+        $('#numbercnt').text(sec);
+
+        // interval seguro
+        const countdownInterval = setInterval(() => {
+            sec -= 1;
+            $('#numbercnt').text(sec);
+            if (sec <= 0) {
+                clearInterval(countdownInterval);
+                $('.cinema-count-screen').fadeOut(600, function() {
+                    $(this).remove();
+                    if (typeof revealLogos === 'function') revealLogos();
+                });
+            }
+        }, 1000);
+
+        // permitir saltar con click (limpia interval)
+        $('.cinema-count-screen').on('click', function() {
+            clearInterval(countdownInterval);
+            $('.cinema-count-screen').stop(true, true).fadeOut(200, function() {
+                $(this).remove();
+                if (typeof revealLogos === 'function') revealLogos();
+            });
         });
-      }
     }
-    // iniciar la cuenta con pequeño retardo
-    setTimeout(contar, 300);
 });
