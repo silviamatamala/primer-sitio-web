@@ -256,3 +256,21 @@ header {
         transition-duration: 0s;
     }
 }
+
+/* Forzar visibilidad de la pantalla de inicio (temporal) */
+.cinema-count-screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.85);
+    z-index: 9999;
+    pointer-events: auto;
+}
+
+.cinema-count .number {
+    font-size: 5rem;
+    color: #fff;
+    font-weight: 700;
+}
