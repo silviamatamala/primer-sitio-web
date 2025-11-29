@@ -31,8 +31,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Animar logos
   function revealLogos() {
-      $("#logo1").animate({ opacity: 1, top: "50px" }, 1000);
-      $("#logo2").animate({ opacity: 1, top: "50px" }, 1000);
+      // asegúrate que el elemento existe
+      const logo = document.getElementById('logo1');
+      if (!logo) return;
+
+      // si necesitas forzar el GIF (a veces el navegador muestra primer frame),
+      // reasigna el src para reiniciar la animación
+      const src = logo.getAttribute('data-gif-src') || logo.src;
+      logo.setAttribute('data-gif-src', src); // guarda si no existe
+      logo.src = '';           // forzar recarga
+      setTimeout(() => { logo.src = src; }, 50);
+
+      // mostrar con clase
+      logo.classList.add('show');
   }
 
   // Hover handlers

@@ -40,12 +40,18 @@ header {
 }
 
 #logo1 {
-    width: 600px;
-    height: 600px;
-    flex: 0 0 auto;
-    display: flex;
-    align-items: center;
-    opacity: 1; /* mostrar logo */
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 500ms ease, transform 500ms ease;
+  max-width: 300px; /* ajustar según diseño */
+  display: block;
+  z-index: 10000; /* encima de la pantalla inicial */
+  position: relative;
+}
+
+#logo1.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Utilities */
