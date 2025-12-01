@@ -1,96 +1,7 @@
 <!DOCTYPE html>
 <html>
-    <head> 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="/Users/silviamatamala/Downloads/GRÁFICA/primer-sitio-web/docs/elementos-web/logo-animado.gif" type="image/gif"> 
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <title>El cine chileno: una mirada retrospectiva </title>
-        <!-- ruta relativa para GitHub Pages cuando usas main /docs -->
-        <link rel="stylesheet" type="text/css" href="styles.css">
-    </head> 
-    <body>
-        <!-- pantalla de inicio (animación) -->
-        <div class="cinema-count-screen">
-            <div class="cinema-count animated">
-                <i><i></i></i>
-                <span id="numbercnt" class="number">10</span>
-            </div>
-        </div>
-
-        <header>
-            <div class="contenedor_logo">
-                <img src="elementos-web/logo-animado.gif" data-gif-src="elementos-web/logo-animado.gif" id="logo1" alt="Logo">
-            </div>
-        </header>
-        
-        <section id="intro">
-            <h1 class="titulo_mayor">
-                ¿Conocemos <span>nuestro</span>
-                cine?
-            </h1>
-            <p id="links_rrss">
-                Por 
-                <a href="https://www.instagram.com/renatoquevedo_/" target="_blank">Renato Quevedo</a>
-                <a href="https://www.instagram.com/silviamtml/" target="_blank">Silvia Matamala</a>
-                <a href="https://www.instagram.com/_blancarios/" target="_blank">Blanca Ríos</a>
-            </p>
-        </section>
-
-        <main class="page-content">
-
- 
-  <div class="card">
-    <div class="content">
-      <h2 class="title">Raúl Ruiz</h2>
-      <p class="copy">15 PELÍCULAS</p>
-    
-      <a class="btn" href="https://www.imdb.com/es/name/nm0749914/" target="_blank">Ver más</a>
-    </div>
-  </div>
-
-
-  <div class="card">
-    <div class="content">
-      <h2 class="title">Sebastián Lelio</h2>
-      <p class="copy">7 PELÍCULAS</p>
-      <a class="btn" href="https://www.imdb.com/es/name/nm0133326/" target="_blank">Ver más</a>
-    </div>
-  </div>
-
-
-  <div class="card">
-    <div class="content">
-      <h2 class="title">Cristián Sánchez</h2>
-      <p class="copy">16 películas</p>
-      <a class="btn" href="https://www.imdb.com/es/name/nm0844877/" target="_blank">Ver más</a>
-    </div>
-  </div>
-
- 
-  <div class="card">
-    <div class="content">
-      <h2 class="title">Pablo Larraín</h2>
-      <p class="copy">12 PELÍCULAS</p>
-      <a class="btn" href="https://www.imdb.com/es/name/nm1883257/" target="_blank">Ver más</a>
-    </div>
-  </div>
-</main>
-
-  <!-- scripts al final del body (jQuery antes de script.js) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="script.js"></script>
-</body>
-</html>
-
-<h3 class="titulos">Coordenadas cinematográficas</h3>
-<p class="parrafo_v3">
-    La narrativa de una película comienza mucho antes de su llegada a salas masivas. Para el cine chileno, este "primer acto" es una coreografía global que se ensaya en casa, pero se valida en el extranjero.
-            
-</p>
- <head> 
+<head>
+  <meta charset="UTF-8">
   <style>
     #vis.vega-embed {
       width: 100%;
@@ -105,8 +16,8 @@
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-</head> 
- <body>
+</head>
+<body>
   <div id="vis"></div>
   <script>
     (function(vegaEmbed) {
@@ -127,9 +38,5 @@
     })(vegaEmbed);
 
   </script>
- </body>
-
-
-
-
-
+</body>
+</html>
