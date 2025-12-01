@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 :root {
     --d: 700ms;
     --e: cubic-bezier(0.19, 1, 0.22, 1);
-    --font-sans: 'Rubik', sans-serif;
-    --font-serif: 'Cardo', serif;
+    --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+    --font-serif: 'Anton', sans-serif; 
 }
 
 /* Reset / base */
@@ -15,7 +15,7 @@ html {
 }
 
 body {
-    font-family: "Figtree", sans-serif;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Akzidenz-Grotesk simulada */
     margin: 0;
     padding: 0;
     display: grid;
@@ -190,9 +190,15 @@ header {
 }
 
 .title {
+    font-family: 'Anton', sans-serif;
     font-size: 1.3rem;
     font-weight: bold;
     line-height: 1.2;
+}
+
+
+h1, h2, h3 {
+    font-family: 'Anton', sans-serif;
 }
 
 .copy {
@@ -365,127 +371,4 @@ body {
 #logo1 {
   --logo-scale: 1 !important;
   transform: translateY(0) scale(1) !important;
-}
-
-/* CodePen: cartelera / cards (scopeado bajo .top para evitar cambios no deseados) */
-.top {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: 50px;
-  background-color: rgba(0, 0, 0, 0.9); /* #000000e5 */
-}
-@media (max-width: 500px) {
-  .top { display: none; }
-}
-
-.top .card {
-  margin: 20px;
-  background-color: #000;
-  padding: 10px 20px;
-  border-radius: 10px;
-  width: 300px;
-  height: 350px;
-  position: relative;
-  background-repeat: no-repeat;
-  background-size: 300px;
-  transition: background-size 4s ease-in-out;
-  color: #fff;
-}
-.top .card:hover {
-  cursor: pointer;
-  background-size: 400px;
-}
-.top .card:hover .border {
-  display: initial;
-}
-.top .card:hover .icons {
-  display: block;
-}
-.top .card:hover h1 {
-  display: initial;
-}
-
-/* imágenes de cada tarjeta (scopeadas) */
-.top #card1 {
-  background-image: url('https://es.web.img3.acsta.net/c_310_420/medias/nmedia/18/97/48/65/20532018.jpg');
-}
-.top #card1:hover {
-  background-position: left center;
-}
-
-.top #card2 {
-  background-image: url('https://pics.filmaffinity.com/paulina_garcia-245932794913171-nm_large.jpg');
-  transition: background 2s ease-out;
-}
-.top #card2:hover {
-  background-position: left center;
-}
-
-.top #card3 {
-  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Daniela_Vega_A_Fantastic_Woman_Berlinale_2017.jpg/500px-Daniela_Vega_A_Fantastic_Woman_Berlinale_2017.jpg');
-  transition: background 2s ease-out;
-}
-.top #card3:hover {
-  background-image: url('https://res.cloudinary.com/dqt1kbgbg/image/upload/v1653957683/codepen/f88ea81585e91e9669978c047aca0c76_sdl78q.jpg');
-  background-position: left center;
-}
-
-.top h1 {
-  display: none;
-  color: #fff;
-  font-size: 1.5rem;
-  font-weight: 100;
-  font-family: sans-serif;
-}
-
-.top img {
-  width: 100%;
-}
-
-.top .images {
-  width: 100%;
-}
-
-.top a {
-  text-decoration: none;
-}
-
-/* iconos y botones dentro de .top */
-.top .icons {
-  display: none;
-  text-align: center;
-  border: 1px solid #eee;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: fit-content;
-}
-
-.top .fab {
-  display: block;
-  font-size: 1rem;
-  color: silver;
-  padding: 5px;
-  margin-bottom: 10px;
-}
-.top .fab:hover {
-  color: gold;
-}
-
-/* borde decorativo */
-.top .border {
-  display: none;
-  position: absolute;
-  border: 1px solid silver;
-  left: 5px;
-  right: 5px;
-  border-radius: 10px;
-  height: 340px;
-  bottom: 5px;
-  transition: .65s;
 }
