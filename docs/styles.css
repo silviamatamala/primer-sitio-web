@@ -19,14 +19,14 @@ body {
     padding: 0;
     display: grid;
     place-items: center;
-    background-color: #f7f7f7;
+    background-color: ##F6F4ED;
     height: 100%;
 }
 
 /* Header / logo */
 header {
     background-color: #F6F4ED;
-    color: #000; /* cambiado a negro para mayor contraste */
+    color: #000; 
     padding: 10px;
     display: flex;
     align-items: center;
@@ -40,8 +40,9 @@ header {
 }
 
 #logo1 {
+  --logo-scale: 1;
   opacity: 0;
-  transform: translateY(-16px);
+  transform: translateY(-16px) scale(var(--logo-scale));
   transition: opacity 450ms ease, transform 550ms ease;
   max-width: 300px;
   display: block;
@@ -52,14 +53,15 @@ header {
 /* al mostrarse, además del GIF animado, el logo "flota" */
 #logo1.show {
   opacity: 1;
-  transform: translateY(0);
+  --logo-scale: 2; /* doble tamaño */
+  transform: translateY(0) scale(var(--logo-scale));
   animation: logoFloat 3.2s ease-in-out infinite;
 }
 
 @keyframes logoFloat {
-  0%   { transform: translateY(0); }
-  50%  { transform: translateY(-8px); }
-  100% { transform: translateY(0); }
+  0%   { transform: translateY(0) scale(var(--logo-scale)); }
+  50%  { transform: translateY(-8px) scale(var(--logo-scale)); }
+  100% { transform: translateY(0) scale(var(--logo-scale)); }
 }
 
 /* Utilities */
@@ -147,7 +149,7 @@ header {
     z-index: 0;
 }
 
-/* Imágenes por tarjeta (selectores planos) */
+
 .card:nth-child(1):before {
     background-image: url('https://m.media-amazon.com/images/M/MV5BMTMyMzY2Mjc1N15BMl5BanBnXkFtZTcwNzM5NzYzNg@@._V1_.jpg');
 }
@@ -161,7 +163,7 @@ header {
     background-image: url('https://images.wsj.net/im-02821113?width=1280&size=0.667&pixel_ratio=2');
 }
 
-/* Contenido dentro de la tarjeta */
+
 .content {
     position: relative;
     display: flex;
@@ -190,7 +192,7 @@ header {
     line-height: 1.35;
 }
 
-/* Botón */
+
 .btn {
     cursor: pointer;
     margin-top: 1.5rem;
@@ -217,7 +219,7 @@ header {
     outline-offset: 3px;
 }
 
-/* Interacciones para hover en pantallas grandes */
+
 @media (hover: hover) and (min-width: 600px) {
     .card:after {
         transform: translateY(0);
@@ -262,7 +264,7 @@ header {
         transition-delay: calc(var(--d) / 8);
     }
 
-    /* focus-within: hacer transiciones instantáneas en algunos casos */
+
     .card:focus-within:before,
     .card:focus-within:after,
     .card:focus-within .content,
@@ -271,8 +273,24 @@ header {
     }
 }
 
-/* cinema-count-screen — CSS corregido */
-body { width: 100%; height: 100%; margin: 0; }
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/* cinema-count corregido: no usar '//' y usar 'width' */
+.cinema-count {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  top: 50%;
+  margin-top: -150px;
+}
 
 .cinema-count-screen {
   position: fixed;
@@ -355,7 +373,7 @@ body { width: 100%; height: 100%; margin: 0; }
   user-select: none;
 }
 
-/* radar keyframes (tu definición original) */
+
 @keyframes radar {
   0% {
     background-image:
