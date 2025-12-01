@@ -24,6 +24,15 @@ body {
     height: 100%;
 }
 
+/* Override para evitar recorte de la pantalla de inicio */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
 /* Header / logo */
 header {
     background-color: #F6F4ED;
@@ -275,45 +284,10 @@ header {
 }
 
 
-/* Asegurar que la pantalla de countdown no se corte */
-html, body {
+body {
+  width: 100%;
   height: 100%;
   margin: 0;
-  padding: 0;
-  overflow-x: hidden; /* evitar scroll horizontal */
-  overflow-y: visible; /* permitir que el overlay no se recorte */
-}
-
-/* overlay full‑viewport fijo y por encima de todo */
-.cinema-count-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 99999; /* suficientemente alto */
-  box-sizing: border-box;
-  background: #afada2; /* o transparente si prefieres */
-  pointer-events: auto;
-  /* soporte safe-area en móviles */
-  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-}
-
-/* contenedor central */
-.cinema-count {
-  width: 300px;
-  height: 300px;
-  max-width: calc(100% - 40px);
-  max-height: calc(100% - 40px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
 }
 
 /* cinema-count corregido: no usar '//' y usar 'width' */
@@ -330,16 +304,21 @@ html, body {
 
 /* cinema-count — tamaño igual al CodePen original */
 .cinema-count-screen {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: #afada2;
-  animation: radar 1s infinite linear;
-  overflow: hidden;
-  z-index: 9999;
-  pointer-events: auto;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 999999 !important;
+  background: #afada2; /* o el que prefieras */
+  pointer-events: auto !important;
+  box-sizing: border-box !important;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
 
 /* cruz central */
@@ -362,6 +341,9 @@ html, body {
   justify-content: center;
   position: relative;
   margin: auto;
+  max-width: calc(100vw - 40px);
+  max-height: calc(100vh - 40px);
+  box-sizing: border-box;
 }
 
 .cinema-count i {
