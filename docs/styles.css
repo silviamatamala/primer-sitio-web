@@ -275,10 +275,45 @@ header {
 }
 
 
-body {
-  width: 100%;
+/* Asegurar que la pantalla de countdown no se corte */
+html, body {
   height: 100%;
   margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* evitar scroll horizontal */
+  overflow-y: visible; /* permitir que el overlay no se recorte */
+}
+
+/* overlay full‑viewport fijo y por encima de todo */
+.cinema-count-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999; /* suficientemente alto */
+  box-sizing: border-box;
+  background: #afada2; /* o transparente si prefieres */
+  pointer-events: auto;
+  /* soporte safe-area en móviles */
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+
+/* contenedor central */
+.cinema-count {
+  width: 300px;
+  height: 300px;
+  max-width: calc(100% - 40px);
+  max-height: calc(100% - 40px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 /* cinema-count corregido: no usar '//' y usar 'width' */
