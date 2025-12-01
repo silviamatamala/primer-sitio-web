@@ -387,3 +387,15 @@ body {
     
     display: block; 
 }
+
+#anteto {
+
+    width: 100%; 
+    height: auto; 
+
+    display: block; 
+    
+    margin: 20px auto; 
+
+    object-fit: contain; 
+}
