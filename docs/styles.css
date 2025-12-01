@@ -366,3 +366,306 @@ body {
   --logo-scale: 1 !important;
   transform: translateY(0) scale(1) !important;
 }
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin desk() {
+    @media only screen and (min-width: 1000px){
+        @content;
+    }
+}
+
+.top{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 50px;
+  background-color: #000000e5;
+}
+@media(max-width: 500px){
+  .top{
+    display: none;
+  }
+}
+.card{
+  margin: 20px;
+  background-color: #000;
+  padding: 10px 20px;
+  border-radius: 10px;
+  width: 300px;
+  height: 350px;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 300px;
+  transition: 4s ease-in-out;
+  &:hover{
+    cursor: pointer; 
+    background-size: 400px;
+  }
+  &:hover .border{
+    display: initial;
+  }
+  &:hover .icons{
+    display: block;
+  }
+  &:hover h1{
+    display: initial;
+  }
+}
+#card1{
+  background-image: url('https://es.web.img3.acsta.net/c_310_420/medias/nmedia/18/97/48/65/20532018.jpg');
+  &:hover{   background:url('https://es.web.img3.acsta.net/c_310_420/medias/nmedia/18/97/48/65/20532018.jpg') left center;
+  }
+}
+#card2{
+  background-image: url('https://pics.filmaffinity.com/paulina_garcia-245932794913171-nm_large.jpg');
+  transition: 2s ease-out;
+  &:hover{
+  background: url('https://pics.filmaffinity.com/paulina_garcia-245932794913171-nm_large.jpg') left center;
+ }
+}
+#card3{
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Daniela_Vega_A_Fantastic_Woman_Berlinale_2017.jpg/500px-Daniela_Vega_A_Fantastic_Woman_Berlinale_2017.jpg');
+  transition: 2s ease-out;
+  &:hover{
+  background-image: url('https://res.cloudinary.com/dqt1kbgbg/image/upload/v1653957683/codepen/f88ea81585e91e9669978c047aca0c76_sdl78q.jpg') left center center;
+ }
+}
+h1{
+  display: none;
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 100;
+  font-family: sans-serif;
+}
+img{
+  width: 100%;
+}
+.images{
+  width: 100%;
+}
+a{
+  text-decoration: none;
+}
+.icons{
+  display: none;
+  text-align: center;
+  border: 1ps solid #eee;
+  position: absolute;
+  bottom: 20px;
+  width: fit-content;
+}
+.fab{
+  display: block;
+  font-size: 1rem;
+  color: silver;
+  padding: 5px;
+  margin-bottom: 10px;
+  &:hover{
+    color: gold;
+  }
+}
+.border{
+  display: none;
+  position: absolute;
+  border:1px solid silver;
+  left: 5px;
+  right: 5px;
+  border-radius: 10px;
+  height: 340px;
+  bottom: 5px;
+  transition: .65s;
+}
+/*uses bootstrap 4 to reset css */
+body{
+  background-color:#0a0900;
+  perspective: 15em;
+  perspective-origin: 50% 100%;
+}
+/* Main container of text (with outer border) */
+.letter-board{
+  margin:1em auto;
+  font-family: 'Teko', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 2rem;
+  width: 22em;
+  position: relative;
+  background-color: #fefefe;
+  background-color: #92866A;
+  /*fake broken blub background effect*/
+  animation: flicker 60s infinite alternate-reverse both;
+  transform: rotateX(0deg);
+  transition: 0.2s ease-in-out;
+  box-shadow: 0px 20px 60px -20px rgba(250,236,165,0.2);
+  overflow:hidden;
+}
+.letter-board:hover{
+   /*I DIDNT LIKE THE HOVER*/
+  transform: rotateX(0deg);
+  box-shadow: 0px 20px 60px -20px rgba(250,236,165,0);
+}
+/*fade out the item not being hovered over */
+.letter-board *{transition:0.1s ease-in;}
+.letter-board:hover > *{ opacity: 0.5; }/*hide all*/
+.letter-board a:hover{   opacity: 1.0; }/* show clicked one */
+
+
+.letter-board a {
+  display:block;
+  color:inherit;
+  position:relative;
+}
+.letter-board a:hover {color:initial}
+
+/* set the first child of .letter-board to look like 
+   the full width lines of the letter board board */
+
+.letter-board > h1,
+.letter-board > h2,
+.letter-board > a > * {
+  background-color:transparent;
+  border:.1em double #dcd6ca;
+  border-left:none;
+  border-right:none;
+  overflow:hidden;
+  margin-bottom:0;
+  font-size: 1.2em;
+  height:1em;
+  line-height:1em;
+  padding-left:1em;
+}
+/*give outer glow to each letter on hover*/
+.letter-board a:hover{
+  text-shadow: 0px 0px 8px rgba(222, 252, 75, 0.51);
+}
+/*darken the bars on hover */
+.letter-board a:hover > *{  border-color:#e6cb95; }
+/*shrink dates (h2)*/
+.letter-board h2{ font-size: 0.8em; }
+
+/*put a slight line on the side of each letter */
+.letter-board span:not(:empty){
+  border-right: 1px inset rgba(158, 151, 135, 0.2); 
+}
+/*default text style*/
+.letter-board span{
+  display: inline-block;
+  transition: color 200ms ease-out;
+  text-align: center;
+  width: 0.6em;
+  color:#090904;
+  background: transparent;  /* fallback for old browsers */
+  background: linear-gradient(13deg, rgba(225, 245, 196, 0.42), rgba(231, 223, 213, 0.43));
+  vertical-align: middle;
+}
+
+/*RANDOMZE THE LETTERS to have different background verical-alignment, colours and rotation*/
+.letter-board span:nth-child(6n+1){
+  vertical-align: top;
+  background: linear-gradient(13deg, rgba(225, 245, 196, 0.21), rgba(233, 222, 222, 0.36))
+}
+.letter-board span:nth-child(4n+4){
+  vertical-align: bottom;
+  transform:rotate(-1deg);
+  background: linear-gradient(13deg, rgba(205, 233, 185, 0.22), rgba(221, 212, 200, 0.65))
+}
+.letter-board span:nth-child(8n+2){
+  transform:rotate(2deg);
+  background: linear-gradient(13deg, rgba(230, 252, 197, 0.59), rgba(236, 223, 207, 0.19))
+}
+.letter-board span:nth-child(5n+3){
+  width:.5em;
+  background: linear-gradient(13deg, rgba(189, 206, 173, 0.02), #f8e7d3);
+}
+.letter-board span.flip{ color:#a30006; }
+
+
+/*ANIMATIONS*/
+@keyframes fade-to-off {
+  0% {
+    background:
+      radial-gradient(circle at 27.67% 93%, #fefefe, transparent 53%),
+      radial-gradient(circle at 69.72% 92.99%, #fefefe, transparent 30%),
+      radial-gradient(circle at 27.58% 12.24%, #fefefe, transparent 58%),
+      radial-gradient(circle at 8.05% 50%, #fefefe, transparent 24%),
+      radial-gradient(circle at 74.32% 9.48%, #fefefe, transparent 96%),
+      radial-gradient(circle at 98.72% 46.86%, #fefefe, transparent 12%),
+      radial-gradient(circle at 51.45% 47.81%, #fefefe, transparent 41%),
+      radial-gradient(circle at 50% 50%, #92866A, #92866A 100%);
+  }
+  10% {
+    background:
+      radial-gradient(circle at 27.67% 93%, #fefefe, transparent 53%),
+      radial-gradient(circle at 69.72% 92.99%, #fefefe, transparent 30%),
+      radial-gradient(circle at 27.58% 12.24%, #fefefe, transparent 58%),
+      radial-gradient(circle at 8.05% 50%, #fefefe, transparent 24%),
+      radial-gradient(circle at 74.32% 9.48%, #fefefe, transparent 96%),
+      radial-gradient(circle at 98.72% 46.86%, #fefefe, transparent 12%),
+      radial-gradient(circle at 51.45% 47.81%, #fefefe, transparent 41%),
+      radial-gradient(circle at 50% 50%, #92866A, #92866A 100%);
+  }
+  20% {
+    background:
+      radial-gradient(circle at 27.67% 93%, #fefefe, transparent 53%),
+      radial-gradient(circle at 69.72% 92.99%, #fefefe, transparent 30%),
+      radial-gradient(circle at 27.58% 12.24%, #fefefe, transparent 58%),
+      radial-gradient(circle at 8.05% 50%, #fefefe, transparent 24%),
+      radial-gradient(circle at 74.32% 9.48%, #fefefe, transparent 96%),
+      radial-gradient(circle at 98.72% 46.86%, #fefefe, transparent 12%),
+      radial-gradient(circle at 51.45% 47.81%, #fefefe, transparent 41%),
+      radial-gradient(circle at 50% 50%, #92866A, #92866A 100%);
+  }
+}
+@keyframes flicker {
+  0% {
+    background:
+      radial-gradient(circle at 27.67% 93%, #fefefe, transparent 53%),
+      radial-gradient(circle at 69.72% 92.99%, #fefefe, transparent 42%),
+      radial-gradient(circle at 27.58% 12.24%, #fefefe, transparent 58%),
+      radial-gradient(circle at 8.05% 50%, #fefefe, transparent 24%),
+      radial-gradient(circle at 74.32% 9.48%, #fefefe, transparent 93%),
+      radial-gradient(circle at 98.72% 46.86%, #fefefe, transparent 12%),
+      radial-gradient(circle at 51.45% 47.81%, #fefefe, transparent 45%),
+      radial-gradient(circle at 50% 50%, #92866A, #92866A 100%);
+  }
+  25% {
+    background:
+      radial-gradient(circle at 27.67% 93%, #fefefe, transparent 53%),
+      radial-gradient(circle at 69.72% 92.99%, #fefefe, transparent 30%),
+      radial-gradient(circle at 27.58% 12.24%, #fefefe, transparent 58%),
+      radial-gradient(circle at 8.05% 50%, #fefefe, transparent 24%),
+      radial-gradient(circle at 74.32% 9.48%, #fefefe, transparent 96%),
+      radial-gradient(circle at 98.72% 46.86%, #fefefe, transparent 12%),
+      radial-gradient(circle at 51.45% 47.81%, #fefefe, transparent 41%),
+      radial-gradient(circle at 50% 50%, #92866A, #92866A 100%);
+  }
+  50% {
+    background:
+      radial-gradient(circle at 27.67% 93%, #fefefe, transparent 53%),
+      radial-gradient(circle at 69.72% 92.99%, #fefefe, transparent 42%),
+      radial-gradient(circle at 27.58% 12.24%, #fefefe, transparent 58%),
+      radial-gradient(circle at 8.05% 50%, #fefefe, transparent 24%),
+      radial-gradient(circle at 74.32% 9.48%, #fefefe, transparent 96%),
+      radial-gradient(circle at 98.72% 46.86%, #fefefe, transparent 12%),
+      radial-gradient(circle at 51.45% 47.81%, #fefefe, transparent 43%),
+      radial-gradient(circle at 50% 50%, #92866A, #92866A 100%);
+  }
+  100% {
+    background:
+      radial-gradient(circle at 27.67% 93%, #fefefe, transparent 53%),
+      radial-gradient(circle at 69.72% 92.99%, #fefefe, transparent 42%),
+      radial-gradient(circle at 27.58% 12.24%, #fefefe, transparent 58%),
+      radial-gradient(circle at 8.05% 50%, #fefefe, transparent 24%),
+      radial-gradient(circle at 74.32% 9.48%, #fefefe, transparent 93%),
+      radial-gradient(circle at 98.72% 46.86%, #fefefe, transparent 12%),
+      radial-gradient(circle at 51.45% 47.81%, #fefefe, transparent 44%),
+      radial-gradient(circle at 50% 50%, #92866A, #92866A 100%);
+  }
+}

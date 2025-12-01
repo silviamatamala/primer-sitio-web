@@ -128,3 +128,44 @@ document.addEventListener('DOMContentLoaded', function () {
     if (screen.parentNode !== document.body) document.body.insertBefore(screen, document.body.firstChild);
   }
 });
+
+$(function(){
+  initLetters();
+
+  function onHover(event){
+    const $target = $(event.target).closest('a');
+    const textAnimation = setInterval(function(){
+      animateTitle($target);
+    }, 600);
+    return textAnimation;
+  }
+
+  let intervalHandle;
+  $('.letter-board a').hover(function(event){
+    intervalHandle = onHover(event);
+  }, function(event){
+    clearInterval(intervalHandle);
+  });
+
+  function initLetters(){
+    $.each($('.letter-board :not(:has(*))'), function(){
+      const $title = $(this);
+      const text = $title.text();
+      let newtext = "";
+      $.each(text.split(''), function(i, v){
+        const ch = v.trim();
+        const className = Math.round(Math.random()) === 1 ? 'flip' : '';
+        // usar &nbsp; para espacios para que el span ocupe lugar
+        const content = ch === "" ? '&nbsp;' : ch;
+        newtext += className ? "<span class='flip'>" + content + "</span>" : "<span>" + content + "</span>";
+      });
+      $title.html(newtext);
+    });
+  }
+
+  function animateTitle($title){
+    $title.find('span').each(function(){
+      if (Math.round(Math.random()) === 1) $(this).toggleClass('flip');
+    });
+  }
+});
