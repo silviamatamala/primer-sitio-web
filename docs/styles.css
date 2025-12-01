@@ -315,36 +315,12 @@ body {
   align-items: center !important;
   justify-content: center !important;
   z-index: 999999 !important;
-  background: #afada2; /* o el que prefieras */
-  pointer-events: auto !important;
   box-sizing: border-box !important;
+  background: #afada2; /* o el color que quieras */
+  pointer-events: auto !important;
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
-
-/* cruz central */
-.cinema-count-screen::before,
-.cinema-count-screen::after {
-  content: '';
-  background: rgba(5,5,5,0.15);
-  position: absolute;
-  left: 0; right: 0; top: 0; bottom: 0; margin: auto;
-}
-.cinema-count-screen::before { width: 2px; height: 100%; }
-.cinema-count-screen::after  { height: 2px; width: 100%; }
-
-/* contenedor y anillos: tamaño original */
-.cinema-count {
-  width: 300px;
-  height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  margin: auto;
-  max-width: calc(100vw - 40px);
-  max-height: calc(100vh - 40px);
-  box-sizing: border-box;
-}
+.cinema-count { max-width: calc(100vw - 40px); max-height: calc(100vh - 40px); }
 
 .cinema-count i {
   position: absolute;

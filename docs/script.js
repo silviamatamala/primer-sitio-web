@@ -107,3 +107,24 @@ document.addEventListener('DOMContentLoaded', function () {
       }
   })();
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  const screen = document.querySelector('.cinema-count-screen');
+  if (screen) {
+    Object.assign(screen.style, {
+      position: 'fixed',
+      top: '0',
+      left: '0',
+      right: '0',
+      bottom: '0',
+      width: '100vw',
+      height: '100vh',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      zIndex: '999999'
+    });
+    // mover el nodo al body para asegurarlo
+    if (screen.parentNode !== document.body) document.body.insertBefore(screen, document.body.firstChild);
+  }
+});
