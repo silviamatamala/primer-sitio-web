@@ -11,6 +11,7 @@
 html {
     scroll-behavior: smooth;
     height: 100%;
+    background-color: #F6F4ED; /* fondo global */
 }
 
 body {
@@ -19,7 +20,7 @@ body {
     padding: 0;
     display: grid;
     place-items: center;
-    background-color: ##F6F4ED;
+    background-color: #F6F4ED; /* fondo global */
     height: 100%;
 }
 
@@ -292,6 +293,7 @@ body {
   margin-top: -150px;
 }
 
+/* cinema-count — tamaño igual al CodePen original */
 .cinema-count-screen {
   position: fixed;
   inset: 0;
@@ -305,6 +307,7 @@ body {
   pointer-events: auto;
 }
 
+/* cruz central */
 .cinema-count-screen::before,
 .cinema-count-screen::after {
   content: '';
@@ -315,9 +318,10 @@ body {
 .cinema-count-screen::before { width: 2px; height: 100%; }
 .cinema-count-screen::after  { height: 2px; width: 100%; }
 
+/* contenedor y anillos: tamaño original */
 .cinema-count {
-  width: 320px;
-  height: 320px;
+  width: 300px;
+  height: 300px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -329,13 +333,11 @@ body {
   position: absolute;
   left: 0; right: 0; top: 0; bottom: 0;
   margin: auto;
-  width: 260px;
-  height: 260px;
+  width: 240px;   /* coincide con el ring interior del CodePen */
+  height: 240px;
   border-radius: 50%;
   border: 3px solid rgba(240,240,240,0.7);
   box-sizing: border-box;
-  transform: scale(1);
-  opacity: 0.9;
 }
 
 .cinema-count i i {
@@ -348,42 +350,26 @@ body {
   border: 2px solid rgba(240,240,240,0.5);
 }
 
-.cinema-count.animated i {
-  animation: pulseScale 1.8s ease-in-out infinite;
-}
-.cinema-count.animated i i {
-  animation: pulseScale 2.1s ease-in-out infinite reverse;
-}
-
-@keyframes pulseScale {
-  0% { transform: scale(1); opacity: 0.95; }
-  50% { transform: scale(1.06); opacity: 1; }
-  100% { transform: scale(1); opacity: 0.95; }
-}
-
-.cinema-count .number{
-  font-family: 'Anton', Arial, sans-serif;
-  font-size: clamp(3rem, 10vw, 8rem);
-  color: #fff;
-  font-weight: 800;
-  line-height: 1;
+/* número centrado — tamaño original */
+.cinema-count .number {
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 160px;
+  line-height: 240px;
   text-align: center;
-  position: relative;
+  font-family: Arial, 'Anton', sans-serif;
+  color: #fff;
+  font-weight: 700;
   z-index: 2;
   user-select: none;
 }
 
-
-@keyframes radar {
-  0% {
-    background-image:
-      linear-gradient(90deg, transparent 50%, #dee2ba 50%),
-      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
-  }
-  50% {
-    background-image:
-      linear-gradient(270deg, transparent 50%, #afada2 50%),
-      linear-gradient(90deg, #dee2ba 50%, transparent 50%);
-  }
-  100% { background-image: none; }
+/* Anulamos cualquier escala aplicada al logo (si quedó la variable) */
+#logo1 {
+  --logo-scale: 1 !important;
+  transform: translateY(0) scale(1) !important;
 }
