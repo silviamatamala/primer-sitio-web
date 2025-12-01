@@ -80,14 +80,15 @@ header {
 }
 
 /* Page grid */
+/* Page grid */
 .page-content {
     display: grid;
     gap: 1rem;
-    padding: 1rem;
+    padding: 2rem; 
     max-width: 1024px;
     margin: 2rem auto;
     font-family: var(--font-sans);
-    width: 95%;
+    
 }
 
 /* Breakpoints (usar valores reales) */
@@ -371,4 +372,18 @@ body {
 #logo1 {
   --logo-scale: 1 !important;
   transform: translateY(0) scale(1) !important;
+}
+
+
+#vis {
+
+    margin-left: auto;
+    margin-right: auto;
+    
+    margin-top: 2rem; 
+    margin-bottom: 2rem;
+
+    max-width: 800px; 
+    
+    display: block; 
 }
