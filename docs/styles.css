@@ -426,3 +426,169 @@ p, .parrafo_v3 {
     width: 100%;
     height: 100%;
 }
+/* --- ESTILOS EXCLUSIVOS DEL TICKET DE CINE (CODEPEN) --- */
+
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
+
+/* NOTA: Las reglas de fuente y color del BODY fueron eliminadas para no afectar el sitio */
+
+.container {
+    width: 600px;
+    height: 260px;
+    margin: 0 auto;
+    margin-top: 50px; /* Reduje el 15% a 50px para mejor control */
+    background: rgb(250,223,165);
+    background: linear-gradient(260deg, rgba(250,223,165,1) 12%, rgba(235,221,189,1) 79%);
+    border: 1px solid #333;
+    -webkit-box-shadow: 2px 4px 8px 0px rgba(85,85,85,1);
+    -moz-box-shadow: 2px 4px 8px 0px rgba(85,85,85,1);
+    box-shadow: 2px 4px 8px 0px rgba(85,85,85,1);
+    transform: rotate(-7deg);
+    border-radius: 5px;
+    /* Aplicamos la fuente específica del ticket solo a su contenedor */
+    font-family: 'Old Standard TT', serif;
+    color: #333;
+    text-shadow: -1px 1px 50px #333333;
+}
+
+.left {
+    float: left;
+    width: 60px;
+    height: 215px;
+    padding: 20px;
+    background: rgb(250,223,165);
+    background: linear-gradient(260deg, rgba(250,223,165,1) 12%, rgba(235,221,189,1) 79%);
+    border-right: 3px dotted #333;
+    text-align: center;
+}
+
+.rotate {
+    margin-top:20px;
+    font-size: 32px; 
+    transform: rotate(180deg);
+    writing-mode: vertical-lr;
+}
+
+.rechts {
+    float: right;
+    width: 60px;
+    height: 220px;
+    padding:20px;
+    background: rgb(250,223,165);
+    background: linear-gradient(260deg, rgba(250,223,165,1) 12%, rgba(235,221,189,1) 79%);
+    border-right: 2px solid rgb(255, 221, 147);
+    border-left: 1px solid #333;
+    text-align: center;
+    margin-top:-259px;
+}
+
+.midden {
+    padding: 20px 15px;
+    text-align: center;
+}
+
+.entree {
+    margin-top:20px;
+    font-size: 28px; 
+    transform: rotate(-180deg);
+    writing-mode: vertical-lr;
+}
+
+.cinema {
+    margin-left:-100px;
+    font-size: 30px; 
+    font-weight: bold;
+    text-shadow: -1px 1px 20px #555555;
+}
+
+hr {
+    width:70%;
+    margin-left:-20px;
+}
+
+.space {
+    margin-bottom: 10px;
+}
+
+.admit {
+    margin-left: -40px;
+    font-size: 18px; 
+    font-weight: bold;
+}
+
+.price {
+    margin-left: -100px;
+    font-size: 20px; 
+    font-weight: bold;
+    color:brown;
+    text-shadow: -1px 1px 20px #555555;
+}
+
+
+.camera-container {
+    display: grid;
+    margin:0 auto;
+    margin-top: -130px; 
+    margin-left: 120px;
+    height: 100px;
+    opacity: 0.8;
+}
+
+.wheels {
+    display: flex;
+    width: 110px;
+}
+
+.main-lens {
+    display: flex;
+    width: 110px;
+}
+
+.round-one {
+    margin-top:46px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background-color: #1d1c1c;
+    -webkit-box-shadow: 2px 4px 8px 0px rgba(85,85,85,1);
+    -moz-box-shadow: 2px 4px 8px 0px rgba(85,85,85,1);
+    box-shadow: 2px 4px 8px 0px rgba(85,85,85,1);
+}
+
+.round-two {
+    margin-top:31px;
+    margin-left: -1px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    background-color: #1d1c1c;
+    -webkit-box-shadow: 2px 4px 16px 0px rgb(113, 113, 113);
+    -moz-box-shadow: 2px 4px 16px 0px rgb(120, 120, 120);
+    box-shadow: 2px 4px 16px 0px rgb(137, 137, 137);
+}
+
+.main {
+    display: flex;
+    width: 55px;
+    height: 35px;
+    background-color: #1d1c1c;
+    border-radius: 5px;
+    -webkit-box-shadow: 2px 4px 15px 0px rgb(129, 128, 128);
+    -moz-box-shadow: 2px 4px 15px 0px rgb(148, 147, 147);
+    box-shadow: 2px 4px 15px 0px rgb(127, 127, 127);
+}
+
+.lens {
+    border-bottom: 35px solid #1d1c1c;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    height: 0;
+    width: 12px;
+    border-radius: 5px;
+    transform: rotate(-90deg);
+}
+
+svg {
+    margin-left: -30px;
+    opacity: 0.6;
+}
