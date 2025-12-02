@@ -448,3 +448,12 @@ p {
     width: 100%;
     height: 100%;
 }
+#vis2 {
+    /* Define un ancho máximo para el gráfico (o usa el ancho completo) */
+    max-width: 800px;
+    /* Centra el bloque del gráfico horizontalmente */
+    margin-left: auto;
+    margin-right: auto;
+    /* Asegura que el gráfico se muestre como un bloque */
+    display: block; 
+}
