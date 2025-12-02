@@ -38,6 +38,13 @@ h1, h2, h3 {
     font-family: var(--font-serif);
     color: #5A0F05;
 }
+.titulo_mayor {
+    /* **Este es el cambio clave para el tamaño del h1** */
+    font-size: 5rem; 
+    line-height: 1; /* Esto ayuda a que el texto grande no tenga demasiado espacio vertical */
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
 
 /* 2. HEADER Y LOGO */
 header {
