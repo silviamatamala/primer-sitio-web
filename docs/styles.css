@@ -424,3 +424,27 @@ p {
     margin-right: auto;
     text-align: center; /* O usa 'justify' si prefieres esa apariencia */
 }
+
+.video-container {
+    /* 1. Limita el ancho del contenedor del video (560px es el ancho estándar) */
+    max-width: 560px; 
+    
+    /* 2. Centra el bloque del video horizontalmente */
+    margin: 2rem auto; 
+    
+    /* 3. Hace que el video mantenga su proporción en móviles (truco CSS) */
+    position: relative;
+    width: 100%;
+    /* 16:9 Aspect Ratio */
+    padding-bottom: 56.25%; 
+    height: 0;
+}
+
+.video-container iframe {
+    /* El iframe se estira para llenar el contenedor responsivo */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
