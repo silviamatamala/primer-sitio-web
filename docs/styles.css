@@ -36,6 +36,7 @@ html, body {
 
 h1, h2, h3, .title {
     font-family: var(--font-serif);
+    color: #5A0F05;
 }
 
 /* 2. HEADER Y LOGO */
