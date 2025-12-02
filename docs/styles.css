@@ -448,12 +448,26 @@ p {
     width: 100%;
     height: 100%;
 }
+#vis {
+    /* Centra el bloque del mapa horizontalmente */
+    margin-left: auto;
+    margin-right: auto;
+    /* Opcional: Limita el ancho del mapa, si es muy grande */
+    max-width: 900px; 
+    /* Asegura que el contenedor se comporte como un bloque centrado */
+    display: block; 
+}
 #vis2 {
-    /* Define un ancho máximo para el gráfico (o usa el ancho completo) */
+    /* Define un ancho máximo para el gráfico. 800px lo hace coherente con tus párrafos. */
     max-width: 800px;
+    
     /* Centra el bloque del gráfico horizontalmente */
     margin-left: auto;
     margin-right: auto;
-    /* Asegura que el gráfico se muestre como un bloque */
+    
+    /* Asegura que el contenedor se comporte como un bloque centrado */
     display: block; 
+    
+    /* Añade un poco de espacio vertical encima y debajo para separarlo del contenido adyacente */
+    padding: 1rem 0;
 }
