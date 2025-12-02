@@ -34,7 +34,7 @@ html, body {
   overflow-y: visible;
 }
 
-h1, h2, h3, .title {
+h1, h2, h3, {
     font-family: var(--font-serif);
     color: #5A0F05;
 }
@@ -211,7 +211,10 @@ p, .parrafo_v3 {
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.15);
 }
-
+/* NUEVA REGLA: Anula el color heredado para el título de la tarjeta */
+.card .content .title {
+    color: whitesmoke;
+}
 @media (min-width: 600px) {
     .card {
         height: 350px;
