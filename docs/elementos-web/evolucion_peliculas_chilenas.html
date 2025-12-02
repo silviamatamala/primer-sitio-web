@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "layer": [{"mark": {"type": "line", "color": "#A52019", "point": true}, "encoding": {"tooltip": [{"field": "a\u00f1o", "type": "quantitative"}, {"field": "cantidad_peliculas_chile", "type": "quantitative"}], "x": {"axis": {"format": "d"}, "field": "a\u00f1o", "title": "A\u00f1o de Estreno", "type": "ordinal"}, "y": {"axis": {"titleColor": "#A52019"}, "field": "cantidad_peliculas_chile", "title": "Pel\u00edculas estrenadas en Chile", "type": "quantitative"}}}, {"mark": {"type": "line", "color": "#88937B", "point": true}, "encoding": {"tooltip": [{"field": "a\u00f1o", "type": "quantitative"}, {"field": "cantidad_peliculas_internacionales", "type": "quantitative"}], "x": {"field": "a\u00f1o", "type": "ordinal"}, "y": {"axis": {"titleColor": "#88937B"}, "field": "cantidad_peliculas_internacionales", "scale": {"domain": [0, 12.100000000000001]}, "title": "Pel\u00edculas estrenadas internacionalmente", "type": "quantitative"}}}], "data": {"name": "data-adff73d23a245821804bf8b431a80cd3"}, "resolve": {"scale": {"y": "independent"}}, "title": "Evoluci\u00f3n de pel\u00edculas chilenas por lugar de estreno", "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-adff73d23a245821804bf8b431a80cd3": [{"a\u00f1o": 1915, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 2}, {"a\u00f1o": 1916, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 1}, {"a\u00f1o": 1917, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 1}, {"a\u00f1o": 1918, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 2}, {"a\u00f1o": 1919, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 1}, {"a\u00f1o": 1920, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 1}, {"a\u00f1o": 1921, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 2}, {"a\u00f1o": 1922, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 3}, {"a\u00f1o": 1923, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 3}, {"a\u00f1o": 1924, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 5}, {"a\u00f1o": 1925, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 1}, {"a\u00f1o": 1927, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 2}, {"a\u00f1o": 1928, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 1}, {"a\u00f1o": 1931, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 1}, {"a\u00f1o": 1934, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 1}, {"a\u00f1o": 1940, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 2}, {"a\u00f1o": 1965, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 1}, {"a\u00f1o": 1973, "cantidad_peliculas_internacionales": 1, "cantidad_peliculas_chile": 0}, {"a\u00f1o": 1994, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 1}, {"a\u00f1o": 1998, "cantidad_peliculas_internacionales": 1, "cantidad_peliculas_chile": 0}, {"a\u00f1o": 2000, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 1}, {"a\u00f1o": 2001, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 1}, {"a\u00f1o": 2002, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 7}, {"a\u00f1o": 2003, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 1}, {"a\u00f1o": 2004, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 1}, {"a\u00f1o": 2005, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 3}, {"a\u00f1o": 2006, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 3}, {"a\u00f1o": 2007, "cantidad_peliculas_internacionales": 1, "cantidad_peliculas_chile": 4}, {"a\u00f1o": 2008, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 8}, {"a\u00f1o": 2009, "cantidad_peliculas_internacionales": 1, "cantidad_peliculas_chile": 16}, {"a\u00f1o": 2010, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 13}, {"a\u00f1o": 2011, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 13}, {"a\u00f1o": 2012, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 1}, {"a\u00f1o": 2013, "cantidad_peliculas_internacionales": 2, "cantidad_peliculas_chile": 4}, {"a\u00f1o": 2014, "cantidad_peliculas_internacionales": 1, "cantidad_peliculas_chile": 3}, {"a\u00f1o": 2015, "cantidad_peliculas_internacionales": 4, "cantidad_peliculas_chile": 7}, {"a\u00f1o": 2016, "cantidad_peliculas_internacionales": 2, "cantidad_peliculas_chile": 7}, {"a\u00f1o": 2017, "cantidad_peliculas_internacionales": 1, "cantidad_peliculas_chile": 11}, {"a\u00f1o": 2018, "cantidad_peliculas_internacionales": 3, "cantidad_peliculas_chile": 10}, {"a\u00f1o": 2019, "cantidad_peliculas_internacionales": 2, "cantidad_peliculas_chile": 9}, {"a\u00f1o": 2020, "cantidad_peliculas_internacionales": 0, "cantidad_peliculas_chile": 2}, {"a\u00f1o": 2021, "cantidad_peliculas_internacionales": 6, "cantidad_peliculas_chile": 2}, {"a\u00f1o": 2022, "cantidad_peliculas_internacionales": 9, "cantidad_peliculas_chile": 3}, {"a\u00f1o": 2023, "cantidad_peliculas_internacionales": 3, "cantidad_peliculas_chile": 3}, {"a\u00f1o": 2024, "cantidad_peliculas_internacionales": 8, "cantidad_peliculas_chile": 1}, {"a\u00f1o": 2025, "cantidad_peliculas_internacionales": 11, "cantidad_peliculas_chile": 1}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

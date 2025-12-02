@@ -3,16 +3,32 @@
     <head> 
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" href="/Users/silviamatamala/Downloads/GRÁFICA/primer-sitio-web/docs/elementos-web/logo-animado.gif" type="image/gif"> 
+        
+        <link rel="icon" href="docs/elementos-web/logo-animado.gif" type="image/gif"> 
+        
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
         <title>El cine chileno: una mirada retrospectiva </title>
-        <!-- ruta relativa para GitHub Pages cuando usas main /docs -->
+        
         <link rel="stylesheet" type="text/css" href="styles.css">
+
+        <style>
+            #vis.vega-embed {
+              width: 100%;
+              display: flex;
+            }
+            #vis.vega-embed details,
+            #vis.vega-embed details summary {
+              position: relative;
+            }
+        </style>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
     </head> 
+    
     <body>
-        <!-- pantalla de inicio (animación) -->
         <div class="cinema-count-screen">
             <div class="cinema-count animated">
                 <i><i></i></i>
@@ -40,117 +56,87 @@
         </section>
 
         <main class="page-content">
+            <div class="card">
+                <div class="content">
+                    <h2 class="title">Raúl Ruiz</h2>
+                    <p class="copy">15 PELÍCULAS</p>
+                    <a class="btn" href="https://www.imdb.com/es/name/nm0749914/" target="_blank">Ver más</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2 class="title">Sebastián Lelio</h2>
+                    <p class="copy">7 PELÍCULAS</p>
+                    <a class="btn" href="https://www.imdb.com/es/name/nm0133326/" target="_blank">Ver más</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2 class="title">Cristián Sánchez</h2>
+                    <p class="copy">16 películas</p>
+                    <a class="btn" href="https://www.imdb.com/es/name/nm0844877/" target="_blank">Ver más</a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <h2 class="title">Pablo Larraín</h2>
+                    <p class="copy">12 PELÍCULAS</p>
+                    <a class="btn" href="https://www.imdb.com/es/name/nm1883257/" target="_blank">Ver más</a>
+                </div>
+            </div>
+        </main>
+        
+        <h3 class="titulos">Coordenadas cinematográficas</h3>
+        
+        <p class="parrafo_v3">
+            La narrativa de una película comienza mucho antes de su llegada a salas masivas.
+            Para el cine chileno, este "primer acto" es una coreografía global que se ensaya en casa, 
+            pero se valida en el extranjero. El mapa de estrenos es muy claro: Chile es el centro de todo, 
+            ya que aquí se realiza cerca del 75% de las primeras funciones de su cine. 
+            Esto muestra que el país es el promotor principal de sus películas ante su audiencia natural.
+        </p>
+        
+        <div id="vis"></div>
 
- 
-  <div class="card">
-    <div class="content">
-      <h2 class="title">Raúl Ruiz</h2>
-      <p class="copy">15 PELÍCULAS</p>
-    
-      <a class="btn" href="https://www.imdb.com/es/name/nm0749914/" target="_blank">Ver más</a>
-    </div>
-  </div>
+        <script>
+            (function(vegaEmbed) {
+                var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300, "stroke": null}}, "layer": [{"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#ffffff"}}, {"data": {"graticule": true}, "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#E1DFD6", "stroke": "black"}}, {"data": {"name": "data-5eca108a4b844b24bbcf1f7afab05e04"}, "mark": {"type": "circle"}, "encoding": {"color": {"value": "#5A0F05"}, "latitude": {"field": "latitude", "type": "quantitative"}, "longitude": {"field": "longitude", "type": "quantitative"}, "size": {"field": "num_premieres", "scale": {"rangeMax": 1000, "rangeMin": 10}, "title": "N\u00famero de Estrenos", "type": "quantitative"}, "tooltip": [{"field": "pais-estreno", "type": "nominal"}, {"field": "num_premieres", "type": "quantitative"}]}, "title": "El cine chileno alrededor del mundo"}], "height": 500, "projection": {"type": "naturalEarth1"}, "width": 800, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-5eca108a4b844b24bbcf1f7afab05e04": [{"pais-estreno": " Alemania", "latitude": 51.1638175, "longitude": 10.4478313, "num_premieres": 3}, {"pais-estreno": " Argentina", "latitude": -34.9964963, "longitude": -64.9672817, "num_premieres": 7}, {"pais-estreno": " Brasil", "latitude": -10.3333333, "longitude": -53.2, "num_premieres": 2}, {"pais-estreno": " Canad\u00e1", "latitude": 61.0666922, "longitude": -107.991707, "num_premieres": 4}, {"pais-estreno": " Chile", "latitude": -31.7613365, "longitude": -71.3187697, "num_premieres": 53}, {"pais-estreno": " Colombia", "latitude": 4.099917, "longitude": -72.9088133, "num_premieres": 3}, {"pais-estreno": " Corea del Sur", "latitude": 36.638392, "longitude": 127.6961188, "num_premieres": 1}, {"pais-estreno": " Cuba", "latitude": 23.0131338, "longitude": -80.8328748, "num_premieres": 1}, {"pais-estreno": " Escocia", "latitude": 56.7861112, "longitude": -4.1140518, "num_premieres": 1}, {"pais-estreno": " Espa\u00f1a", "latitude": 39.3260685, "longitude": -4.8379791, "num_premieres": 5}, {"pais-estreno": " Estados Unidos", "latitude": 39.7837304, "longitude": -100.445882, "num_premieres": 4}, {"pais-estreno": " Francia", "latitude": 46.603354, "longitude": 1.8883335, "num_premieres": 8}, {"pais-estreno": " Holanda", "latitude": 52.2434979, "longitude": 5.6343227, "num_premieres": 2}, {"pais-estreno": " India", "latitude": 22.3511148, "longitude": 78.6677428, "num_premieres": 3}, {"pais-estreno": " Inglaterra", "latitude": 52.5310214, "longitude": -1.2649062, "num_premieres": 2}, {"pais-estreno": " Italia", "latitude": 42.6384261, "longitude": 12.674297, "num_premieres": 2}, {"pais-estreno": " M\u00e9xico", "latitude": 23.6585116, "longitude": -102.0077097, "num_premieres": 3}, {"pais-estreno": " Per\u00fa", "latitude": -6.8699697, "longitude": -75.0458515, "num_premieres": 1}, {"pais-estreno": " Rep\u00fablica Checa", "latitude": 49.7439047, "longitude": 15.3381061, "num_premieres": 1}, {"pais-estreno": " T\u00fanez", "latitude": 33.8439408, "longitude": 9.400138, "num_premieres": 1}, {"pais-estreno": " Villa Alemana", "latitude": -33.0441903, "longitude": -71.3725464, "num_premieres": 1}, {"pais-estreno": "Chile", "latitude": -31.7613365, "longitude": -71.3187697, "num_premieres": 113}, {"pais-estreno": "Estados Unidos", "latitude": 39.7837304, "longitude": -100.445882, "num_premieres": 1}]}};
+            var embedOpt = {"mode": "vega-lite"};
+
+            function showError(el, error){
+                el.innerHTML = ('<div style="color:red;">'
+                                + '<p>JavaScript Error: ' + error.message + '</p>'
+                                + "<p>This usually means there's a typo in your chart specification. "
+                                + "See the javascript console for the full traceback.</p>"
+                                + '</div>');
+                throw error;
+            }
+            const el = document.getElementById('vis');
+            vegaEmbed("#vis", spec, embedOpt)
+                .catch(error => showError(el, error));
+        </script>
+
+        <div class="video-container">
+            <iframe 
+                width="560" 
+                height="315" 
+                src="https://www.youtube.com/embed/oJt0ioceYcM" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                referrerpolicy="strict-origin-when-cross-origin" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <p class="parrafo_v3"> Este gráfico traza la historia de un cine que se hizo fuerte en casa: 
+            una curva de estrenos que alcanzó su punto máximo en 2009 y que, tras consolidar su voz en el ámbito nacional,
+            se lanzó a la conquista global. La tímida presencia internacional de décadas pasadas ha dado paso,
+            a partir de 2010, a una expansión sostenida que reescribe el lugar de Chile en el panorama cinematográfico mundial.
+        </p>
 
 
-  <div class="card">
-    <div class="content">
-      <h2 class="title">Sebastián Lelio</h2>
-      <p class="copy">7 PELÍCULAS</p>
-      <a class="btn" href="https://www.imdb.com/es/name/nm0133326/" target="_blank">Ver más</a>
-    </div>
-  </div>
-
-
-  <div class="card">
-    <div class="content">
-      <h2 class="title">Cristián Sánchez</h2>
-      <p class="copy">16 películas</p>
-      <a class="btn" href="https://www.imdb.com/es/name/nm0844877/" target="_blank">Ver más</a>
-    </div>
-  </div>
-
- 
-  <div class="card">
-    <div class="content">
-      <h2 class="title">Pablo Larraín</h2>
-      <p class="copy">12 PELÍCULAS</p>
-      <a class="btn" href="https://www.imdb.com/es/name/nm1883257/" target="_blank">Ver más</a>
-    </div>
-  </div>
-</main>
-
-  <!-- scripts al final del body (jQuery antes de script.js) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="script.js"></script>
-</body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="script.js"></script>
+    </body>
 </html>
-
-<h3 class="titulos">Coordenadas cinematográficas</h3>
-<p class="parrafo_v3">
-    La narrativa de una película comienza mucho antes de su llegada a salas masivas.
-     Para el cine chileno, este "primer acto" es una coreografía global que se ensaya en casa, 
-     pero se valida en el extranjero.
-            
-</p>
- <head> 
-  <style>
-    #vis.vega-embed {
-      width: 100%;
-      display: flex;
-    }
-
-    #vis.vega-embed details,
-    #vis.vega-embed details summary {
-      position: relative;
-    }
-  </style>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-</head> 
- <body>
-  <div id="vis"></div>
-  <script>
-    (function(vegaEmbed) {
-      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300, "stroke": null}}, "layer": [{"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#ffffff"}}, {"data": {"graticule": true}, "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#E1DFD6", "stroke": "black"}}, {"data": {"name": "data-5eca108a4b844b24bbcf1f7afab05e04"}, "mark": {"type": "circle"}, "encoding": {"color": {"value": "#5A0F05"}, "latitude": {"field": "latitude", "type": "quantitative"}, "longitude": {"field": "longitude", "type": "quantitative"}, "size": {"field": "num_premieres", "scale": {"rangeMax": 1000, "rangeMin": 10}, "title": "N\u00famero de Estrenos", "type": "quantitative"}, "tooltip": [{"field": "pais-estreno", "type": "nominal"}, {"field": "num_premieres", "type": "quantitative"}]}, "title": "El cine chileno alrededor del mundo"}], "height": 500, "projection": {"type": "naturalEarth1"}, "width": 800, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-5eca108a4b844b24bbcf1f7afab05e04": [{"pais-estreno": " Alemania", "latitude": 51.1638175, "longitude": 10.4478313, "num_premieres": 3}, {"pais-estreno": " Argentina", "latitude": -34.9964963, "longitude": -64.9672817, "num_premieres": 7}, {"pais-estreno": " Brasil", "latitude": -10.3333333, "longitude": -53.2, "num_premieres": 2}, {"pais-estreno": " Canad\u00e1", "latitude": 61.0666922, "longitude": -107.991707, "num_premieres": 4}, {"pais-estreno": " Chile", "latitude": -31.7613365, "longitude": -71.3187697, "num_premieres": 53}, {"pais-estreno": " Colombia", "latitude": 4.099917, "longitude": -72.9088133, "num_premieres": 3}, {"pais-estreno": " Corea del Sur", "latitude": 36.638392, "longitude": 127.6961188, "num_premieres": 1}, {"pais-estreno": " Cuba", "latitude": 23.0131338, "longitude": -80.8328748, "num_premieres": 1}, {"pais-estreno": " Escocia", "latitude": 56.7861112, "longitude": -4.1140518, "num_premieres": 1}, {"pais-estreno": " Espa\u00f1a", "latitude": 39.3260685, "longitude": -4.8379791, "num_premieres": 5}, {"pais-estreno": " Estados Unidos", "latitude": 39.7837304, "longitude": -100.445882, "num_premieres": 4}, {"pais-estreno": " Francia", "latitude": 46.603354, "longitude": 1.8883335, "num_premieres": 8}, {"pais-estreno": " Holanda", "latitude": 52.2434979, "longitude": 5.6343227, "num_premieres": 2}, {"pais-estreno": " India", "latitude": 22.3511148, "longitude": 78.6677428, "num_premieres": 3}, {"pais-estreno": " Inglaterra", "latitude": 52.5310214, "longitude": -1.2649062, "num_premieres": 2}, {"pais-estreno": " Italia", "latitude": 42.6384261, "longitude": 12.674297, "num_premieres": 2}, {"pais-estreno": " M\u00e9xico", "latitude": 23.6585116, "longitude": -102.0077097, "num_premieres": 3}, {"pais-estreno": " Per\u00fa", "latitude": -6.8699697, "longitude": -75.0458515, "num_premieres": 1}, {"pais-estreno": " Rep\u00fablica Checa", "latitude": 49.7439047, "longitude": 15.3381061, "num_premieres": 1}, {"pais-estreno": " T\u00fanez", "latitude": 33.8439408, "longitude": 9.400138, "num_premieres": 1}, {"pais-estreno": " Villa Alemana", "latitude": -33.0441903, "longitude": -71.3725464, "num_premieres": 1}, {"pais-estreno": "Chile", "latitude": -31.7613365, "longitude": -71.3187697, "num_premieres": 113}, {"pais-estreno": "Estados Unidos", "latitude": 39.7837304, "longitude": -100.445882, "num_premieres": 1}]}};
-      var embedOpt = {"mode": "vega-lite"};
-
-      function showError(el, error){
-          el.innerHTML = ('<div style="color:red;">'
-                          + '<p>JavaScript Error: ' + error.message + '</p>'
-                          + "<p>This usually means there's a typo in your chart specification. "
-                          + "See the javascript console for the full traceback.</p>"
-                          + '</div>');
-          throw error;
-      }
-      const el = document.getElementById('vis');
-      vegaEmbed("#vis", spec, embedOpt)
-        .catch(error => showError(el, error));
-    })(vegaEmbed);
-  </script>
- </body>
- <p class="parrafo_v3"> La distribución de las películas chilenas tiene dos objetivos: 
-  conectar con el público local y llegar rápidamente al resto del mundo. 
-  El mapa de estrenos es muy claro: Chile es el centro de todo, 
-  ya que aquí se realiza cerca del 75% de las primeras funciones de su cine. 
-  Esto muestra que el país es el promotor principal de sus películas ante su audiencia natural
- </p>
-<div class="video-container">
-    <iframe 
-        width="560" 
-        height="315" 
-        src="https://www.youtube.com/embed/oJt0ioceYcM" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-    </iframe>
-</div>
-
-
-
-
-
-
-
