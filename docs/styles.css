@@ -425,18 +425,18 @@ p {
     text-align: center; /* O usa 'justify' si prefieres esa apariencia */
 }
 
+
 .video-container {
-    /* 1. Limita el ancho del contenedor del video (560px es el ancho estándar) */
-    max-width: 560px; 
+    /* Limita el ancho del contenedor (ajustado a los 800px que usamos para el texto) */
+    max-width: 800px; 
     
-    /* 2. Centra el bloque del video horizontalmente */
+    /* Centra el bloque del video horizontalmente */
     margin: 2rem auto; 
     
-    /* 3. Hace que el video mantenga su proporción en móviles (truco CSS) */
+    /* Truco para mantener la proporción 16:9 (altura = 56.25% del ancho) */
     position: relative;
     width: 100%;
-    /* 16:9 Aspect Ratio */
-    padding-bottom: 56.25%; 
+    padding-bottom: 56.25%; /* 56.25% es 9/16, la proporción estándar de YouTube */
     height: 0;
 }
 
