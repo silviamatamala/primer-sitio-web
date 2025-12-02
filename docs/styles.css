@@ -16,6 +16,7 @@ html {
 
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* Akzidenz-Grotesk simulada */
+    text-align: justify; /* Esto afecta a todos los párrafos dentro del body */
     margin: 0;
     padding: 0;
     display: grid;
@@ -207,6 +208,7 @@ h1, h2, h3 {
     font-size: 1.125rem;
     font-style: italic;
     line-height: 1.35;
+    text-align: justify;
 }
 
 
