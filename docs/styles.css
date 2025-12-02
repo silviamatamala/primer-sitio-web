@@ -364,11 +364,16 @@ p, .parrafo_v3 {
         transition-duration: 0s;
     }
 }
-/* FIN DEL CÓDIGO DE CARDS RECUPERADO */
-
 
 /* 6. GRÁFICOS Y VIDEO (BLOQUES CENTRADOS) */
-
+/* Estilos para la imagen de ancho completo (#anteto) */
+#anteto {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    margin: 20px auto; 
+    object-fit: contain; 
+}
 /* Contenedor del Mapa (VIS) y Gráfico de Líneas (VIS2) */
 #vis, #vis2 {
     /* Centra el bloque horizontalmente */
