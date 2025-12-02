@@ -401,3 +401,26 @@ body {
 
     object-fit: contain; 
 }
+.parrafo_v3 {
+    /* Limita el ancho del párrafo para que no se estire de borde a borde */
+    max-width: 800px; 
+    
+    /* Centra el bloque del párrafo en la pantalla */
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* Centra las líneas de texto dentro de este bloque, si la línea es corta */
+    text-align: center; 
+    
+    /* Espaciado para separarlo del video */
+    padding: 2rem 1rem;
+    line-height: 1.6; /* Mejora la legibilidad */
+}
+
+/* OPCIONAL: Centrar todos los párrafos si no quieres justificar */
+p {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center; /* O usa 'justify' si prefieres esa apariencia */
+}
