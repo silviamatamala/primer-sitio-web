@@ -291,11 +291,8 @@ En este gráfico se despliegan los siete principales géneros en el cine chileno
             ya que aquí se realiza cerca del 75% de las primeras funciones de su cine. 
             Esto muestra que el país es el promotor principal de sus películas ante su audiencia natural.
         </p>
-   <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="UTF-8">
-  <style>
+   <style>
+    /* Estilos CSS: Asegura que el contenedor del mapa ocupe el 100% del ancho */
     #vis.vega-embed {
       width: 100%;
       display: flex;
@@ -305,14 +302,15 @@ En este gráfico se despliegan los siete principales géneros en el cine chileno
     #vis.vega-embed details summary {
       position: relative;
     }
-  </style>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-</head>
-<body>
-  <div id="vis"></div>
-  <script>
+</style>
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+<div id="vis"></div>
+
+<script>
     (function(vegaEmbed) {
       var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300, "stroke": null}}, "layer": [{"data": {"sphere": true}, "mark": {"type": "geoshape", "fill": "#ffffff"}}, {"data": {"graticule": true}, "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.5}}, {"data": {"url": "https://cdn.jsdelivr.net/npm/vega-datasets@v1.29.0/data/world-110m.json", "format": {"feature": "countries", "type": "topojson"}}, "mark": {"type": "geoshape", "fill": "#E1DFD6", "stroke": "black"}}, {"data": {"name": "data-5eca108a4b844b24bbcf1f7afab05e04"}, "mark": {"type": "circle"}, "encoding": {"color": {"value": "#5A0F05"}, "latitude": {"field": "latitude", "type": "quantitative"}, "longitude": {"field": "longitude", "type": "quantitative"}, "size": {"field": "num_premieres", "scale": {"rangeMax": 1000, "rangeMin": 10}, "title": "N\u00famero de Estrenos", "type": "quantitative"}, "tooltip": [{"field": "pais-estreno", "type": "nominal"}, {"field": "num_premieres", "type": "quantitative"}]}, "title": "El cine chileno alrededor del mundo"}], "height": 500, "projection": {"type": "naturalEarth1"}, "width": 800, "$schema": "https://vega.github.io/schema/vega-lite/v5.20.1.json", "datasets": {"data-5eca108a4b844b24bbcf1f7afab05e04": [{"pais-estreno": " Alemania", "latitude": 51.1638175, "longitude": 10.4478313, "num_premieres": 3}, {"pais-estreno": " Argentina", "latitude": -34.9964963, "longitude": -64.9672817, "num_premieres": 7}, {"pais-estreno": " Brasil", "latitude": -10.3333333, "longitude": -53.2, "num_premieres": 2}, {"pais-estreno": " Canad\u00e1", "latitude": 61.0666922, "longitude": -107.991707, "num_premieres": 4}, {"pais-estreno": " Chile", "latitude": -31.7613365, "longitude": -71.3187697, "num_premieres": 53}, {"pais-estreno": " Colombia", "latitude": 4.099917, "longitude": -72.9088133, "num_premieres": 3}, {"pais-estreno": " Corea del Sur", "latitude": 36.638392, "longitude": 127.6961188, "num_premieres": 1}, {"pais-estreno": " Cuba", "latitude": 23.0131338, "longitude": -80.8328748, "num_premieres": 1}, {"pais-estreno": " Escocia", "latitude": 56.7861112, "longitude": -4.1140518, "num_premieres": 1}, {"pais-estreno": " Espa\u00f1a", "latitude": 39.3260685, "longitude": -4.8379791, "num_premieres": 5}, {"pais-estreno": " Estados Unidos", "latitude": 39.7837304, "longitude": -100.445882, "num_premieres": 4}, {"pais-estreno": " Francia", "latitude": 46.603354, "longitude": 1.8883335, "num_premieres": 8}, {"pais-estreno": " Holanda", "latitude": 52.2434979, "longitude": 5.6343227, "num_premieres": 2}, {"pais-estreno": " India", "latitude": 22.3511148, "longitude": 78.6677428, "num_premieres": 3}, {"pais-estreno": " Inglaterra", "latitude": 52.5310214, "longitude": -1.2649062, "num_premieres": 2}, {"pais-estreno": " Italia", "latitude": 42.6384261, "longitude": 12.674297, "num_premieres": 2}, {"pais-estreno": " M\u00e9xico", "latitude": 23.6585116, "longitude": -102.0077097, "num_premieres": 3}, {"pais-estreno": " Per\u00fa", "latitude": -6.8699697, "longitude": -75.0458515, "num_premieres": 1}, {"pais-estreno": " Rep\u00fablica Checa", "latitude": 49.7439047, "longitude": 15.3381061, "num_premieres": 1}, {"pais-estreno": " T\u00fanez", "latitude": 33.8439408, "longitude": 9.400138, "num_premieres": 1}, {"pais-estreno": " Villa Alemana", "latitude": -33.0441903, "longitude": -71.3725464, "num_premieres": 1}, {"pais-estreno": "Chile", "latitude": -31.7613365, "longitude": -71.3187697, "num_premieres": 113}, {"pais-estreno": "Estados Unidos", "latitude": 39.7837304, "longitude": -100.445882, "num_premieres": 1}]}};
       var embedOpt = {"mode": "vega-lite"};
@@ -330,9 +328,7 @@ En este gráfico se despliegan los siete principales géneros en el cine chileno
         .catch(error => showError(el, error));
     })(vegaEmbed);
 
-  </script>
-</body>
-</html>
+</script>
           
         <p class="parrafo_v3"> La distribución de las películas chilenas tiene dos objetivos:
            conectar con el público local y llegar rápidamente al resto del mundo. 
