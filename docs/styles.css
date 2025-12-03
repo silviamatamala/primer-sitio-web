@@ -426,17 +426,25 @@ p, .parrafo_v3 {
     width: 100%;
     height: 100%;
 }
-/* --- ESTILOS EXCLUSIVOS DEL TICKET DE CINE (CODEPEN) --- */
-
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
 
-/* NOTA: Las reglas de fuente y color del BODY fueron eliminadas para no afectar el sitio */
+/* ESTILOS GLOBALES (MÍNIMOS) - Quitamos la fuente y el color de texto */
+body {
+    /* Quitamos font-family, color, y text-shadow de aquí */
+    background: rgb(237, 237, 237);
+}
 
 .container {
+    /* 🚀 AÑADIMOS LA FUENTE Y EL COLOR AL CONTENEDOR DEL TICKET */
+    font-family: 'Old Standard TT', serif; 
+    color: #333; /* Color de texto dentro del ticket */
+    text-shadow: -1px 1px 50px #333333; /* Sombra del texto dentro del ticket */
+    /* ------------------------------------------------------------------ */
+    
     width: 600px;
     height: 260px;
     margin: 0 auto;
-    margin-top: 50px; /* Reduje el 15% a 50px para mejor control */
+    margin-top: 15%;
     background: rgb(250,223,165);
     background: linear-gradient(260deg, rgba(250,223,165,1) 12%, rgba(235,221,189,1) 79%);
     border: 1px solid #333;
@@ -445,10 +453,6 @@ p, .parrafo_v3 {
     box-shadow: 2px 4px 8px 0px rgba(85,85,85,1);
     transform: rotate(-7deg);
     border-radius: 5px;
-    /* Aplicamos la fuente específica del ticket solo a su contenedor */
-    font-family: 'Old Standard TT', serif;
-    color: #333;
-    text-shadow: -1px 1px 50px #333333;
 }
 
 .left {
@@ -461,134 +465,130 @@ p, .parrafo_v3 {
     border-right: 3px dotted #333;
     text-align: center;
 }
-
-.rotate {
-    margin-top:20px;
-    font-size: 32px; 
-    transform: rotate(180deg);
-    writing-mode: vertical-lr;
+img {
+  max-width: 100%;
 }
 
-.rechts {
-    float: right;
-    width: 60px;
-    height: 220px;
-    padding:20px;
-    background: rgb(250,223,165);
-    background: linear-gradient(260deg, rgba(250,223,165,1) 12%, rgba(235,221,189,1) 79%);
-    border-right: 2px solid rgb(255, 221, 147);
-    border-left: 1px solid #333;
-    text-align: center;
-    margin-top:-259px;
+#topcap, #bottomcap {
+  position: absolute;
+  left: -5px;
+  width: 130px;
+  height: 10px;
+  background: -webkit-linear-gradient(left, rgba(63,63,63,1) 0%,rgba(0,0,0,1) 17%,rgba(86,86,86,1) 39%,rgba(14,14,14,1) 89%,rgba(71,71,71,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, rgba(63,63,63,1) 0%,rgba(0,0,0,1) 17%,rgba(86,86,86,1) 39%,rgba(14,14,14,1) 89%,rgba(71,71,71,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, rgba(63,63,63,1) 0%,rgba(0,0,0,1) 17%,rgba(86,86,86,1) 39%,rgba(14,14,14,1) 89%,rgba(71,71,71,1) 100%); /* IE10+ */
+  background: linear-gradient(to right, rgba(63,63,63,1) 0%,rgba(0,0,0,1) 17%,rgba(86,86,86,1) 39%,rgba(14,14,14,1) 89%,rgba(71,71,71,1) 100%); /* W3C */
 }
 
-.midden {
-    padding: 20px 15px;
-    text-align: center;
+#bottomcap {
+  bottom: 0;
 }
 
-.entree {
-    margin-top:20px;
-    font-size: 28px; 
-    transform: rotate(-180deg);
-    writing-mode: vertical-lr;
+#can {
+  box-shadow: 8px 0px 10px rgba(0,0,0,0.5);
+  position: absolute;
+  top: 20px;
+  left: 50px;
+  width: 120px;
+  height: 230px;
+  background: -webkit-linear-gradient(left, rgba(164,97,8,1) 0%,rgba(242,216,67,1) 38%,rgba(223,150,35,1) 80%,rgba(164,97,8,1) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(left, rgba(164,97,8,1) 0%,rgba(242,216,67,1) 38%,rgba(223,150,35,1) 80%,rgba(164,97,8,1) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(left, rgba(164,97,8,1) 0%,rgba(242,216,67,1) 38%,rgba(223,150,35,1) 80%,rgba(164,97,8,1) 100%); /* IE10+ */
+  background: linear-gradient(to right, rgba(164,97,8,1) 0%,rgba(242,216,67,1) 38%,rgba(223,150,35,1) 80%,rgba(164,97,8,1) 100%); /* W3C */
 }
 
-.cinema {
-    margin-left:-100px;
-    font-size: 30px; 
-    font-weight: bold;
-    text-shadow: -1px 1px 20px #555555;
+#can #text {
+  -webkit-transform: rotate(90deg) translate(60px, 40px);
+  -moz-transform: rotate(90deg) translate(60px, 40px);
+  transform: rotate(90deg) translate(60px, 40px);
+  display: block;
+  color: #000;
+  font-family: helvetica;
+  font-weight: bold;
+  text-align: center;
+  width: 200px;
 }
 
-hr {
-    width:70%;
-    margin-left:-20px;
+#can p {
+  margin: 0;
 }
 
-.space {
-    margin-bottom: 10px;
+#can p.gold {
+  font-size: 3em;
+  line-height: 0.9em;
 }
 
-.admit {
-    margin-left: -40px;
-    font-size: 18px; 
-    font-weight: bold;
+#can p.num {
+  font-size: 2em;
+  font-style: italic;
 }
 
-.price {
-    margin-left: -100px;
-    font-size: 20px; 
-    font-weight: bold;
-    color:brown;
-    text-shadow: -1px 1px 20px #555555;
+#can p.mm {
+  font-size: 0.8em;
+  font-family: serif;
 }
 
-
-.camera-container {
-    display: grid;
-    margin:0 auto;
-    margin-top: -130px; 
-    margin-left: 120px;
-    height: 100px;
-    opacity: 0.8;
+#film {
+  position: absolute;
+  top: 35px;
+  left: 160px;
+  width: 150px;
+  overflow: hidden;
+  transition: all 1s;
 }
 
-.wheels {
-    display: flex;
-    width: 110px;
+#film:hover {
+  width: 560px;
 }
 
-.main-lens {
-    display: flex;
-    width: 110px;
+#film:hover ul {
+  -webkit-transform: translatex(0px);
+  -moz-transform: translatex(0px);
+  transform: translatex(0px);
 }
 
-.round-one {
-    margin-top:46px;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    background-color: #1d1c1c;
-    -webkit-box-shadow: 2px 4px 8px 0px rgba(85,85,85,1);
-    -moz-box-shadow: 2px 4px 8px 0px rgba(85,85,85,1);
-    box-shadow: 2px 4px 8px 0px rgba(85,85,85,1);
+ul {
+  -webkit-transform: translatex(-450px);
+  -moz-transform: translatex(-450px);
+  transform: translatex(-450px);
+  transition: all 1s;
+  width: 560px;
+  height: 166px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  border-style: solid;
+  border-width: 17px 0px;
+  -moz-border-image: url(https://i.imgur.com/Sm9CNai.png) 27 repeat stretch;
+  -webkit-border-image: url(https://i.imgur.com/Sm9CNai.png) 27 repeat stretch;
+  -o-border-image: url(https://i.imgur.com/Sm9CNai.png) 27 repeat stretch;
+  border-image: url(https://i.imgur.com/Sm9CNai.png) 27 fill repeat stretch;
 }
 
-.round-two {
-    margin-top:31px;
-    margin-left: -1px;
-    border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    background-color: #1d1c1c;
-    -webkit-box-shadow: 2px 4px 16px 0px rgb(113, 113, 113);
-    -moz-box-shadow: 2px 4px 16px 0px rgb(120, 120, 120);
-    box-shadow: 2px 4px 16px 0px rgb(137, 137, 137);
+ul li {
+  display: block;
+  width: 160px;
+  height: 160px;
+  margin: 3px 0px 20px 20px;
+  background: #000;
+  float: left;
 }
 
-.main {
-    display: flex;
-    width: 55px;
-    height: 35px;
-    background-color: #1d1c1c;
-    border-radius: 5px;
-    -webkit-box-shadow: 2px 4px 15px 0px rgb(129, 128, 128);
-    -moz-box-shadow: 2px 4px 15px 0px rgb(148, 147, 147);
-    box-shadow: 2px 4px 15px 0px rgb(127, 127, 127);
+ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
 }
 
-.lens {
-    border-bottom: 35px solid #1d1c1c;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    height: 0;
-    width: 12px;
-    border-radius: 5px;
-    transform: rotate(-90deg);
+ul li:nth-child(1) a {
+  background-image: url('https://ew.com/thmb/NSqfIkCN7NR1TSFGjbrT1rG0RE8=/2000x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/gettyimages-56654121-2000-0ed22c3ecb5e4d2693521a9b00b9b6ad.jpg');
 }
 
-svg {
-    margin-left: -30px;
-    opacity: 0.6;
+ul li:nth-child(2) a {
+  background-image: url('https://i.pinimg.com/1200x/90/47/41/904741a2291c256676992ecb6b6c8e40.jpg');
+}
+
+ul li:nth-child(3) a {
+  background-image: url('https://festhomedocs.com/festivals/616/logo-616.jpg');
 }
