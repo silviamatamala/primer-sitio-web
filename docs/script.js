@@ -1,19 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
     // 1. Inicialización de Variables y Elementos Clave
-    // Buscamos el contenedor principal de la pantalla de inicio
     const countdownScreen = document.querySelector('.cinema-count-screen');
-    // Buscamos el elemento que muestra el número (clase .number)
-    const countdownNumberElement = document.querySelector('.cinema-count-screen .number'); 
+    // ⭐ CORRECCIÓN CLAVE: Buscamos directamente el ID 'numbercnt' que está en tu HTML ⭐
+    const countdownNumberElement = document.getElementById('numbercnt'); 
     
-    // Si la pantalla de cuenta regresiva no existe, salimos
     if (!countdownScreen) {
-        // Igualmente intentamos revelar el logo si no hay cuenta regresiva
         if (typeof revealLogos === 'function') revealLogos();
         return; 
     }
 
-    // 2. Control de Reproducción de Videos (Intersection Observer)
-    // El $ funciona ahora porque incluimos jQuery en el HTML
+    // 2. Control de Reproducción de Videos (Intersection Observer - Usa jQuery $)
     const videos = $('video'); 
     
     const options = {
@@ -27,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const video = entry.target; 
             if (entry.isIntersecting) {
                 video.play().catch(error => {
-                    console.error('Autoplay failed:', error);
+                    // console.error('Autoplay failed:', error);
                 });
             } else {
                 video.pause(); 
@@ -56,15 +52,15 @@ document.addEventListener('DOMContentLoaded', function () {
             logo.classList.add('show');
         }, 60);
     }
-    window.revealLogos = revealLogos; // Hacemos la función disponible globalmente
+    window.revealLogos = revealLogos; 
 
-    // 4. Hover handlers (usa jQuery)
+    // 4. Hover handlers (Usa jQuery $)
     $("#links_rrss a, #smooth a").hover(
         function() { $(this).animate({ color: "#f0781d" }, 300); }, 
         function() { $(this).animate({ color: "#fff" }, 300); }
     );
 
-    // 5. Scroll reveal (usa jQuery)
+    // 5. Scroll reveal (Usa jQuery $)
     $(window).scroll(function() {
         $(".imagen, .flourish-embed").each(function() {
             if ($(this).offset().top < $(window).scrollTop() + $(window).height()) {
@@ -76,30 +72,29 @@ document.addEventListener('DOMContentLoaded', function () {
     // 6. Lógica de la Cuenta Regresiva
     
     function hideCinemaScreen(intervalId) {
-        if (intervalId) clearInterval(intervalId); // Detiene el contador
+        if (intervalId) clearInterval(intervalId);
         
         countdownScreen.style.transition = 'opacity 0.5s ease';
         countdownScreen.style.opacity = '0';
         
         setTimeout(() => {
-            countdownScreen.remove(); // Quita el elemento del DOM
-            revealLogos(); // Muestra el logo animado
+            countdownScreen.remove(); 
+            revealLogos(); 
         }, 600);
     }
 
     function initCountdown() {
         if (!countdownNumberElement) {
+             console.error("Elemento de cuenta regresiva 'numbercnt' no encontrado.");
              hideCinemaScreen();
              return;
         }
 
-        // Obtiene el número inicial (10, según tu HTML)
         let seconds = parseInt(countdownNumberElement.textContent.trim(), 10);
         if (isNaN(seconds) || seconds <= 0) seconds = 5; 
         
         countdownNumberElement.textContent = seconds; 
 
-        // Inicia el temporizador
         const timerId = setInterval(() => {
             seconds -= 1;
             countdownNumberElement.textContent = seconds;
@@ -109,19 +104,17 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }, 1000);
 
-        // Permite saltar la cuenta al hacer clic
         countdownScreen.addEventListener('click', () => {
             hideCinemaScreen(timerId);
         }, { once: true });
     }
 
-    // Ejecutar el contador si no se ha ejecutado ya
     if (!window._cinemaCountdownRunning) {
         window._cinemaCountdownRunning = true;
         initCountdown();
     }
     
-    // Asegurar estilos de pantalla (por si acaso)
+    // Asegurar estilos de pantalla
     Object.assign(countdownScreen.style, {
         position: 'fixed',
         top: '0',
@@ -135,6 +128,5 @@ document.addEventListener('DOMContentLoaded', function () {
         justifyContent: 'center',
         zIndex: '999999'
     });
-    // Asegurar que es el primer elemento del body
     if (countdownScreen.parentNode !== document.body) document.body.insertBefore(countdownScreen, document.body.firstChild);
 });
