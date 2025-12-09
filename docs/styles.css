@@ -1,33 +1,33 @@
 /* 1. IMPORTS (Mover todos los @import al principio) */
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
-
+ 
 :root {
     --d: 700ms;
     --e: cubic-bezier(0.19, 1, 0.22, 1);
-    --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
-    --font-serif: 'Anton', sans-serif; 
+    --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-serif: 'Anton', sans-serif;
 }
-
+ 
 /* 2. RESET Y BASE */
 * {
     box-sizing: border-box;
 }
-
+ 
 html {
     scroll-behavior: smooth;
     background-color: #F6F4ED; /* FONDO GLOBAL CORRECTO */
 }
-
+ 
 body {
     font-family: var(--font-sans); /* Akzidenz-Grotesk simulada */
     color: #333; /* Color de texto principal */
-    text-align: center; 
+    text-align: center;
     margin: 0;
     padding: 0;
     background-color: #F6F4ED; /* FONDO GLOBAL CORRECTO */
 }
-
+ 
 /* Override de Altura y Scroll para la página completa */
 html, body {
   height: 100%;
@@ -36,35 +36,35 @@ html, body {
   overflow-x: hidden;
   overflow-y: visible;
 }
-
+ 
 h1, h2, h3 {
     font-family: var(--font-serif);
     color: #5A0F05;
 }
 .titulo_mayor {
     /* **Este es el cambio clave para el tamaño del h1** */
-    font-size: 5rem; 
+    font-size: 5rem;
     line-height: 1; /* Esto ayuda a que el texto grande no tenga demasiado espacio vertical */
     margin-top: 2rem;
     margin-bottom: 0.5rem;
 }
-
+ 
 /* 3. HEADER Y LOGO */
 header {
     background-color: #F6F4ED;
-    color: #F6F4ED; 
+    color: #F6F4ED;
     padding: 10px;
     display: flex;
     align-items: center;
     height: 100vh;
 }
-
+ 
 .contenedor_logo {
     flex: 1;
     display: flex;
     justify-content: center;
 }
-
+ 
 #logo1 {
   --logo-scale: 1;
   opacity: 0;
@@ -78,20 +78,20 @@ header {
   --logo-scale: 1 !important;
   transform: translateY(0) scale(1) !important;
 }
-
+ 
 #logo1.show {
   opacity: 1;
-  --logo-scale: 2; 
+  --logo-scale: 2;
   transform: translateY(0) scale(var(--logo-scale));
   animation: logoFloat 3.2s ease-in-out infinite;
 }
-
+ 
 @keyframes logoFloat {
   0%   { transform: translateY(0) scale(var(--logo-scale)); }
   50%  { transform: translateY(-8px) scale(var(--logo-scale)); }
   100% { transform: translateY(0) scale(var(--logo-scale)); }
 }
-
+ 
 /* 4. PANTALLA DE INICIO (CUENTA REGRESIVA) */
 .cinema-count-screen {
   position: fixed !important;
@@ -106,11 +106,11 @@ header {
   justify-content: center !important;
   z-index: 999999 !important;
   box-sizing: border-box !important;
-  background: #afada2; 
+  background: #afada2;
   pointer-events: auto !important;
   padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
 }
-
+ 
 .cinema-count {
   position: absolute;
   left: 0;
@@ -120,27 +120,27 @@ header {
   margin: auto;
   top: 50%;
   margin-top: -150px;
-  max-width: calc(100vw - 40px); 
+  max-width: calc(100vw - 40px);
   max-height: calc(100vh - 40px);
 }
-
+ 
 .cinema-count i {
   position: absolute;
   left: 0; right: 0; top: 0; bottom: 0;
   margin: auto;
-  width: 240px;   
+  width: 240px;  
   height: 240px;
   border-radius: 50%;
   border: 3px solid rgba(240,240,240,0.7);
   box-sizing: border-box;
 }
-
+ 
 .cinema-count i i {
   width: 200px;
   height: 200px;
   border: 2px solid rgba(240,240,240,0.5);
 }
-
+ 
 .cinema-count .number {
   position: absolute;
   width: 240px;
@@ -157,24 +157,24 @@ header {
   z-index: 2;
   user-select: none;
 }
-
+ 
 /* 5. SECCIONES DE CONTENIDO GENERAL Y TIPOGRAFÍA */
-
+ 
 .page-content {
     display: grid;
     gap: 1rem;
-    padding: 2rem; 
+    padding: 2rem;
     max-width: 1024px;
     margin: 2rem auto;
     font-family: var(--font-sans);
 }
-
+ 
 .title {
     font-size: 1.3rem;
     font-weight: bold;
     line-height: 1.2;
 }
-
+ 
 .copy {
     font-family: var(--font-serif);
     font-size: 1.125rem;
@@ -182,31 +182,31 @@ header {
     line-height: 1.35;
     text-align: justify;
 }
-
+ 
 /* Centrado de Párrafos: Aplica a todos los <p> y específicamente a .parrafo_v3 */
 p, .parrafo_v3 {
     max-width: 800px;
     margin-left: auto;
     margin-right: auto;
-    text-align: center; 
-    line-height: 1.6; 
+    text-align: center;
+    line-height: 1.6;
     padding: 1rem;
 }
-
+ 
 /* 6. CARDS (DIRECTORES) */
-
+ 
 @media (min-width: 600px) {
     .page-content {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
+ 
 @media (min-width: 800px) {
     .page-content {
         grid-template-columns: repeat(4, 1fr);
     }
 }
-
+ 
 .card {
     position: relative;
     display: flex;
@@ -217,7 +217,7 @@ p, .parrafo_v3 {
     min-height: 250px;
     text-align: center;
     color: whitesmoke;
-    background-color: transparent; 
+    background-color: transparent;
     border-radius: 12px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.15);
 }
@@ -230,7 +230,7 @@ p, .parrafo_v3 {
         height: 350px;
     }
 }
-
+ 
 /* Pseudo-elementos para imagen de fondo y degradado */
 .card:before {
     content: '';
@@ -245,7 +245,7 @@ p, .parrafo_v3 {
     pointer-events: none;
     z-index: 0;
 }
-
+ 
 .card:after {
     content: '';
     display: block;
@@ -264,7 +264,7 @@ p, .parrafo_v3 {
     transition: transform calc(var(--d) * 2) var(--e);
     z-index: 0;
 }
-
+ 
 /* Imágenes de fondo específicas para cada card */
 .card:nth-child(1):before {
     background-image: url('https://m.media-amazon.com/images/M/MV5BMTMyMzY2Mjc1N15BMl5BanBnXkFtZTcwNzM5NzYzNg@@._V1_.jpg');
@@ -278,8 +278,7 @@ p, .parrafo_v3 {
 .card:nth-child(4):before {
     background-image: url('https://images.wsj.net/im-02821113?width=1280&size=0.667&pixel_ratio=2');
 }
-
-
+ 
 .content {
     position: relative;
     display: flex;
@@ -290,11 +289,11 @@ p, .parrafo_v3 {
     transition: transform var(--d) var(--e);
     z-index: 1;
 }
-
+ 
 .content > * + * {
     margin-top: 1rem;
 }
-
+ 
 .btn {
     cursor: pointer;
     margin-top: 1.5rem;
@@ -311,26 +310,25 @@ p, .parrafo_v3 {
     border-radius: 4px;
     transition: background-color 0.3s ease;
 }
-
+ 
 .btn:hover {
     background-color: #0d0d0d;
 }
-
+ 
 .btn:focus {
     outline: 1px dashed yellow;
     outline-offset: 3px;
 }
-
-
+ 
 @media (hover: hover) and (min-width: 600px) {
     .card:after {
         transform: translateY(0);
     }
-
+ 
     .content {
         transform: translateY(calc(100% - 4.5rem));
     }
-
+ 
     .content > *:not(.title) {
         opacity: 0;
         transform: translateY(1rem);
@@ -338,35 +336,34 @@ p, .parrafo_v3 {
             transform var(--d) var(--e),
             opacity var(--d) var(--e);
     }
-
+ 
     .card:hover,
     .card:focus-within {
         align-items: center;
     }
-
+ 
     .card:hover:before,
     .card:focus-within:before {
         transform: translateY(-4%);
     }
-
+ 
     .card:hover:after,
     .card:focus-within:after {
         transform: translateY(-50%);
     }
-
+ 
     .card:hover .content,
     .card:focus-within .content {
         transform: translateY(0);
     }
-
+ 
     .card:hover .content > *:not(.title),
     .card:focus-within .content > *:not(.title) {
         opacity: 1;
         transform: translateY(0);
         transition-delay: calc(var(--d) / 8);
     }
-
-
+ 
     .card:focus-within:before,
     .card:focus-within:after,
     .card:focus-within .content,
@@ -374,54 +371,54 @@ p, .parrafo_v3 {
         transition-duration: 0s;
     }
 }
-
+ 
 /* 7. GRÁFICOS Y VIDEO (BLOQUES CENTRADOS) */
 /* Estilos para la imagen de ancho completo (#anteto) */
 #anteto {
-    width: 100%; 
-    height: auto; 
-    display: block; 
-    margin: 20px auto; 
-    object-fit: contain; 
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    object-fit: contain;
 }
 /* Contenedor del Mapa (VIS) y Gráfico de Líneas (VIS2) */
 #vis, #vis2 {
     /* Centra el bloque horizontalmente */
     margin-left: auto;
     margin-right: auto;
-    
+   
     /* Define un ancho máximo */
-    max-width: 900px; 
+    max-width: 900px;
     
     /* Asegura que el contenedor se comporte como un bloque centrado */
-    display: block; 
+    display: block;
     
     /* Espaciado vertical */
     padding: 1rem 0;
 }
-
+ 
 /* Reglas específicas de Vega/Vega-Lite */
 #vis.vega-embed {
     width: 100%;
     display: flex;
 }
-
+ 
 #vis.vega-embed details,
 #vis.vega-embed details summary {
     position: relative;
 }
-
+ 
 /* Contenedor de Video (Responsivo) */
 .video-container {
-    max-width: 800px; 
-    margin: 2rem auto; 
+    max-width: 800px;
+    margin: 2rem auto;
     position: relative;
     width: 100%;
     padding-bottom: 56.25%; /* Proporción 16:9 */
     height: 0;
     display: block;
 }
-
+ 
 .video-container iframe {
     position: absolute;
     top: 0;
@@ -429,3 +426,5 @@ p, .parrafo_v3 {
     width: 100%;
     height: 100%;
 }
+ 
+ 
