@@ -1,354 +1,261 @@
 <!DOCTYPE html>
 <html>
-    <head> 
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link rel="icon" href="docs/elementos-web/logo-animado.gif" type="image/gif"> 
-        
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-        <title>El cine chileno: una mirada retrospectiva </title>
-        
-        <link rel="stylesheet" type="text/css" href="/Users/silviamatamala/Downloads/GRÁFICA/primer-sitio-web/docs/styles.css> 
-
-        <style>
-            #vis.vega-embed {
-              width: 100%;
-              display: flex;
-            }
-            #vis.vega-embed details,
-            #vis.vega-embed details summary {
-              position: relative;
-            }
-        </style>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
-        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-        
-        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-        
-        <script src="/Users/silviamatamala/Downloads/GRÁFICA/primer-sitio-web/docs/script.js"></script> 
-    </head>
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <body>
-        <div class="cinema-count-screen">
-            <div class="cinema-count animated">
-                <i><i></i></i>
-                <span id="numbercnt" class="number">10</span>
+    <link rel="icon" href="docs/elementos-web/logo-animado.gif" type="image/gif"> 
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <title>El cine chileno: una mirada retrospectiva</title>
+    
+    <!-- CORRECCIÓN: Ruta CSS correcta -->
+    <link rel="stylesheet" type="text/css" href="docs/styles.css"> 
+
+    <style>
+        #vis.vega-embed {
+          width: 100%;
+          display: flex;
+        }
+        #vis.vega-embed details,
+        #vis.vega-embed details summary {
+          position: relative;
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    
+    <!-- CORRECCIÓN: Ruta JS correcta -->
+    <script src="docs/script.js"></script> 
+</head>
+
+<body>
+    <div class="cinema-count-screen">
+        <div class="cinema-count animated">
+            <i><i></i></i>
+            <span id="numbercnt" class="number">10</span>
+        </div>
+    </div>
+
+    <header>
+        <div class="contenedor_logo">
+            <!-- CORRECCIÓN: Ruta de imagen correcta -->
+            <img src="docs/elementos-web/logo-animado.gif" data-gif-src="docs/elementos-web/logo-animado.gif" id="logo1" alt="Logo">
+        </div>
+    </header>
+    
+    <section id="intro">
+        <h1 class="titulo_mayor">
+            Siempre los mismos gatos: 
+            <span>Radiografía del cine chileno</span>
+        </h1>
+        <p id="links_rrss">
+            Por 
+            <a href="https://www.instagram.com/renatoquevedo_/" target="_blank">Renato Quevedo</a>,
+            <a href="https://www.instagram.com/silviamtml/" target="_blank">Silvia Matamala</a> y 
+            <a href="https://www.instagram.com/_blancarios/" target="_blank">Blanca Ríos</a>
+        </p>
+    </section>
+
+    <main class="page-content">
+        <div class="card">
+            <div class="content">
+                <h2 class="title">Raúl Ruiz</h2>
+                <p class="copy">15 PELÍCULAS</p>
+                <a class="btn" href="https://www.imdb.com/es/name/nm0749914/" target="_blank">Ver más</a>
             </div>
         </div>
-
-        <header>
-            <div class="contenedor_logo">
-                <img src="elementos-web/logo-animado.gif" data-gif-src="elementos-web/logo-animado.gif" id="logo1" alt="Logo">
+        <div class="card">
+            <div class="content">
+                <h2 class="title">Sebastián Lelio</h2>
+                <p class="copy">7 PELÍCULAS</p>
+                <a class="btn" href="https://www.imdb.com/es/name/nm0133326/" target="_blank">Ver más</a>
             </div>
-        </header>
-        
-        <section id="intro">
-         <h1 class="titulo_mayor">
-                Siempre los mismos gatos: 
-                <span>Radiografía del cine chileno</span>
-                
-            </h1>
-            <p id="links_rrss">
-                Por 
-                <a href="https://www.instagram.com/renatoquevedo_/" target="_blank">Renato Quevedo</a>,
-                <a href="https://www.instagram.com/silviamtml/" target="_blank">Silvia Matamala</a> y 
-                <a href="https://www.instagram.com/_blancarios/" target="_blank">Blanca Ríos</a>
-            </p>
-        </section>
-
-        <main class="page-content">
-            <div class="card">
-                <div class="content">
-                    <h2 class="title">Raúl Ruiz</h2>
-                    <p class="copy">15 PELÍCULAS</p>
-                    <a class="btn" href="https://www.imdb.com/es/name/nm0749914/" target="_blank">Ver más</a>
-                </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h2 class="title">Cristián Sánchez</h2>
+                <p class="copy">16 películas</p>
+                <a class="btn" href="https://www.imdb.com/es/name/nm0844877/" target="_blank">Ver más</a>
             </div>
-            <div class="card">
-                <div class="content">
-                    <h2 class="title">Sebastián Lelio</h2>
-                    <p class="copy">7 PELÍCULAS</p>
-                    <a class="btn" href="https://www.imdb.com/es/name/nm0133326/" target="_blank">Ver más</a>
-                </div>
+        </div>
+        <div class="card">
+            <div class="content">
+                <h2 class="title">Pablo Larraín</h2>
+                <p class="copy">12 PELÍCULAS</p>
+                <a class="btn" href="https://www.imdb.com/es/name/nm1883257/" target="_blank">Ver más</a>
             </div>
-            <div class="card">
-                <div class="content">
-                    <h2 class="title">Cristián Sánchez</h2>
-                    <p class="copy">16 películas</p>
-                    <a class="btn" href="https://www.imdb.com/es/name/nm0844877/" target="_blank">Ver más</a>
-                </div>
-            </div>
-            <div class="card">
-                <div class="content">
-                    <h2 class="title">Pablo Larraín</h2>
-                    <p class="copy">12 PELÍCULAS</p>
-                    <a class="btn" href="https://www.imdb.com/es/name/nm1883257/" target="_blank">Ver más</a>
-                </div>
-            </div>
-        </main>
-           <h2 class="titulos">¿El éxito responde únicamente al género del director o puede influir la categoría de la película?</h2> 
-<p class="parrafo_v1">  
-
-
-
-
-
-
- <h2 class="titulos">Coordenadas cinematográficas</h2>
-<p class="parrafo_v2"> El cine chileno ha reescrito su propia historia, pasando de ser un arte de consumo
-casi exclusivamente local a consolidarse como una fuerza internacional en ascenso. 
-Los gráficos lo demuestran. El giro no fue uniforme, sino que se impulsó a través de dos rutas distintas: 
-la ficción y el documental. El análisis de ambas trayectorias demuestra que Chile 
-tiene hoy dos motores distintos para proyectar su cinematografía al mundo. 
-</p>
-<div class="grafico-container">
-    <iframe
-        src="docs/visualizaciones/evolucion_peliculas_FICCIÓN.html"
-        width="100%"
-        height="550px" 
-        frameborder="0" 
-        title="Gráfico de Evolución de Ficción"
-        style="border: none;"
-    >
-    </iframe>
-</div>
-<p class="parrafo_v2"> El éxito de la ficción chilena en el extranjero no ha sido un crecimiento lento.
-     Su expansión llegó en el aumento de estrenos y que se han concentrado en años específicos. 
-</p>
-<p class="parrafo_v2"> El desarrollo de las películas de ficción en el ámbito internacional ha sido de forma repentina
-     y depende enteramente de los grandes momentos de reconocimiento. La expansión crece de golpe cuando 
-     las películas son nominadas en los festivales más importantes o cuando ganan un galardón. Este modelo 
-     de "salto por prestigio" se convirtió en la principal estrategia para que las producciones chilenas 
-     pudieran ingresar a mercados saturados. La razón es simple: una nominación de alto perfil funciona 
-     como un sello de calidad para el desarrollo de cada película. 
- </p>
- <div class="video-container" style="max-width: 800px; margin: 40px auto; text-align: center;">
-    <iframe 
-        width="100%" 
-        height="450" 
-        
-        src="https://www.youtube.com/embed/0XJSiAZtfzE?autoplay=1&mute=1&loop=1&playlist=0XJSiAZtfzE" 
-        
-        frameborder="0" 
-        
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        allowfullscreen
-    ></iframe>
-</div>
- <p class="parrafo_v2"> "La Nana" (2009) de Sebastián Silva es la prueba de este fenómeno. 
-    Su nominación a los Globos de Oro de 2010 en la categoría de Mejor Película Extranjera 
-    no fue solo un honor, sino que fue la llave que abrió las puertas de la distribución global. 
-    Esto se tradujo en un auge sostenido en los estrenos internacionales que se hicieron 
-    evidentes en el gráfico desde 2008 hasta 2018. Además de películas como “Una mujer fantástica” (2017) 
-    de Sebastián Lelio y su nominación a Mejor Película Extranjera en los Premios Óscar, 
-    demuestran que la ficción chilena podía competir y obtener ganancias, 
-    que validó a toda una generación de cineastas y atrayendo nuevas inversiones al sector. 
-</p>
-<p class="parrafo_v2"> Este vuelco de prestigio tiene un efecto de arrastre fundamental. 
-    La película premiada o nominada regresa a Chile con una fama mayor, lo que inmediatamente 
-    logra despertar el interés del público. El reconocimiento global funciona como 
-    el mejor marketing para la película, que garantiza una mejor taquilla 
-    y demuestra que las producciones chilenas que triunfan afuera también pueden tener éxito en casa. 
-    Esto consolida un modelo donde el prestigio es el detonante de la distribución
-     tanto internacional como local. 
-     </p>
-     <div class="grafico-container">
-    <iframe
-        src="docs/visualizaciones/evolucion_peliculas_DOCUMENTALES.html"
-        width="100%"
-        height="550px" 
-        frameborder="0" 
-        title="Gráfico de Evolución de Documentales"
-        style="border: none;"
-    >
-    </iframe>
-</div>
-<p class="parrafo_v2"> El análisis de los documentales chilenos revela un patrón distinto 
-    al de un crecimiento constante. La presencia en el extranjero es impredecible. 
-    Esta situación significa que no existe una base de estrenos garantizada año tras año. 
-    Aunque el documental tiene prestigio, el número puede caer abruptamente a cero, 
-    incluso después de un año de éxito. 
-</p>
-<p class="parrafo_v2"> La directora Maite Alberdi ha sido una de las figuras fundamentales 
-    para representar e impulsar los aumentos del género documental en Chile. 
-    Películas como “El agente topo” (2020)  y “La memoria infinita” (2023) han sido nominadas
-     a los premios Óscar en la categoría de Mejor Documental y, sin duda, han sido hitos claves en el cine nacional. 
-     Su éxito continuado ha ayudado a establecer la credibilidad en la esfera global. 
+        </div>
+    </main>
+    
+    <h2 class="titulos">¿El éxito responde únicamente al género del director o puede influir la categoría de la película?</h2>
+    <p class="parrafo_v1">Este espacio está reservado para contenido adicional.</p>
+    
+    <h2 class="titulos">Coordenadas cinematográficas</h2>
+    <p class="parrafo_v2">
+        El cine chileno ha reescrito su propia historia, pasando de ser un arte de consumo
+        casi exclusivamente local a consolidarse como una fuerza internacional en ascenso. 
+        Los gráficos lo demuestran. El giro no fue uniforme, sino que se impulsó a través de dos rutas distintas: 
+        la ficción y el documental. El análisis de ambas trayectorias demuestra que Chile 
+        tiene hoy dos motores distintos para proyectar su cinematografía al mundo.
     </p>
+    
+    <div class="grafico-container">
+        <iframe
+            src="docs/visualizaciones/evolucion_peliculas_FICCIÓN.html"
+            width="100%"
+            height="550px" 
+            frameborder="0" 
+            title="Gráfico de Evolución de Ficción"
+            style="border: none;"
+        >
+        </iframe>
+    </div>
+    
+    <p class="parrafo_v2">
+        El éxito de la ficción chilena en el extranjero no ha sido un crecimiento lento.
+        Su expansión llegó en el aumento de estrenos y que se han concentrado en años específicos.
+    </p>
+    
+    <p class="parrafo_v2">
+        El desarrollo de las películas de ficción en el ámbito internacional ha sido de forma repentina
+        y depende enteramente de los grandes momentos de reconocimiento. La expansión crece de golpe cuando 
+        las películas son nominadas en los festivales más importantes o cuando ganan un galardón. Este modelo 
+        de "salto por prestigio" se convirtió en la principal estrategia para que las producciones chilenas 
+        pudieran ingresar a mercados saturados. La razón es simple: una nominación de alto perfil funciona 
+        como un sello de calidad para el desarrollo de cada película.
+    </p>
+    
+    <div class="video-container" style="max-width: 800px; margin: 40px auto; text-align: center;">
+        <iframe 
+            width="100%" 
+            height="450" 
+            src="https://www.youtube.com/embed/0XJSiAZtfzE?autoplay=1&mute=1&loop=1&playlist=0XJSiAZtfzE" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            allowfullscreen
+        ></iframe>
+    </div>
+    
+    <p class="parrafo_v2">
+        "La Nana" (2009) de Sebastián Silva es la prueba de este fenómeno. 
+        Su nominación a los Globos de Oro de 2010 en la categoría de Mejor Película Extranjera 
+        no fue solo un honor, sino que fue la llave que abrió las puertas de la distribución global. 
+        Esto se tradujo en un auge sostenido en los estrenos internacionales que se hicieron 
+        evidentes en el gráfico desde 2008 hasta 2018. Además de películas como "Una mujer fantástica" (2017) 
+        de Sebastián Lelio y su nominación a Mejor Película Extranjera en los Premios Óscar, 
+        demuestran que la ficción chilena podía competir y obtener ganancias, 
+        que validó a toda una generación de cineastas y atrayendo nuevas inversiones al sector.
+    </p>
+    
+    <p class="parrafo_v2">
+        Este vuelco de prestigio tiene un efecto de arrastre fundamental. 
+        La película premiada o nominada regresa a Chile con una fama mayor, lo que inmediatamente 
+        logra despertar el interés del público. El reconocimiento global funciona como 
+        el mejor marketing para la película, que garantiza una mejor taquilla 
+        y demuestra que las producciones chilenas que triunfan afuera también pueden tener éxito en casa. 
+        Esto consolida un modelo donde el prestigio es el detonante de la distribución
+        tanto internacional como local.
+    </p>
+    
+    <div class="grafico-container">
+        <iframe
+            src="docs/visualizaciones/evolucion_peliculas_DOCUMENTALES.html"
+            width="100%"
+            height="550px" 
+            frameborder="0" 
+            title="Gráfico de Evolución de Documentales"
+            style="border: none;"
+        >
+        </iframe>
+    </div>
+    
+    <p class="parrafo_v2">
+        El análisis de los documentales chilenos revela un patrón distinto 
+        al de un crecimiento constante. La presencia en el extranjero es impredecible. 
+        Esta situación significa que no existe una base de estrenos garantizada año tras año. 
+        Aunque el documental tiene prestigio, el número puede caer abruptamente a cero, 
+        incluso después de un año de éxito.
+    </p>
+    
+    <p class="parrafo_v2">
+        La directora Maite Alberdi ha sido una de las figuras fundamentales 
+        para representar e impulsar los aumentos del género documental en Chile. 
+        Películas como "El agente topo" (2020) y "La memoria infinita" (2023) han sido nominadas
+        a los premios Óscar en la categoría de Mejor Documental y, sin duda, han sido hitos claves en el cine nacional. 
+        Su éxito continuado ha ayudado a establecer la credibilidad en la esfera global.
+    </p>
+    
     <div class="imagen-container">
-    <img 
-        src="docs/elementos-web/memoria-infinita3.jpg" 
-        alt="Fotograma de la película chilena 'La Memoria Infinita'."
+        <img 
+            src="docs/elementos-web/memoria-infinita3.jpg" 
+            alt="Fotograma de la película chilena 'La Memoria Infinita'."
+            style="max-width: 100%; height: auto; display: block; margin: 20px auto; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"
+        >
+    </div>
+    
+    <p class="parrafo_v2">
+        Cuando el documental chileno llega al mercado, tiene una alta probabilidad 
+        de conseguir distribución y audiencia. Es el impulso necesario para aumentar el reconocimiento
+        del género tanto a nivel nacional como internacional.
+    </p>
+    
+    <p class="parrafo_v2">
+        Para comprender la magnitud, el siguiente paso es trazar la geografía del éxito. 
+        A continuación, el mapa de estrenos internacionales permite ver exactamente dónde ha aterrizado 
+        esta producción premiada, revelando los países y festivales que más han adoptado y reconocido el nuevo cine chileno.
+    </p>
+    
+    <div class="grafico-container">
+        <iframe
+            src="docs/visualizaciones/Mapa-de-estrenos.html"
+            width="100%"
+            height="600px" 
+            frameborder="0" 
+            title="Mapa de la distribución global de estrenos chilenos"
+            style="border: none;"
+        >
+        </iframe>
+    </div>
+    
+    <div class="container">
+        <div class="left"><span class="rotate">A 660346</span></div>
+        <div class="midden">
+            <span class="cinema">ENTRADA AL CINE</span><hr>
+            <span class="price"> Elige tu género favorito</span><hr class="space">
+            <span class="admit">CHILE</span>
+            <p>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 30" width="160" height="30">
+                    <rect x="0" y="0" width="30" height="30" fill="none" />
+                    <polygon points="15,0 18,10 30,10 20,17 23,30 15,22 7,30 10,17 0,10 12,10" fill="brown" />
+                    <rect x="40" y="0" width="30" height="30" fill="none" />
+                    <polygon points="55,0 58,10 70,10 60,17 63,30 55,22 47,30 50,17 40,10 52,10" fill="brown" />
+                    <rect x="80" y="0" width="30" height="30" fill="none" />
+                    <polygon points="95,0 98,10 110,10 100,17 103,30 95,22 87,30 90,17 80,10 92,10" fill="brown" />
+                    <rect x="120" y="0" width="30" height="30" fill="none" />
+                    <polygon points="135,0 138,10 150,10 140,17 143,30 135,22 127,30 130,17 120,10 132,10" fill="brown" />
+                    <rect x="160" y="0" width="30" height="30" fill="none" />
+                    <polygon points="175,0 178,10 190,10 180,17 183,30 175,22 167,30 170,17 160,10 172,10" fill="brown" />
+                </svg>
+            </p>
+        </div>
+        <div class="rechts"><span class="entree">A 660346</span></div>
         
-        style="max-width: 100%; height: auto; display: block; margin: 20px auto; border-radius: 5px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);"
-    >
-</div>
-<p class="parrafo_v2"> Cuando el documental chileno llega al mercado, tiene una alta probabilidad 
-    de conseguir distribución y audiencia. Es el impulso necesario para aumentar el reconocimiento
-     del género tanto a nivel nacional como internacional. 
-     </p>
-<p class="parrafo_v2"> Para comprender la magnitud, el siguiente paso es trazar la geografía del éxito. 
-    A continuación, el mapa de estrenos internacionales permite ver exactamente dónde ha aterrizado 
-    esta producción premiada, revelando los países y festivales que más han adoptado y reconocido el nuevo cine chileno.  </p>
-<div class="grafico-container">
-    <iframe
-        src="docs/visualizaciones/Mapa-de-estrenos.html"
-        width="100%"
-        height="600px" 
-        frameborder="0" 
-        title="Mapa de la distribución global de estrenos chilenos"
-        style="border: none;"
-    >
-    </iframe>
-</div>
-<div class="container">
-<div class="left"><span class="rotate">A 660346</span></div>
-<div class="midden"><span class="cinema">ENTRADA AL CINE</span><hr><span class="price"> Elige tu género favorito</span><hr class="space">
- <span class="admit">CHILE</span><p> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 30" width="160" height="30">
-    <rect x="0" y="0" width="30" height="30" fill="none" />
-    <polygon points="15,0 18,10 30,10 20,17 23,30 15,22 7,30 10,17 0,10 12,10" fill="brown" />
-    <rect x="40" y="0" width="30" height="30" fill="none" />
-    <polygon points="55,0 58,10 70,10 60,17 63,30 55,22 47,30 50,17 40,10 52,10" fill="brown" />
-    <rect x="80" y="0" width="30" height="30" fill="none" />
-    <polygon points="95,0 98,10 110,10 100,17 103,30 95,22 87,30 90,17 80,10 92,10" fill="brown" />
-    <rect x="120" y="0" width="30" height="30" fill="none" />
-    <polygon points="135,0 138,10 150,10 140,17 143,30 135,22 127,30 130,17 120,10 132,10" fill="brown" />
-    <rect x="160" y="0" width="30" height="30" fill="none" />
-    <polygon points="175,0 178,10 190,10 180,17 183,30 175,22 167,30 170,17 160,10 172,10" fill="brown" />
-  </svg></div>
-<div class="rechts"><span class="entree">A 660346</span></div>
-
-<div class="camera-container">
-
-    <div class="wheels">
-    <div class="round-one"></div>
-    <div class="round-two"></div>
-</div>
-
-<div class="main-lens">
-    <div class="main"></div>
-    <div class="lens"></div>
-</div>
-</div>
-
-
-
- <!-- end container -->   
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-           
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <div class="camera-container">
+            <div class="wheels">
+                <div class="round-one"></div>
+                <div class="round-two"></div>
+            </div>
+            <div class="main-lens">
+                <div class="main"></div>
+                <div class="lens"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
