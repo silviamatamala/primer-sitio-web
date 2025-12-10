@@ -1,137 +1,229 @@
-/* ========================================================================= */
-/* ESTILOS GENERALES Y FUENTES */
-/* ========================================================================= */
- 
+/* 1. IMPORTS Y VARIABLES */
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap');
+
 :root {
-    /* Colores solicitados */
-    --background-color: #F6F4ED;
-    --text-color: #000000;
-   
-    /* Tipografía solicitada */
-    --anton: 'Anton', sans-serif;
-    /* Reemplazo de Akzidenz-Grotesk */
-    --body-font: 'Open Sans', sans-serif;
- 
-    /* Tamaños de fuente */
-    --title-size: 48px;
-    --body-size: 16px;
+    --d: 700ms;
+    --e: cubic-bezier(0.19, 1, 0.22, 1);
+    --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-serif: 'Anton', sans-serif;
 }
- 
-body {
+
+/* 2. RESET Y BASE */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: #F6F4ED;
+    height: 100%;
     margin: 0;
     padding: 0;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: var(--body-font);
+    overflow-x: hidden;
+    overflow-y: visible;
 }
- 
-.title {
-    font-family: var(--anton);
-    font-size: var(--title-size); /* 40-60 px */
+
+body {
+    font-family: var(--font-sans);
+    color: #333;
     text-align: center;
-    margin: 40px auto 20px;
-    max-width: 900px;
+    margin: 0;
+    padding: 0;
+    background-color: #F6F4ED;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: visible;
 }
- 
-.body-text {
-    font-family: var(--body-font);
-    font-size: var(--body-size); /* 15-17 px */
+
+h1, h2, h3 {
+    font-family: var(--font-serif);
+    color: #5A0F05;
 }
- 
-/* Estilo para todos los párrafos de contenido */
-.paragraph {
+
+.titulo_mayor {
+    font-size: 5rem;
+    line-height: 1;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+p, .parrafo_v3 {
     max-width: 800px;
-    margin: 20px auto;
-    text-align: justify;
-    line-height: 1.7; /* Para dar más espacio entre líneas */
-    padding: 0 20px;
-}
- 
-.centered-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 40px 0;
-}
- 
-.hidden {
-    display: none !important;
-}
- 
-/* PLACEHOLDERS PARA LOGO Y GRÁFICOS */
-#logo-placeholder {
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
- 
-.logo-text {
-    font-size: 60px;
-}
- 
-.graph-placeholder {
-    min-height: 250px;
-    width: 80%;
-    border: 2px dashed #000;
-    margin: 40px auto;
-    padding: 20px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
+    line-height: 1.6;
+    padding: 1rem;
 }
- 
-.video-container {
-    padding: 20px 0;
+
+/* 3. HEADER Y LOGO */
+header {
+    background-color: #F6F4ED;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    height: auto; 
+    padding-top: 50px;
 }
- 
-/* ========================================================================= */
-/* ESTILOS ESPECÍFICOS: 1. CUENTA REGRESIVA */
-/* ========================================================================= */
- 
-#countdown-screen {
+
+.contenedor_logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+#logo1 {
+    --logo-scale: 1;
+    opacity: 0;
+    transform: translateY(-16px) scale(var(--logo-scale));
+    transition: opacity 450ms ease, transform 550ms ease;
+    max-width: 300px;
+    display: block;
+    z-index: 10000;
+    position: relative;
+    --logo-scale: 1; 
+    transform: translateY(0) scale(1);
+}
+
+#logo1.show {
+    opacity: 1;
+    --logo-scale: 2;
+    transform: translateY(0) scale(var(--logo-scale));
+    animation: logoFloat 3.2s ease-in-out infinite;
+}
+
+@keyframes logoFloat {
+    0%    { transform: translateY(0) scale(var(--logo-scale)); }
+    50%   { transform: translateY(-8px) scale(var(--logo-scale)); }
+    100% { transform: translateY(0) scale(var(--logo-scale)); }
+}
+
+/* 4. PANTALLA DE INICIO (CUENTA REGRESIVA) */
+.cinema-count-screen {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
     height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 999999;
+    box-sizing: border-box;
+    background: #afada2;
+    pointer-events: auto;
+    transition: opacity 0.5s ease-out; 
+}
+
+.cinema-count {
+    position: absolute;
+    left: 0; right: 0; top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    max-width: calc(100vw - 40px);
+    max-height: calc(100vh - 40px);
+}
+
+.cinema-count i {
+    position: absolute;
+    left: 0; right: 0; top: 0; bottom: 0;
+    margin: auto;
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+    border: 3px solid rgba(240,240,240,0.7);
+    box-sizing: border-box;
+}
+
+.cinema-count i i {
+    width: 200px;
+    height: 200px;
+    border: 2px solid rgba(240,240,240,0.5);
+}
+
+.cinema-count .number {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 160px;
+    line-height: 240px;
     text-align: center;
+    font-family: Arial, var(--font-serif);
+    color: #fff;
+    font-weight: 700;
+    z-index: 2;
+    user-select: none;
 }
- 
-#countdown-timer {
-    font-family: var(--anton);
-    font-size: 150px;
-    margin-top: 20px;
+
+/* 5. ESTILOS ESPECÍFICOS DE INTRODUCCIÓN */
+#intro {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    padding-top: 50px;
 }
- 
-/* ========================================================================= */
-/* ESTILOS ESPECÍFICOS: 2. ASIENTOS DE CINE */
-/* ========================================================================= */
- 
+
+#links_rrss {
+    font-family: 'Old Standard TT', serif;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+}
+
+#links_rrss a {
+    color: #5A0F05;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 5px;
+    padding: 0 5px;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 300ms ease;
+}
+
+#links_rrss a:hover {
+    border-bottom: 2px solid #5A0F05;
+}
+
+/* 6. VISUALIZACIÓN DE BUTACAS (CINEMA SEATS) */
+
 .theatre {
+    position: relative;
+    margin: 80px auto; 
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    margin: 40px 0;
-    position: relative;
-    /* top: 70%; left: 50%; transform: translate(-50%, -50%); --> removido por conflicto de posición fija */
+    transform: perspective(1000px) rotateX(15deg);
+    padding: 50px 0;
+    width: fit-content;
+    max-width: 90%;
 }
- 
+
 .cinema-seats {
     display: flex;
+    flex-direction: column;
 }
- 
+
+/* Estilos de los Asientos Generales */
 .cinema-seats .seat {
     cursor: pointer;
+    position: relative;
     width: 35px;
     height: 50px;
     border-radius: 7px;
-    background: linear-gradient(to top, #761818, #761818, #761818, #761818, #761818, #B54041, #F3686A);
+    background: linear-gradient(to top, #761818, #761818, #761818, #B54041, #F3686A);
     margin-bottom: 10px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    position: relative;
+    transition: background 0.3s ease;
 }
- 
+
+/* Efectos de Hover y Active (Clase 'active' aplicada por JavaScript) */
 .cinema-seats .seat:hover:before {
     content: '';
     position: absolute;
@@ -141,545 +233,48 @@ body {
     background: rgba(0, 0, 0, 0.5);
     border-radius: 7px;
 }
- 
+
 .cinema-seats .seat.active:before {
     content: '';
     position: absolute;
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.6); /* Asientos documentales (blancos/claros) */
+    background: rgba(255, 255, 255, 0.6);
     border-radius: 7px;
 }
- 
- 
-/* Left Seats */
-.left .cinema-row {
-    transform: skew(-15deg);
-    margin: 0 6px;
-}
- 
-.left .seat {
-    transform: skew(20deg);
-    margin-top: -32px;
-}
- 
-.left .row-2 { transform: skew(-13deg); } .left .row-2 .seat { transform: skew(18deg); }
-.left .row-3 { transform: skew(-12deg); } .left .row-3 .seat { transform: skew(16deg); }
-.left .row-4 { transform: skew(-11deg); } .left .row-4 .seat { transform: skew(15deg); }
-.left .row-5 { transform: skew(-10deg); } .left .row-5 .seat { transform: skew(12deg); }
-.left .row-6 { transform: skew(-9deg); } .left .row-6 .seat { transform: skew(10deg); }
-.left .row-7 { transform: skew(-7deg); } .left .row-7 .seat { transform: skew(8deg); }
- 
-/* Right Seats */
-.right {
-    margin-left: 70px;
-}
- 
-.right .cinema-row {
-    transform: skew(7deg);
-    margin: 0 6px;
-}
- 
-.right .seat {
-    transform: skew(-8deg);
-    margin-top: -32px;
-}
- 
-.right .row-2 { transform: skew(9deg); } .right .row-2 .seat { transform: skew(-10deg); }
-.right .row-3 { transform: skew(10deg); } .right .row-3 .seat { transform: skew(-12deg); }
-.right .row-4 { transform: skew(11deg); } .right .row-4 .seat { transform: skew(-15deg); }
-.right .row-5 { transform: skew(12deg); } .right .row-5 .seat { transform: skew(-16deg); }
-.right .row-6 { transform: skew(13deg); } .right .row-6 .seat { transform: skew(-18deg); }
-.right .row-7 { transform: skew(15deg); } .right .row-7 .seat { transform: skew(-20deg); }
- 
- 
-/* ========================================================================= */
-/* ESTILOS ESPECÍFICOS: 3. CARRUSEL DE DOCUMENTALES */
-/* ========================================================================= */
- 
-/* Reset mínimo para el carrusel (el resto se mantiene del código original) */
-.carousel-wrapper * {
-                box-sizing: border-box;
-    font-family: var(--body-font);
-}
- 
-.carousel-wrapper {
-    /* La sección de carrusel tiene un estilo de fondo diferente en el original, lo aislamos */
-    background-color: #f5f5f5;
-    padding: 20px 0;
-    width: 100%;
-}
- 
-.main-container {
-                display: flex;
-                width: 100%;
-                max-width: 1200px;
-                height: 80vh;
-                gap: 60px;
-                align-items: center;
-                justify-content: center;
-}
- 
-.carousel-section {
-                flex: 1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-}
- 
-.controls-section {
-                flex: 1;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 40px;
-                padding-left: 40px;
-}
- 
-.carousel-container {
-                width: 100%;
-                max-width: 500px;
-                height: 70vh;
-                position: relative;
-                perspective: 1000px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-}
- 
-.carousel-container .nav-arrow {
-                display: none;
-}
- 
-.carousel-track {
-                width: 450px;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                position: relative;
-                transform-style: preserve-3d;
-                transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
- 
-.card {
-                position: absolute;
-                width: 400px;
-                height: 225px;
-                background: white;
-                border-radius: 20px;
-                overflow: hidden;
-                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-                transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-                cursor: pointer;
-}
- 
-.card img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
- 
-.card.center {
-                z-index: 10;
-                transform: scale(1.1) translateZ(0);
-}
- 
-.card.center img {
-                filter: none;
-}
- 
-.card.up-2 {
-                z-index: 1;
-                transform: translateY(-300px) scale(0.8) translateZ(-300px);
-                opacity: 0.7;
-}
- 
-.card.up-2 img {
-                filter: grayscale(100%);
-}
- 
-.card.up-1 {
-                z-index: 5;
-                transform: translateY(-150px) scale(0.9) translateZ(-100px);
-                opacity: 0.9;
-}
- 
-.card.up-1 img {
-                filter: grayscale(100%);
-}
- 
-.card.down-1 {
-                z-index: 5;
-                transform: translateY(150px) scale(0.9) translateZ(-100px);
-                opacity: 0.9;
-}
- 
-.card.down-1 img {
-                filter: grayscale(100%);
-}
- 
-.card.down-2 {
-                z-index: 1;
-                transform: translateY(300px) scale(0.8) translateZ(-300px);
-                opacity: 0.7;
-}
- 
-.card.down-2 img {
-                filter: grayscale(100%);
-}
- 
-.member-info {
-                text-align: center;
-                margin-top: 20px;
-                transition: all 0.5s ease-out;
-}
- 
-.member-name {
-    /* Color rgb(8, 42, 123) mantenido del código original */
-                color: rgb(8, 42, 123);
-                font-size: 2rem;
-                font-weight: 700;
-                margin-bottom: 8px;
-                position: relative;
-                display: inline-block;
-    /* Usando la fuente Open Sans para el nombre de las películas/directores */
-    font-family: var(--body-font);
-}
- 
-.member-name::before,
-.member-name::after {
-                content: "";
-                position: absolute;
-                top: 100%;
-                width: 80px;
-                height: 2px;
-                background: rgb(8, 42, 123);
-}
- 
-.member-name::before {
-                left: -100px;
-}
- 
-.member-name::after {
-                right: -100px;
-}
- 
-.member-role {
-                color: #848696;
-                font-size: 1.2rem;
-                font-weight: 500;
-                opacity: 0.8;
-                text-transform: uppercase;
-                letter-spacing: 0.1em;
-                padding: 5px 0;
-                margin-top: -10px;
-                position: relative;
-    font-family: var(--body-font);
-}
-.dots {
-                display: flex;
-                justify-content: center;
-                gap: 10px;
-                margin-top: 30px;
-}
- 
-.dot {
-                width: 12px;
-                height: 12px;
-                border-radius: 50%;
-                background: rgba(8, 42, 123, 0.2);
-                cursor: pointer;
-                transition: all 0.3s ease;
-}
- 
-.dot.active {
-                background: rgb(8, 42, 123);
-                transform: scale(1.2);
-}
- 
-.nav-arrow {
-    /* El resto del estilo de nav-arrow se mantiene del código original */
-                position: relative;
-                background: transparent;
-                color: white;
-                width: 80px;
-                height: 80px;
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                cursor: pointer;
-                z-index: 20;
-                transition: all 0.3s ease;
-                font-size: 1.5rem;
-                border: none;
-                outline: none;
-                margin: 0;
-                padding: 0;
-                overflow: visible;
-                box-shadow: none;
-}
- 
-.nav-arrow img {
-                width: 60px;
-                height: 60px;
-                object-fit: contain;
-                filter: none;
-                transition: all 0.3s ease;
-}
- 
-.nav-controls {
-                display: flex;
-                flex-direction: row;
-                gap: 30px;
-                align-items: center;
-                justify-content: center;
-}
- 
-/* Estilos de Botón Flotante y Media Queries del carrusel mantenidos */
-#super-btn {
-    position: fixed;
-    right: 32px;
-    bottom: 32px;
-    z-index: 1000;
-    display: inline-block;
-    border-radius: 18px;
-    overflow: hidden;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
-    width: 56px;
-    height: 56px;
-    background: #fff;
-    transition: box-shadow 0.2s, transform 0.2s;
-}
- 
-/* ... (El resto de las reglas del carrusel CSS se omiten por espacio, asumiendo que el usuario las copiará desde el original proporcionado o confía en la integración inicial) ... */
- 
-/* Media queries for carousel adjustment - CRUCIAL for mobile view */
-@media (max-width: 768px) {
-    /* Styles maintained from original media query */
-    .main-container { flex-direction: column; height: auto; gap: 20px; max-width: 100%; }
-    .carousel-container { height: 60vh; max-width: 350px; }
-    .carousel-container .nav-arrow { display: flex; position: absolute; left: 50%; transform: translateX(-50%); width: 70px; height: 70px; }
-    .nav-controls { display: none; }
-    .card { width: 320px; height: 180px; }
-    .carousel-track { width: 350px; }
-    /* ... (rest of the media query styles) ... */
-}
- 
- 
-/* ========================================================================= */
-/* ESTILOS ESPECÍFICOS: 4. TICKET DE CINE */
-/* ========================================================================= */
- 
-.ticket-wrapper {
-    /* Contenedor para posicionar el ticket en el centro, aislando los estilos de fuente del código original */
-    padding: 60px 0;
-    margin: 0 auto;
-}
- 
-.container {
-    width: 600px;
-    height: 260px;
-    margin: 0 auto;
-    background: rgb(250,223,165);
-    background: linear-gradient(260deg, rgba(250,223,165,1) 12%, rgba(235,221,189,1) 79%);
-    border: 1px solid #333;
-    box-shadow: 2px 4px 8px 0px rgba(85,85,85,1);
-    transform: rotate(-7deg);
-    border-radius: 5px;
-    position: relative; /* Agregado para posicionamiento de elementos internos */
-}
- 
-.container .body-text {
-    /* Sobreescribe temporalmente el color de texto del cuerpo si el original lo pide, manteniendo la fuente Open Sans */
-    color: #333;
-    text-shadow: -1px 1px 50px #333333;
-    font-family: var(--body-font);
-}
- 
-.left {
-    float: left;
-    width: 60px;
-    height: 215px;
-    padding: 20px;
-    background: linear-gradient(260deg, rgba(250,223,165,1) 12%, rgba(235,221,189,1) 79%);
-    border-right: 3px dotted #333;
-    text-align: center;
-}
- 
-.rotate {
-    margin-top:20px;
-    font-size: 40px;
-    transform: rotate(180deg);
-    writing-mode: vertical-lr;
-}
- 
-.rechts {
-    float: right;
-    width: 60px;
-    height: 220px;
-    padding:20px;
-    background: linear-gradient(260deg, rgba(250,223,165,1) 12%, rgba(235,221,189,1) 79%);
-    border-right: 2px solid rgb(255, 221, 147);
-    border-left: 1px solid #333;
-    text-align: center;
-    margin-top:-259px;
-}
- 
-.midden {
-    padding: 20px 15px;
-    text-align: center;
-}
- 
-.entree {
-    margin-top:20px;
-    font-size: 36px;
-    transform: rotate(-180deg);
-    writing-mode: vertical-lr;
-}
- 
-.cinema {
-    margin-left:-100px;
-    font-size: 36px;
-    font-weight: bold;
-    text-shadow: -1px 1px 20px #555555;
-}
- 
-hr {
-    width:70%;
-    margin-left:-20px;
-}
- 
-.space {
-    margin-bottom: 10px;
-}
- 
-.admit {
-    margin-left: -40px;
-    font-size: 24px;
-    font-weight: bold;
-}
- 
-.price {
-    margin-left: -100px;
-    font-size: 26px;
-    font-weight: bold;
-    color:brown;
-    text-shadow: -1px 1px 20px #555555;
-}
- 
-.camera-container {
-    display: grid;
-    margin:0 auto;
-    margin-top: -130px;
-    margin-left: 120px;
-    height: 100px;
-    opacity: 0.8;
-}
- 
-/* El resto de estilos de la cámara (wheels, main-lens, etc.) se mantienen del código original */
- 
- 
-/* ========================================================================= */
-/* ESTILOS ESPECÍFICOS: 5. CARRETE DE PELÍCULA */
-/* ========================================================================= */
-.film-reel-wrapper {
-    /* Contenedor para posicionamiento */
-    position: relative;
-    width: 800px;
-    height: 300px; /* Ajuste de altura para ver el efecto */
-    margin: 40px auto;
-}
- 
-#topcap, #bottomcap {
-    position: absolute;
-    left: -5px;
-    width: 130px;
-    height: 10px;
-    /* Degradado del código original */
-    background: linear-gradient(to right, rgba(63,63,63,1) 0%,rgba(0,0,0,1) 17%,rgba(86,86,86,1) 39%,rgba(14,14,14,1) 89%,rgba(71,71,71,1) 100%);
-}
- 
-#bottomcap {
-    bottom: 0;
-}
- 
-#can {
-    box-shadow: 8px 0px 10px rgba(0,0,0,0.5);
-    position: absolute;
-    top: 20px;
-    left: 50px;
-    width: 120px;
-    height: 230px;
-    /* Degradado del código original */
-    background: linear-gradient(to right, rgba(164,97,8,1) 0%,rgba(242,216,67,1) 38%,rgba(223,150,35,1) 80%,rgba(164,97,8,1) 100%);
-}
- 
-#can #text {
-    transform: rotate(90deg) translate(60px, 40px);
-    display: block;
-    color: #000;
-    font-family: var(--body-font);
-    font-weight: bold;
-    text-align: center;
-    width: 200px;
-}
- 
-/* El resto de estilos de texto para #can se mantienen del código original */
- 
-#film {
-    position: absolute;
-    top: 35px;
-    left: 160px;
-    width: 150px;
-    overflow: hidden;
-    transition: all 1s;
-}
- 
-#film:hover {
-    width: 560px;
-}
- 
-#film:hover ul {
-    transform: translatex(0px);
-}
- 
-ul {
-    transform: translatex(-450px);
-    transition: all 1s;
-    width: 560px;
-    height: 166px;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    border-style: solid;
-    border-width: 17px 0px;
-    /* Imagen externa para el borde del carrete */
-    border-image: url(https://i.imgur.com/Sm9CNai.png) 27 fill repeat stretch;
-}
- 
-ul li {
-    display: block;
-    width: 160px;
-    height: 160px;
-    margin: 3px 0px 20px 20px;
-    background: #000;
-    float: left;
-}
- 
-ul li a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-size: cover; /* Cambiado de contain a cover para mejor visualización */
-}
- 
-/* Imágenes de las películas cargadas como background en CSS */
-ul li:nth-child(1) a { background-image: url('https://cinechile.cl/wp-content/uploads/2025/05/1-dbea47ef-wpcf_370x516.jpeg'); }
-ul li:nth-child(2) a { background-image: url('https://cinechile.cl/wp-content/uploads/2019/01/taxiparatres-wpcf_370x516.jpg'); }
-ul li:nth-child(3) a { background-image: url('https://cinechile.cl/wp-content/uploads/2019/01/unamujerfantastica-wpcf_370x516.jpg'); }
+
+/* Lado Izquierdo - Inclinaciones y perspectiva */
+.left { margin-right: 35px; }
+.left .cinema-row { transform: skew(-15deg); margin: 0 6px; display: flex; }
+.left .seat { transform: skew(20deg); margin-top: -32px; }
+.left .row-2 { transform: skew(-13deg); }
+.left .row-2 .seat { transform: skew(18deg); }
+.left .row-3 { transform: skew(-12deg); }
+.left .row-3 .seat { transform: skew(16deg); }
+.left .row-4 { transform: skew(-11deg); }
+.left .row-4 .seat { transform: skew(15deg); }
+.left .row-5 { transform: skew(-10deg); }
+.left .row-5 .seat { transform: skew(12deg); }
+.left .row-6 { transform: skew(-9deg); }
+.left .row-6 .seat { transform: skew(10deg); }
+.left .row-7 { transform: skew(-7deg); }
+.left .row-7 .seat { transform: skew(8deg); }
+
+
+/* Lado Derecho - Inclinaciones y perspectiva */
+.right { margin-left: 35px; }
+.right .cinema-row { transform: skew(7deg); margin: 0 6px; display: flex; }
+.right .seat { transform: skew(-8deg); margin-top: -32px; }
+.right .row-2 { transform: skew(9deg); }
+.right .row-2 .seat { transform: skew(-10deg); }
+.right .row-3 { transform: skew(10deg); }
+.right .row-3 .seat { transform: skew(-12deg); }
+.right .row-4 { transform: skew(11deg); }
+.right .row-4 .seat { transform: skew(-15deg); }
+.right .row-5 { transform: skew(12deg); }
+.right .row-5 .seat { transform: skew(-16deg); }
+.right .row-6 { transform: skew(13deg); }
+.right .row-6 .seat { transform: skew(-18deg); }
+.right .row-7 { transform: skew(15deg); }
+.right .row-7 .seat { transform: skew(-20deg); }
