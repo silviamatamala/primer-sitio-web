@@ -3,100 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="docs/elementos-web/logo-animado.gif" type="image/gif">
+    <title>CINEMA - Producción por Década</title>
+    <link rel="stylesheet" href="style.css">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap" rel="stylesheet">
-    
-    <title>El cine chileno: una mirada retrospectiva </title>
-    
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    
-    <style>
-        #vis.vega-embed {
-            width: 100%;
-            display: flex;
-        }
-
-        #vis.vega-embed details, #vis.vega-embed details summary {
-            position: relative;
-        }
-    </style>
-    
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 </head>
 <body>
-    
+
     <div class="cinema-count-screen">
-        <div class="cinema-count animated">
-            <i>
-                <i></i>
-            </i>
-            <span id="numbercnt" class="number">10</span>
+        <div class="count-box">
+            <span id="numbercnt">10</span>
         </div>
+        <div class="text-start">HAGA CLIC PARA SALTAR</div>
     </div>
+
+    <main>
+        
+        <section id="smooth">
+            <div class="header-container">
+                <img id="logo1" data-gif-src="elementos-web/logo-animado.gif" src="" alt="Logo Animado" class="logo">
+                <div class="logos-secondary">
+                    <img src="elementos-web/logo2.png" alt="Logo Secundario 2" class="logo show">
+                    <img src="elementos-web/logo3.png" alt="Logo Secundario 3" class="logo show">
+                </div>
+                <h1 class="titulo">PRODUCCIÓN DE CINE Y TELEVISIÓN</h1>
+            </div>
+        </section>
+
+        <section class="section-graph">
+            <h2 class="subtitulo imagen">🎬 Producción de Obras de Ficción y Documentales por Década</h2>
+            <div id="vis" class="vega-embed imagen"></div>
+        </section>
+
+        <section class="section-seats">
+            <h2 class="subtitulo imagen">Butacas Vendidas</h2>
+            <div class="seats-grid">
+                <div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div>
+                <div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div>
+                <div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div>
+                <div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div>
+                <div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div>
+                <div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div>
+                <div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div>
+                <div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div>
+                <div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div>
+                <div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div>
+                <div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div>
+                <div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div>
+                <div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div>
+                <div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div>
+                <div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div>
+                <div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div>
+                <div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div>
+                <div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div>
+                <div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div>
+                <div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div>
+            </div>
+        </section>
+        
+        <section class="section-videos">
+            <div class="video-item imagen">
+                <video src="elementos-web/video1.mp4" muted autoplay loop playsinline></video>
+                <p>Descripción del Video 1</p>
+            </div>
+            <div class="video-item imagen">
+                <video src="elementos-web/video2.mp4" muted autoplay loop playsinline></video>
+                <p>Descripción del Video 2</p>
+            </div>
+        </section>
+
+    </main>
     
-    <header>
-        <div class="contenedor_logo">
-            <img src="elementos-web/logo-animado.gif" data-gif-src="elementos-web/logo-animado.gif" id="logo1" alt="Logo">
-        </div>
-    </header>
-    
-    <section id="intro">
-        <h1 class="titulo_mayor">
-            Siempre los mismos gatos: Radiografía del cine chileno
-        </h1>
-        <p id="links_rrss">
-            Por
-            <a href="https://www.instagram.com/renatoquevedo_/" target="_blank">Renato Quevedo</a>
-            <a href="https://www.instagram.com/silviamtml/" target="_blank">Silvia Matamala</a>
-            <a href="https://www.instagram.com/_blancarios/" target="_blank">Blanca Ríos</a>
-        </p>
-
-        <h2 class="parrafo-butacas-h2">
-            Si la cantidad de los documentales chilenos de la última década se sentaran en una sala de cine, ocuparían todos los asientos blancos, dejando los rojos para todas las películas de ficción:
-        </h2>
-    </section>
-
-    <div class="theatre">
-        <div class="cinema-seats left">
-            <div class="cinema-row row-1"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-2"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-3"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-4"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-5"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-6"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-7"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-        </div>
-
-        <div class="cinema-seats right">
-             <div class="cinema-row row-1"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-2"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-3"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-4"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-5"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-6"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-7"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-        </div>
+    <div id="links_rrss">
+        <a href="#smooth">↑ Inicio</a>
+        <a href="#">Facebook</a>
+        <a href="#">Twitter</a>
     </div>
-    
-    <section id="analisis-butacas">
-        
-        <h1 class="analisis-h1">
-            Documentales versus Ficción
-        </h1>
-        
-        <h2 class="analisis-h2">
-            Un 52,9 % de todas las películas chilenas, estrenadas entre el 2010 y el 2020, son documentales. En los últimos 25 años los documentales han sobrepasado a las películas de ficción. Pero, ¿serías capaz de mencionar 10 documentales chilenos? O ¿te resulta más fácil nombrar 10 películas chilenas de ficción?
-        </h2>
-    </section>
 
-    <script src="script.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
