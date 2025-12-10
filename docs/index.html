@@ -39,19 +39,19 @@
         </header>
         <section id="intro">
             <h1 class="titulo_mayor">
-                Siempre los mismos gatos: Radiografía del cine chileno 
+                ¿Conocemos <span>nuestro</span>
+                cine?
            
             </h1>
             <p id="links_rrss">
                 Por
-                <a href=https://www.instagram.com/renatoquevedo_/ target="_blank">Renato Quevedo,</a>
-                <a href=https://www.instagram.com/silviamtml/ target="_blank">Silvia Matamala y </a>
+                <a href=https://www.instagram.com/renatoquevedo_/ target="_blank">Renato Quevedo</a>
+                <a href=https://www.instagram.com/silviamtml/ target="_blank">Silvia Matamala</a>
                 <a href=https://www.instagram.com/_blancarios/ target="_blank">Blanca Ríos</a>
             </p>
         </section>
         
-        <!-- Nueva sección de butacas -->
-        <section id="butacas-section">
+        <section id="cinema-section">
             <p class="parrafo_v1">Si la cantidad de los documentales chilenos de la última década se sentaran en una sala de cine, ocuparían todos los asientos blancos, dejando los rojos para todas las películas de ficción.</p>
             
             <div class="theatre">
@@ -65,6 +65,7 @@
                         <div class="seat"></div>
                         <div class="seat"></div>
                     </div>
+
                     <div class="cinema-row row-2">
                         <div class="seat"></div>
                         <div class="seat"></div>
@@ -74,6 +75,7 @@
                         <div class="seat"></div>
                         <div class="seat"></div>
                     </div>
+
                     <div class="cinema-row row-3">
                         <div class="seat"></div>
                         <div class="seat"></div>
@@ -83,6 +85,7 @@
                         <div class="seat"></div>
                         <div class="seat"></div>
                     </div>
+
                     <div class="cinema-row row-4">
                         <div class="seat"></div>
                         <div class="seat"></div>
@@ -92,6 +95,7 @@
                         <div class="seat"></div>
                         <div class="seat"></div>
                     </div>
+
                     <div class="cinema-row row-5">
                         <div class="seat"></div>
                         <div class="seat"></div>
@@ -101,6 +105,7 @@
                         <div class="seat"></div>
                         <div class="seat"></div>
                     </div>
+
                     <div class="cinema-row row-6">
                         <div class="seat"></div>
                         <div class="seat"></div>
@@ -110,6 +115,7 @@
                         <div class="seat"></div>
                         <div class="seat"></div>
                     </div>
+
                     <div class="cinema-row row-7">
                         <div class="seat"></div>
                         <div class="seat"></div>
@@ -120,6 +126,7 @@
                         <div class="seat"></div>
                     </div>
                 </div>
+
                 <div class="cinema-seats right">
                     <div class="cinema-row row-1">
                         <div class="seat"></div>
@@ -130,6 +137,7 @@
                         <div class="seat"></div>
                         <div class="seat"></div>
                     </div>
+
                     <div class="cinema-row row-2">
                         <div class="seat"></div>
                         <div class="seat"></div>
@@ -139,6 +147,7 @@
                         <div class="seat"></div>
                         <div class="seat"></div>
                     </div>
+
                     <div class="cinema-row row-3">
                         <div class="seat"></div>
                         <div class="seat"></div>
@@ -148,6 +157,7 @@
                         <div class="seat"></div>
                         <div class="seat"></div>
                     </div>
+
                     <div class="cinema-row row-4">
                         <div class="seat"></div>
                         <div class="seat"></div>
@@ -157,6 +167,7 @@
                         <div class="seat"></div>
                         <div class="seat"></div>
                     </div>
+
                     <div class="cinema-row row-5">
                         <div class="seat"></div>
                         <div class="seat"></div>
@@ -166,6 +177,7 @@
                         <div class="seat"></div>
                         <div class="seat"></div>
                     </div>
+
                     <div class="cinema-row row-6">
                         <div class="seat"></div>
                         <div class="seat"></div>
@@ -175,6 +187,7 @@
                         <div class="seat"></div>
                         <div class="seat"></div>
                     </div>
+
                     <div class="cinema-row row-7">
                         <div class="seat"></div>
                         <div class="seat"></div>
@@ -187,158 +200,6 @@
                 </div>
             </div>
         </section>
-      
-        
-        <section>
-            <p class="parrafo_v1">Un 52,9 % de todas las películas chilenas, estrenadas entre el 2010 y el 2020, son documentales. En los últimos 25 años los documentales han sobrepasado a las películas de ficción. Pero, ¿serías capaz de mencionar 10 documentales chilenos? O ¿te resulta más fácil nombrar 10 películas chilenas de ficción?</p>
-<!-- Gráfico: Producción por década -->
-        <section id="grafico-decada">
-            <h2 class="titulo_seccion">Producción de documentales vs ficción por década</h2>
-            <p class="parrafo_v1">Esta visualización muestra la evolución de la producción cinematográfica chilena a lo largo de las décadas, desglosada entre documentales y películas de ficción.</p>
-            <div id="vis"></div>
-        </section>
-
-        <script type="text/javascript">
-            // Especificación de Vega-Lite para el gráfico
-            const spec = {
-                "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-                "description": "Producción de películas chilenas por década",
-                "width": "container",
-                "height": 400,
-                "data": {
-                    "url": "tu_datos.csv" // Reemplaza con la URL de tus datos
-                },
-                "mark": "bar",
-                "encoding": {
-                    "x": {
-                        "field": "década",
-                        "type": "ordinal",
-                        "title": "Década"
-                    },
-                    "y": {
-                        "field": "cantidad",
-                        "type": "quantitative",
-                        "title": "Cantidad de películas"
-                    },
-                    "color": {
-                        "field": "tipo",
-                        "type": "nominal",
-                        "title": "Tipo",
-                        "scale": {
-                            "domain": ["Documental", "Ficción"],
-                            "range": ["#FF0000", "#FFFFFF"] // Rojo para ficción, blanco para documental
-                        }
-                    }
-                }
-            };
-
-            // Embed the visualization in the container with id "vis"
-            vegaEmbed('#vis', spec);
-        </script>
-    </body>
-</html>  
- <p class="parrafo_v1"> Esta observación se puede relacionar con el éxito que ha tenido la directora Maite Alberdi en sus obras documentales, llegando incluso a los premios Oscar. Quizás Chile tiene una gran oportunidad en este mundo y Alberdi puede ser una puerta de las grandes ligas para los documentalistas chilenos.
-     </p>
-    <!-- Sección del gráfico de distribución por género -->
-        <section id="distribucion-genero">
-            <h2 class="titulo_seccion">Distribución por género en el cine chileno</h2>
-            <p class="parrafo_v1">Este gráfico muestra la distribución de películas chilenas por género, revelando las tendencias y preferencias en la producción cinematográfica nacional.</p>
-            <div id="vis-genero"></div>
-        </section>
-
-        <script type="text/javascript">
-            // Especificación Vega-Lite para el gráfico de género
-            const specGenero = {
-                "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-                "description": "Distribución de películas chilenas por género",
-                "width": "container",
-                "height": 500,
-                "data": {
-                    "url": "data/generos.csv" // Ajusta esta ruta según tu estructura de archivos
-                },
-                "transform": [
-                    {"filter": "datum.cantidad > 0"},
-                    {"calculate": "datum.cantidad/total", "as": "porcentaje"}
-                ],
-                "mark": {
-                    "type": "arc",
-                    "innerRadius": 50,
-                    "outerRadius": 200
-                },
-                "encoding": {
-                    "theta": {
-                        "field": "cantidad",
-                        "type": "quantitative",
-                        "stack": true
-                    },
-                    "color": {
-                        "field": "genero",
-                        "type": "nominal",
-                        "title": "Género",
-                        "scale": {
-                            "scheme": "category20"
-                        }
-                    },
-                    "tooltip": [
-                        {"field": "genero", "type": "nominal", "title": "Género"},
-                        {"field": "cantidad", "type": "quantitative", "title": "Cantidad"},
-                        {"field": "porcentaje", "type": "quantitative", "title": "Porcentaje", "format": ".1%"}
-                    ]
-                },
-                "view": {"stroke": null}
-            };
-
-            // Embed the visualization in the container with id "vis-genero"
-            vegaEmbed('#vis-genero', specGenero);
-        </script>
-
-        <!-- Pie de página -->
-        <footer>
-            <div class="footer-content">
-                <p>©️ 2024 El cine chileno: una mirada retrospectiva</p>
-                <p>Datos: Fuente de datos cinematográficos chilenos</p>
-                <p>Visualizaciones creadas con Vega-Lite</p>
-            </div>
-        </footer>
-
-        <script>
-            // Script para el contador animado (si es necesario)
-            document.addEventListener('DOMContentLoaded', function() {
-                const counter = document.getElementById('numbercnt');
-                if (counter) {
-                    let count = 0;
-                    const target = 10;
-                    const duration = 2000; // 2 segundos
-                    const increment = target / (duration / 16); // 60fps
-                    
-                    function updateCounter() {
-                        if (count < target) {
-                            count += increment;
-                            counter.textContent = Math.floor(count);
-                            requestAnimationFrame(updateCounter);
-                        } else {
-                            counter.textContent = target;
-                        }
-                    }
-                    updateCounter();
-                }
-                
-                // Script para animar las butacas
-                const seats = document.querySelectorAll('.seat');
-                seats.forEach((seat, index) => {
-                    // Animar asientos con delay escalonado
-                    setTimeout(() => {
-                        seat.classList.add('animated');
-                    }, index * 50);
-                });
-            });
-        </script>
-    </body>
-</html>
-<p class="parrafo_v1"> Si hacemos un zoom in a los últimos años, desde 1990 hasta la actualidad, se puede ver en detalle como el documental ha ido superando a la ficción. El 2008 ocurrió un cambio en la delantera: se estrenaron 40 películas de ficción y 26 documentales. Sin embargo, al año siguiente la brecha no fue tan significativa y estuvieron casi a la par ambas categorías. Desde el 2010 hasta el 2015, se desarrollaron cinco años de subidas y bajadas entre el ganador, la cual fue interrumpida por una clara tendencia de los documentales hasta la actualidad, o en realidad hasta el año pasado. </p>
-<p class="parrafo_v1"> Sin duda falta fomentar el cine documental en Chile. Si quieres empezar a conocer este mundo o recomendarle a algún conocido hacerlo, te compartimos 6 documentales chilenos que valen la pena echarles un vistazo. Recuerda que la mayoría de las obras chilenas se encuentran gratuitas en Ondamedia.cl</p>        
-            
-        
         <main class="page-content">
             <div class="card">
                 <div class="content">
@@ -2364,8 +2225,26 @@ Se puede ver una clara jerarquía entre las temáticas. A lo largo de los años,
             }
             )(vegaEmbed);
         </script>
-        <script src=https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="script.js"></script>
+        
+        <!-- ✓ CAMBIO REALIZADO: Script para marcar asientos de cine -->
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                // Convertimos los asientos en un array real
+                const seats = Array.from(document.querySelectorAll(".seat"));
+
+                const totalToMark = 52;
+
+                // Mezclamos el array (aleatorio)
+                const shuffled = seats.sort(() => Math.random() - 0.5);
+
+                // Marcamos los primeros 52 de la lista ya mezclada
+                shuffled.slice(0, totalToMark).forEach(seat => {
+                    seat.classList.add("active");
+                });
+            });
+        </script>
     </body>
 </html>
 <p class="parrafo_v3">El primer gran hito ocurrió en 2009,
