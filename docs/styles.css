@@ -7,6 +7,9 @@
     --e: cubic-bezier(0.19, 1, 0.22, 1);
     --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --font-serif: 'Anton', sans-serif;
+    --color-primary: #5A0F05; /* Rojo oscuro de títulos */
+    --color-background: #F6F4ED; /* Beige claro/Fondo principal */
+    --color-accent: #f0781d; /* Naranja/Ámbar para hover */
 }
 
 /* 2. RESET Y BASE */
@@ -16,7 +19,7 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: #F6F4ED;
+    background-color: var(--color-background);
     height: 100%;
     margin: 0;
     padding: 0;
@@ -30,7 +33,7 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #F6F4ED;
+    background-color: var(--color-background);
     height: 100%;
     overflow-x: hidden;
     overflow-y: visible;
@@ -38,7 +41,7 @@ body {
 
 h1, h2, h3 {
     font-family: var(--font-serif);
-    color: #5A0F05;
+    color: var(--color-primary);
 }
 
 .titulo_mayor {
@@ -59,7 +62,7 @@ p, .parrafo_v3 {
 
 /* 3. HEADER Y LOGO */
 header {
-    background-color: #F6F4ED;
+    background-color: var(--color-background);
     padding: 10px;
     display: flex;
     align-items: center;
@@ -179,7 +182,7 @@ header {
 }
 
 #links_rrss a {
-    color: #5A0F05;
+    color: var(--color-primary);
     text-decoration: none;
     font-weight: bold;
     margin: 0 5px;
@@ -189,7 +192,7 @@ header {
 }
 
 #links_rrss a:hover {
-    border-bottom: 2px solid #5A0F05;
+    border-bottom: 2px solid var(--color-primary);
 }
 
 /* 6. VISUALIZACIÓN DE BUTACAS (CINEMA SEATS) */
@@ -199,6 +202,7 @@ header {
     margin: 80px auto; 
     display: flex;
     justify-content: center;
+    /* Perspectiva y rotación para el efecto 3D */
     transform: perspective(1000px) rotateX(15deg);
     padding: 50px 0;
     width: fit-content;
@@ -217,13 +221,19 @@ header {
     width: 35px;
     height: 50px;
     border-radius: 7px;
+    /* Gradiente para simular textura/relieve */
     background: linear-gradient(to top, #761818, #761818, #761818, #B54041, #F3686A);
-    margin-bottom: 10px;
+    
+    /* MODIFICACIONES PARA AUMENTAR EL ESPACIADO */
+    margin-bottom: 15px; /* Espaciado vertical entre filas (aumentado) */
+    margin-left: 5px;   /* Espaciado horizontal entre butacas */
+    margin-right: 5px;  /* Espaciado horizontal entre butacas */
+
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     transition: background 0.3s ease;
 }
 
-/* Efectos de Hover y Active (Clase 'active' aplicada por JavaScript) */
+/* Efectos de Hover y Active */
 .cinema-seats .seat:hover:before {
     content: '';
     position: absolute;
@@ -240,7 +250,8 @@ header {
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.6);
+    /* Mantiene el color blanco/claro para simular la ocupación */
+    background: rgba(255, 255, 255, 0.6); 
     border-radius: 7px;
 }
 
