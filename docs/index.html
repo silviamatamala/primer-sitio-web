@@ -1,98 +1,325 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="docs/elementos-web/logo-animado.gif" type="image/gif">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap" rel="stylesheet">
-    
-    <title>El cine chileno: una mirada retrospectiva </title>
-    
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    
-    <style>
-        #vis.vega-embed {
-            width: 100%;
-            display: flex;
-        }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="docs/elementos-web/logo-animado.gif" type="image/gif">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap" rel="stylesheet">
+    
+    <title>El cine chileno: una mirada retrospectiva </title>
+    
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+    <style>
+        /* Estilos para el contenedor de gráficos Vega-Embed */
+        #vis.vega-embed {
+            width: 100%;
+            display: flex;
+        }
 
-        #vis.vega-embed details, #vis.vega-embed details summary {
-            position: relative;
-        }
-    </style>
-    
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+        #vis.vega-embed details, #vis.vega-embed details summary {
+            position: relative;
+        }
+        
+        /* Estilos específicos para la nueva visualización de carrusel */
+        .carousel-container {
+            width: 100%;
+            max-width: 500px;
+            height: 70vh;
+            position: relative;
+            perspective: 1000px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .carousel-track {
+            width: 450px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+    </style>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
 </head>
 <body>
-    
-    <div class="cinema-count-screen">
-        <div class="cinema-count animated">
-            <i>
-                <i></i>
-            </i>
-            <span id="numbercnt" class="number">10</span>
-        </div>
-    </div>
-    
-    <header>
-        <div class="contenedor_logo">
-            <img src="elementos-web/logo-animado.gif" data-gif-src="elementos-web/logo-animado.gif" id="logo1" alt="Logo">
-        </div>
-    </header>
-    
-    <section id="intro">
-        <h1 class="titulo_mayor">
-            Siempre los mismos gatos: Radiografía del cine chileno
-        </h1>
-        <p id="links_rrss">
-            Por
-            <a href="https://www.instagram.com/renatoquevedo_/" target="_blank">Renato Quevedo</a>
-            <a href="https://www.instagram.com/silviamtml/" target="_blank">Silvia Matamala</a>
-            <a href="https://www.instagram.com/_blancarios/" target="_blank">Blanca Ríos</a>
-        </p>
+    
+    <div class="cinema-count-screen">
+        <div class="cinema-count animated">
+            <i>
+                <i></i>
+            </i>
+            <span id="numbercnt" class="number">10</span>
+        </div>
+    </div>
+    
+    <header>
+        <div class="contenedor_logo">
+            <img src="elementos-web/logo-animado.gif" data-gif-src="elementos-web/logo-animado.gif" id="logo1" alt="Logo">
+        </div>
+    </header>
+    
+    <section id="intro">
+        <h1 class="titulo_mayor">
+            Siempre los mismos gatos: Radiografía del cine chileno
+        </h1>
+        <p id="links_rrss">
+            Por
+            <a href="https://www.instagram.com/renatoquevedo_/" target="_blank">Renato Quevedo</a>
+            <a href="https://www.instagram.com/silviamtml/" target="_blank">Silvia Matamala</a>
+            <a href="https://www.instagram.com/_blancarios/" target="_blank">Blanca Ríos</a>
+        </p>
 
-        <h2 class="parrafo-butacas-h2">
-            Si la cantidad de los documentales chilenos de la última década se sentaran en una sala de cine, ocuparían todos los asientos blancos, dejando los rojos para todas las películas de ficción:
-        </h2>
-    </section>
+        <h2 class="parrafo-butacas-h2">
+            Si la cantidad de los documentales chilenos de la última década se sentaran en una sala de cine, ocuparían todos los asientos blancos, dejando los rojos para todas las películas de ficción:
+        </h2>
+    </section>
 
-    <div class="theatre">
-        <div class="cinema-seats left">
-            <div class="cinema-row row-1"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-2"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-3"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-4"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-5"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-6"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-7"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-        </div>
+    <div class="theatre">
+        <div class="cinema-seats left">
+            <div class="cinema-row row-1"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-2"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-3"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-4"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-5"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-6"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-7"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+        </div>
 
-        <div class="cinema-seats right">
-             <div class="cinema-row row-1"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-2"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-3"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-4"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-5"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-6"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-7"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-        </div>
-    </div>
-    
-    <section id="analisis-butacas">
-        <h1 class="analisis-h1">
-            Documentales versus Ficción
-        </h1>
-        <h2 class="analisis-h2">
-            Un 52,9 % de todas las películas chilenas, estrenadas entre el 2010 y el 2020, son documentales. En los últimos 25 años los documentales han sobrepasado a las películas de ficción. Pero, ¿serías capaz de mencionar 10 documentales chilenos? O ¿te resulta más fácil nombrar 10 películas chilenas de ficción?
-        </h2>
-    </section>
+        <div class="cinema-seats right">
+            <div class="cinema-row row-1"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-2"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-3"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-4"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-5"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-6"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-7"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+        </div>
+    </div>
+    
+    <section id="analisis-butacas">
+        <h1 class="analisis-h1">
+            Documentales versus Ficción
+        </h1>
+        <h2 class="analisis-h2">
+            Un 52,9 % de todas las películas chilenas, estrenadas entre el 2010 y el 2020, son documentales. En los últimos 25 años los documentales han sobrepasado a las películas de ficción. Pero, ¿serías capaz de mencionar 10 documentales chilenos? O ¿te resulta más fácil nombrar 10 películas chilenas de ficción?
+        </h2>
+        
+        <h2 class="parrafo_general">
+            Esta observación se puede relacionar con el éxito que ha tenido la directora Maite Alberdi en sus obras documentales, llegando incluso a los premios Oscar. Quizás Chile tiene una gran oportunidad en este mundo y Alberdi puede ser una puerta de las grandes ligas para los documentalistas chilenos.
+        </h2>
+        
+        <div id="vis-decada-blanca" class="chart-container">
+             <h2 class="parrafo_general" style="color: var(--color-title-red); font-weight: bold;">
+                 [MARCADOR: GRÁFICO prod-decada blanca.html]
+             </h2>
+        </div>
+        
+        <h2 class="parrafo_general">
+            Si hacemos un zoom in a los últimos años, desde 1990 hasta la actualidad, se puede ver en detalle como el documental ha ido superando a la ficción. El 2008 ocurrió un cambio en la delantera: se estrenaron 40 películas de ficción y 26 documentales. Sin embargo, al año siguiente la brecha no fue tan significativa y estuvieron casi a la par ambas categorías. Desde el 2010 hasta el 2015, se desarrollaron cinco años de subidas y bajadas entre el ganador, la cual fue interrumpida por una clara tendencia de los documentales hasta la actualidad, o en realidad hasta el año pasado.
+        </h2>
+        
+        <h2 class="parrafo_general">
+            Sin duda falta fomentar el cine documental en Chile. Si quieres empezar a conocer este mundo o recomendarle a algún conocido hacerlo, te compartimos 6 documentales chilenos que valen la pena echarles un vistazo. Recuerda que la mayoría de las obras chilenas se encuentran gratuitas en Ondamedia.cl
+        </h2>
+    </section>
 
-    <section id="decada-blanca-vis">
+    <section id="documentales-recomendados">
+        <div class="main-container">
+            <div class="carousel-section">
+                <div class="carousel-container">
+                    <button class="nav-arrow up">
+                        <img src="assets/top.png" alt="Up">
+                    </button>
+                    <div class="carousel-track">
+                        <div class="card" data-index="0">
+                            <img src="https://m.media-amazon.com/images/S/pv-target-images/f67bd3ad0d68b62fa4355009fce4d3119496ee66b19d12cb771d8a2fd2214fcc.jpg" alt="Lemebel">
+                        </div>
+                        <div class="card" data-index="1">
+                            <img src="https://images.mubicdn.net/images/film/149850/cache-126856-1745492649/image-w1280.jpg?size=800x" alt="Surire">
+                        </div>
+                        <div class="card" data-index="2">
+                            <img src="https://images.mubicdn.net/images/film/126678/cache-119711-1745492521/image-w1280.jpg?size=800x" alt="Allende mi abuelo Allende">
+                        </div>
+                        <div class="card" data-index="3">
+                            <img src="https://m.media-amazon.com/images/S/pv-target-images/f7fdda5347f13873376fc776c2c35891b337386ac9d5906740940db001875859.png" alt="El salvavidas">
+                        </div>
+                        <div class="card" data-index="4">
+                            <img src="https://m.media-amazon.com/images/S/pv-target-images/5270f965ee8a3dbfe36f8e6e411a89db0bb32c0495f10811c08a94a2117b92ba.jpg" alt="Sergio Larraín: El instante eterno">
+                        </div>
+                        <div class="card" data-index="5">
+                            <img src="https://crop-platform-static.cdn.mdstrm.com/show/images/573f76742a1b8a2b09aace7d_6717b8e254a2ddcdd680b705_1729611384833.jpg?auto=format&w=600&h=315&fit=crop&crop=faces" alt="Malqueridas">
+                        </div>
+                    </div>
+                    <button class="nav-arrow down">
+                        <img src="https://ik.imagekit.io/gopichakradhar/icons/down.png?updatedAt=1754290523249" alt="Down">
+                    </button>
+                </div>
+            </div>
+    
+            <div class="controls-section">
+                <div class="nav-controls">
+                    <button class="nav-arrow up">
+                        <img src="https://ik.imagekit.io/gopichakradhar/icons/top.png?updatedAt=1754290522765" alt="Up">
+                    </button>
+                    <button class="nav-arrow down">
+                        <img src="https://ik.imagekit.io/gopichakradhar/icons/down.png?updatedAt=1754290523249" alt="Down">
+                    </button>
+                </div>
+    
+                <div class="member-info">
+                    <h2 class="member-name">Emily Kim</h2>
+                    <p class="member-role">Founder</p>
+                </div>
+    
+                <div class="dots">
+                    <div class="dot active" data-index="0"></div>
+                    <div class="dot" data-index="1"></div>
+                    <div class="dot" data-index="2"></div>
+                    <div class="dot" data-index="3"></div>
+                    <div class="dot" data-index="4"></div>
+                    <div class="dot" data-index="5"></div>
+                </div>
+            </div>
+        </div>
+        <a href="https://gopichakradhar.me" target="_blank" id="super-btn" title="Visit gopichakradhar.me">
+            <img src="https://ik.imagekit.io/gopichakradhar/assets/super.jpg?updatedAt=1748004690247" alt="Super" />
+        </a>
+    </section>
+
+    <section id="analisis-ficcion-documental">
+        <h2 class="parrafo_general">
+            El cine chileno ha reescrito su propia historia, pasando de ser un arte de consumo casi exclusivamente local a consolidarse como una fuerza internacional en ascenso.
+            Los gráficos lo demuestran. El giro no fue uniforme, sino que se impulsó a través de dos rutas distintas: la ficción y el documental. El análisis de ambas trayectorias demuestra que Chile tiene hoy dos motores distintos para proyectar su cinematografía al mundo.
+        </h2>
+        
+        <div id="vis-evolucion-ficcion" class="chart-container">
+             <h2 class="parrafo_general" style="color: var(--color-title-red); font-weight: bold;">
+                 [MARCADOR: GRÁFICO evolucion_peliculas_FICCIÓN.html]
+             </h2>
+        </div>
+        
+        <h2 class="parrafo_general">
+            El éxito de la ficción chilena en el extranjero no ha sido un crecimiento lento. Su expansión llegó en el aumento de estrenos y que se han concentrado en años específicos.
+            
+            El desarrollo de las películas de ficción en el ámbito internacional ha sido de forma repentina y depende enteramente de los grandes momentos de reconocimiento. La expansión crece de golpe cuando las películas son nominadas en los festivales más importantes o cuando ganan un galardón. Este modelo de "salto por prestigio" se convirtió en la principal estrategia para que las producciones chilenas pudieran ingresar a mercados saturados. La razón es simple: una nominación de alto perfil funciona como un sello de calidad para el desarrollo de cada película.
+        </h2>
+        
+        <div class="youtube-trailer">
+             <iframe width="560" height="315" src="https://www.youtube.com/embed/0XJSiAZtfzE?si=20mnq-Qq4YDH5z" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        
+        <h2 class="parrafo_general">
+            "La Nana" (2009) de Sebastián Silva es la prueba de este fenómeno. Su nominación a los Globos de Oro de 2010 en la categoría de Mejor Película Extranjera no fue solo un honor, sino que fue la llave que abrió las puertas de la distribución global. Esto se tradujo en un auge sostenido en los estrenos internacionales que se hicieron evidentes en el gráfico desde 2008 hasta 2018. Además de películas como “Una mujer fantástica” (2017) de Sebastián Lelio y su nominación a Mejor Película Extranjera en los Premios Óscar, demuestran que la ficción chilena podía competir y obtener ganancias, que validó a toda una generación de cineastas y atrayendo nuevas inversiones al sector.
+            
+            Este vuelco de prestigio tiene un efecto de arrastre fundamental. La película premiada o nominada regresa a Chile con una fama mayor, lo que inmediatamente logra despertar el interés del público. El reconocimiento global funciona como el mejor marketing para la película, que garantiza una mejor taquilla y demuestra que las producciones chilenas que triunfan afuera también pueden tener éxito en casa. Esto consolida un modelo donde el prestigio es el detonante de la distribución tanto internacional como local.
+        </h2>
+        
+        <div id="vis-evolucion-documentales" class="chart-container">
+             <h2 class="parrafo_general" style="color: var(--color-title-red); font-weight: bold;">
+                 [MARCADOR: GRÁFICO evolucion_peliculas_DOCUMENTALES.html]
+             </h2>
+        </div>
+        
+        <h2 class="parrafo_general">
+            El análisis de los documentales chilenos revela un patrón distinto al de un crecimiento constante. La presencia en el extranjero es impredecible. Esta situación significa que no existe una base de estrenos garantizada año tras año. Aunque el documental tiene prestigio, el número puede caer abruptamente a cero, incluso después de un año de éxito.
+            
+            La directora Maite Alberdi ha sido una de las figuras fundamentales para representar e impulsar los aumentos del género documental en Chile. Películas como “El agente topo” (2020) y “La memoria infinita” (2023) han sido nominadas a los premios Óscar en la categoría de Mejor Documental y, sin duda, han sido hitos claves en el cine nacional. Su éxito continuado ha ayudado a establecer la credibilidad en la esfera global.
+        </h2>
+
+        <h2 class="parrafo_general">
+            Cuando el documental chileno llega al mercado, tiene una alta probabilidad de conseguir distribución y audiencia. Es el impulso necesario para aumentar el reconocimiento del género tanto a nivel nacional como internacional.
+            
+            Para comprender la magnitud, el siguiente paso es trazar la geografía del éxito. A continuación, el mapa de estrenos internacionales permite ver exactamente dónde ha aterrizado esta producción premiada, revelando los países y festivales que más han adoptado y reconocido el nuevo cine chileno.
+        </h2>
+        
+        <div id="vis-mapa-estrenos" class="chart-container">
+             <h2 class="parrafo_general" style="color: var(--color-title-red); font-weight: bold;">
+                 [MARCADOR: GRÁFICO Mapa-de-estrenos.html]
+             </h2>
+        </div>
+    </section>
+
+    <section id="ticket-cine-vis">
+        <div class="container ticket-container">
+            <div class="left"><span class="rotate">A 660346</span></div>
+            <div class="midden"><span class="cinema">ENTRADA AL CINE</span><hr><span class="price"> Elige tu género favorito</span><hr class="space">
+                <span class="admit">CHILE</span><p> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 30" width="160" height="30">
+                    <rect x="0" y="0" width="30" height="30" fill="none" />
+                    <polygon points="15,0 18,10 30,10 20,17 23,30 15,22 7,30 10,17 0,10 12,10" fill="brown" />
+                    <rect x="40" y="0" width="30" height="30" fill="none" />
+                    <polygon points="55,0 58,10 70,10 60,17 63,30 55,22 47,30 50,17 40,10 52,10" fill="brown" />
+                    <rect x="80" y="0" width="30" height="30" fill="none" />
+                    <polygon points="95,0 98,10 110,10 100,17 103,30 95,22 87,30 90,17 80,10 92,10" fill="brown" />
+                    <rect x="120" y="0" width="30" height="30" fill="none" />
+                    <polygon points="135,0 138,10 150,10 140,17 143,30 135,22 127,30 130,17 120,10 132,10" fill="brown" />
+                    <rect x="160" y="0" width="30" height="30" fill="none" />
+                    <polygon points="175,0 178,10 190,10 180,17 183,30 175,22 167,30 170,17 160,10 172,10" fill="brown" />
+                </svg></div>
+            <div class="rechts"><span class="entree">A 660346</span></div>
+        
+            <div class="camera-container">
+                <div class="wheels">
+                    <div class="round-one"></div>
+                    <div class="round-two"></div>
+                </div>
+                <div class="main-lens">
+                    <div class="main"></div>
+                    <div class="lens"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="vis-generos" class="chart-container">
+         <h2 class="parrafo_general" style="color: var(--color-title-red); font-weight: bold;">
+             [MARCADOR: GRÁFICO generos blanca.html]
+         </h2>
+    </div>
+
+    <h2 class="parrafo_general">
+        En este gráfico se despliegan los siete principales géneros en el cine chileno. Se puede ver una clara jerarquía entre las temáticas. A lo largo de los años, se demuestra que las películas históricas tienen una notable diferencia de cantidad, en comparación a las demás, doblando a la categoría que le sigue (drama) en la década del 2010. Cabe recalcar que dentro de las películas históricas se agrupan todas las que involucren procesos históricos de todo tipo en Chile o en el mundo. Es importante desmentir el mito de que “todo el cine chileno trata sobre la dictadura”. Así lo respalda un estudio de cinechile.cl : “Entre 2001 y 2023 se han estrenado 613 películas chilenas en los cines, de las cuales 92 entran en la categoría que habla de la dictadura, del golpe o de los últimos días de la Unidad Popular. Es decir, es un 14,85%”.
+        Entre el drama y el romance, se puede ver que ambas han tenido un comportamiento bastante parecido, llegando a toparse varias veces. En cuarto lugar, se encuentran las películas de acción, las cuales se diferencian en comparación a ciencia ficción y terror. Estas últimas dos tienen un desarrollo parecido, alejándose de la comedia. Además, se identifica una baja en todas las categorías desde el 2010 hasta el 2020. Incluso, las películas históricas bajan su desempeño a 150, la cual es una cifra menor de la que juntaban en los 2000.
+    </h2>
+
+    <h2 class="parrafo_general">
+        Para analizar este declive se pueden relacionar varios factores. Entre el 2010 y 2012 la mayoría de las producciones dependían de la Corporación de Fomento de la Producción (CORFO), todos los realizadores estaban a la espera de los resultados de los concursos para ganar los fondos. En 2013, CORFO se reestructuró y redujo el apoyo directamente al cine. Por otro lado, Chile se fue adentrando cada vez más a la globalización y con mejores tecnologías, por lo que se importaban muchas películas internacionales para proyectarlas en el país, provocando menos espacios para las cintas nacionales. Por esto mismo, los estándares del público aumentaron y para algunas producciones chilenas se les hizo muy costoso realizar tantas películas. Culminando la década con el Estallido Social, y luego la pandemia, provocando un estancamiento.
+        Para analizar con más profundidad este fenómeno debemos esperar que finalice, por lo menos, la década que estamos viviendo, para identificar si estos problemas se han dejado de lado o la industria sigue estancada.
+    </h2>
+
+    <section id="lata-cine-vis">
+        <div id="film">
+            <ul>
+                <li><a href="https://cinechile.cl/wp-content/uploads/2019/01/unamujerfantastica-wpcf_370x516.jpg"></a></li>
+                <li><a href="https://cinechile.cl/wp-content/uploads/2019/01/taxiparatres-wpcf_370x516.jpg"></a></li>
+                <li><a href="https://cinechile.cl/wp-content/uploads/2025/05/1-dbea47ef-wpcf_370x516.jpeg"></a></li>
+            </ul>
+        </div>
+        <div id="can">
+            <div id="topcap"></div>
+            <div id="text">
+                <p class="gold">CINE</p>
+                <p class="num">CHILENO</p>
+                <p class="mm">35mm film for color prints</p>
+            </div>
+            <div id="bottomcap"></div>
+        </div>
+    </section>
+
+    <script src="script.js"></script> 
+    <script src="carousel.js"></script> </body>
+</html>
