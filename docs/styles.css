@@ -223,7 +223,6 @@ h1, h2, h3 {
 .cinema-seats.right .row-7 .seat {
     transform: skew(-20deg);
 }
-/* ✓ CAMBIO REALIZADO: Estilos para butacas de cine */
  
 /* 3. HEADER Y LOGO */
 header {
@@ -603,71 +602,37 @@ p, .parrafo_v3 {
     height: 100%;
 }
 
-/* ✓ CAMBIO REALIZADO: Estilos para butacas de cine */
-
+/* Estilos específicos para #cinema-section (nuevas butacas) */
 #cinema-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     margin: 60px 0;
     padding: 40px 20px;
 }
 
-.theatre {
+#cinema-section .theatre {
     display: flex;
     justify-content: center;
-    align-items: center;
-    position: relative;
     width: 100%;
-    margin-top: 40px;
 }
 
-.cinema-seats {
+#cinema-section .cinema-seats {
     display: flex;
     flex-direction: column;
-    gap: 0;
 }
 
-.cinema-seats .seat {
-    cursor: pointer;
-    position: relative;
+#cinema-section .cinema-row {
+    display: flex;
 }
 
-.cinema-seats .seat:hover:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 7px;
-    z-index: 10;
-}
-
-.cinema-seats .seat.active:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 7px;
-    z-index: 10;
-}
-
-/* Left Seats */
-.left {
+#cinema-section .left {
     margin-right: 35px;
 }
 
-.left .cinema-row {
+#cinema-section .left .cinema-row {
     transform: skew(-15deg);
     margin: 0 6px;
-    display: flex;
 }
 
-.left .seat {
+#cinema-section .left .seat {
     width: 35px;
     height: 50px;
     border-radius: 7px;
@@ -676,68 +641,68 @@ p, .parrafo_v3 {
     transform: skew(20deg);
     margin-top: -32px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    position: relative;
 }
 
-.left .row-2 {
+#cinema-section .left .row-2 {
     transform: skew(-13deg);
 }
 
-.left .row-2 .seat {
+#cinema-section .left .row-2 .seat {
     transform: skew(18deg);
 }
 
-.left .row-3 {
+#cinema-section .left .row-3 {
     transform: skew(-12deg);
 }
 
-.left .row-3 .seat {
+#cinema-section .left .row-3 .seat {
     transform: skew(16deg);
 }
 
-.left .row-4 {
+#cinema-section .left .row-4 {
     transform: skew(-11deg);
 }
 
-.left .row-4 .seat {
+#cinema-section .left .row-4 .seat {
     transform: skew(15deg);
 }
 
-.left .row-5 {
+#cinema-section .left .row-5 {
     transform: skew(-10deg);
 }
 
-.left .row-5 .seat {
+#cinema-section .left .row-5 .seat {
     transform: skew(12deg);
 }
 
-.left .row-6 {
+#cinema-section .left .row-6 {
     transform: skew(-9deg);
 }
 
-.left .row-6 .seat {
+#cinema-section .left .row-6 .seat {
     transform: skew(10deg);
 }
 
-.left .row-7 {
+#cinema-section .left .row-7 {
     transform: skew(-7deg);
 }
 
-.left .row-7 .seat {
+#cinema-section .left .row-7 .seat {
     transform: skew(8deg);
 }
 
-/* Right Seats */
-.right {
+#cinema-section .right {
     margin-left: 35px;
 }
 
-.right .cinema-row {
+#cinema-section .right .cinema-row {
     transform: skew(7deg);
     margin: 0 6px;
-    display: flex;
 }
 
-.right .seat {
+#cinema-section .right .seat {
     width: 35px;
     height: 50px;
     border-radius: 7px;
@@ -746,54 +711,76 @@ p, .parrafo_v3 {
     transform: skew(-8deg);
     margin-top: -32px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    position: relative;
 }
 
-.right .row-2 {
+#cinema-section .right .row-2 {
     transform: skew(9deg);
 }
 
-.right .row-2 .seat {
+#cinema-section .right .row-2 .seat {
     transform: skew(-10deg);
 }
 
-.right .row-3 {
+#cinema-section .right .row-3 {
     transform: skew(10deg);
 }
 
-.right .row-3 .seat {
+#cinema-section .right .row-3 .seat {
     transform: skew(-12deg);
 }
 
-.right .row-4 {
+#cinema-section .right .row-4 {
     transform: skew(11deg);
 }
 
-.right .row-4 .seat {
+#cinema-section .right .row-4 .seat {
     transform: skew(-15deg);
 }
 
-.right .row-5 {
+#cinema-section .right .row-5 {
     transform: skew(12deg);
 }
 
-.right .row-5 .seat {
+#cinema-section .right .row-5 .seat {
     transform: skew(-16deg);
 }
 
-.right .row-6 {
+#cinema-section .right .row-6 {
     transform: skew(13deg);
 }
 
-.right .row-6 .seat {
+#cinema-section .right .row-6 .seat {
     transform: skew(-18deg);
 }
 
-.right .row-7 {
+#cinema-section .right .row-7 {
     transform: skew(15deg);
 }
 
-.right .row-7 .seat {
+#cinema-section .right .row-7 .seat {
     transform: skew(-20deg);
+}
+
+#cinema-section .seat:hover:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 7px;
+}
+
+#cinema-section .seat.active:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 7px;
 }
  
  
