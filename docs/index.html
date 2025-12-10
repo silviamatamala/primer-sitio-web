@@ -1,110 +1,107 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="docs/elementos-web/logo-animado.gif" type="image/gif">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap" rel="stylesheet">
-    
-    <title>El cine chileno: una mirada retrospectiva </title>
-    
-    <link rel="stylesheet" type="text/css" href="styles.css">
-    
-    <style>
-		#vis.vega-embed {
-			width: 100%;
-			display: flex;
-		}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="docs/elementos-web/logo-animado.gif" type="image/gif">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT&display=swap" rel="stylesheet">
+    
+    <title>El cine chileno: una mirada retrospectiva </title>
+    
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    
+    <style>
+        #vis.vega-embed {
+            width: 100%;
+            display: flex;
+        }
 
-		#vis.vega-embed details,
-		#vis.vega-embed details summary {
-			position: relative;
-		}
-    </style>
-    
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-    
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+        #vis.vega-embed details, #vis.vega-embed details summary {
+            position: relative;
+        }
+    </style>
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.20.1"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
 </head>
 <body>
-    
-    <div class="cinema-count-screen">
-        <div class="cinema-count animated">
-            <i>
-                <i></i>
-            </i>
-            <span id="numbercnt" class="number">10</span>
-        </div>
-    </div>
-    
-    <header>
-        <div class="contenedor_logo">
-            <img src="elementos-web/logo-animado.gif" data-gif-src="elementos-web/logo-animado.gif" id="logo1" alt="Logo">
-        </div>
-    </header>
-    
-    <section id="intro">
-        <h1 class="titulo_mayor">
-            Siempre los mismos gatos: Radiografía del cine chileno
-        </h1>
-        <p id="links_rrss">
-            Por
-            <a href="https://www.instagram.com/renatoquevedo_/" target="_blank">Renato Quevedo</a>
-            <a href="https://www.instagram.com/silviamtml/" target="_blank">Silvia Matamala</a>
-            <a href="https://www.instagram.com/_blancarios/" target="_blank">Blanca Ríos</a>
-        </p>
+    
+    <div class="cinema-count-screen">
+        <div class="cinema-count animated">
+            <i>
+                <i></i>
+            </i>
+            <span id="numbercnt" class="number">10</span>
+        </div>
+    </div>
+    
+    <header>
+        <div class="contenedor_logo">
+            <img src="elementos-web/logo-animado.gif" data-gif-src="elementos-web/logo-animado.gif" id="logo1" alt="Logo">
+        </div>
+    </header>
+    
+    <section id="intro">
+        <h1 class="titulo_mayor">
+            Siempre los mismos gatos: Radiografía del cine chileno
+        </h1>
+        <p id="links_rrss">
+            Por
+            <a href="https://www.instagram.com/renatoquevedo_/" target="_blank">Renato Quevedo</a>
+            <a href="https://www.instagram.com/silviamtml/" target="_blank">Silvia Matamala</a>
+            <a href="https://www.instagram.com/_blancarios/" target="_blank">Blanca Ríos</a>
+        </p>
 
-        <h2 class="parrafo-butacas-h2">
-            Si la cantidad de los documentales chilenos de la última década se sentaran en una sala de cine, ocuparían todos los asientos blancos, dejando los rojos para todas las películas de ficción:
-        </h2>
-    </section>
+        <h2 class="parrafo-butacas-h2">
+            Si la cantidad de los documentales chilenos de la última década se sentaran en una sala de cine, ocuparían todos los asientos blancos, dejando los rojos para todas las películas de ficción:
+        </h2>
+    </section>
 
-    <div class="theatre">
-        <div class="cinema-seats left">
-            <div class="cinema-row row-1"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-2"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-3"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-4"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-5"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-6"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-7"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-        </div>
+    <div class="theatre">
+        <div class="cinema-seats left">
+            <div class="cinema-row row-1"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-2"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-3"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-4"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-5"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-6"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-7"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+        </div>
 
-        <div class="cinema-seats right">
-             <div class="cinema-row row-1"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-2"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-3"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-4"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-5"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-6"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-            <div class="cinema-row row-7"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
-        </div>
-    </div>
-    
-    <section id="analisis-butacas">
-        <h1 class="analisis-h1">
-            Documentales versus Ficción
-        </h1>
-        <h2 class="analisis-h2">
-            Un 52,9 % de todas las películas chilenas, estrenadas entre el 2010 y el 2020, son documentales. En los últimos 25 años los documentales han sobrepasado a las películas de ficción. Pero, ¿serías capaz de mencionar 10 documentales chilenos? O ¿te resulta más fácil nombrar 10 películas chilenas de ficción?
-        </h2>
-    </section>
+        <div class="cinema-seats right">
+             <div class="cinema-row row-1"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-2"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-3"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-4"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-5"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-6"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+            <div class="cinema-row row-7"><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div><div class="seat"></div></div>
+        </div>
+    </div>
+    
+    <section id="analisis-butacas">
+        <h1 class="analisis-h1">
+            Documentales versus Ficción
+        </h1>
+        <h2 class="analisis-h2">
+            Un 52,9 % de todas las películas chilenas, estrenadas entre el 2010 y el 2020, son documentales. En los últimos 25 años los documentales han sobrepasado a las películas de ficción. Pero, ¿serías capaz de mencionar 10 documentales chilenos? O ¿te resulta más fácil nombrar 10 películas chilenas de ficción?
+        </h2>
+    </section>
 
-    <section id="decada-blanca-vis">
-        <div id="vis-decada-blanca" class="chart-container">
-			<p style="color: var(--color-title-red); font-weight: bold;">
-				Producción de Obras de Ficción y Documentales por Década
-			</p>
-			<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABdwAAAK8CAYAAAD1Zn2wAAAAOnRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjEwLjAsIGh0dHBzOi8vbWF0cGxvdGxpYi5vcmcvlHJYcgAAAAlwSFlzAAAPYQAAD2EBqD+naQAAp1ZJ resting.jpg" alt="Gráfico de Producción de Obras de Ficción y Documentales por Década">
-        </div>
-    </section>
-    
-    <script src="script.js"></script>
+    <section id="decada-blanca-vis">
+        <div id="vis-decada-blanca" class="chart-container">
+            <p style="color: var(--color-title-red); font-weight: bold;">
+                [POR FAVOR, PEGA AQUÍ EL CONTENIDO COMPLETO DEL ARCHIVO 'prod-decada blanca.html']
+            </p>
+        </div>
+    </section>
+    <script src="script.js"></script> 
 </body>
 </html>
