@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // HANDLERS DE HOVER
         $("#links_rrss a, #smooth a").hover(
             function() { $(this).animate({ color: "#f0781d" }, 300); },
-            // Mantenemos el color de salida como negro (var(--color-primary) en CSS)
+            // El color de salida es NEGRO (#333)
             function() { $(this).animate({ color: "#333" }, 300); } 
         );
 
@@ -108,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function () {
         videos.each(function() { observer.observe(this); });
     }
 
-});
+})();
 
 // --- Código de posicionamiento de la pantalla de conteo ---
 (function() {

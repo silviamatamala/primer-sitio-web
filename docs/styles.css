@@ -8,12 +8,13 @@
     --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --font-serif: 'Anton', sans-serif;
     
-    /* MODIFICACIÓN: Todas las variables de texto a color negro o gris oscuro (#333) */
-    --color-text-dark: #333;        
-    --color-primary: #333;          
-    --color-background: #F6F4ED;    
-    --color-accent: #f0781d;        /* Se mantiene el acento naranja para hover */
-    --color-secondary: #333;        
+    /* Variables de Color ESPECÍFICAS: */
+    --color-title-red: #5A0F05;       /* Rojo Oscuro para el título principal */
+    --color-key-green: #88937B;       /* Verde/Gris para el párrafo de butacas */
+    --color-text-dark: #333;          /* Negro para todos los textos y títulos secundarios */
+    
+    --color-background: #F6F4ED;    /* Beige claro/Fondo principal */
+    --color-accent: #f0781d;        /* Naranja/Ámbar para hover */
 }
 
 /* 2. RESET Y BASE */
@@ -33,7 +34,7 @@ html {
 
 body {
     font-family: var(--font-sans);
-    color: var(--color-text-dark); 
+    color: var(--color-text-dark); /* Texto base en color negro */
     text-align: center;
     margin: 0;
     padding: 0;
@@ -45,14 +46,16 @@ body {
 
 h1, h2, h3 {
     font-family: var(--font-serif);
-    color: var(--color-primary); 
+    color: var(--color-text-dark); 
 }
 
+/* >>> EXCEPCIÓN: TÍTULO PRINCIPAL EN ROJO <<< */
 .titulo_mayor {
     font-size: 5rem;
     line-height: 1;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
+    color: var(--color-title-red); 
 }
 
 p, .parrafo_v3 {
@@ -186,7 +189,7 @@ header {
 }
 
 #links_rrss a {
-    color: var(--color-primary); 
+    color: var(--color-text-dark); /* Enlaces de autor en color negro */
     text-decoration: none;
     font-weight: bold;
     margin: 0 5px;
@@ -196,14 +199,15 @@ header {
 }
 
 #links_rrss a:hover {
-    border-bottom: 2px solid var(--color-primary);
+    border-bottom: 2px solid var(--color-text-dark);
 }
 
+/* >>> EXCEPCIÓN: PÁRRAFO CLAVE EN VERDE-GRIS <<< */
 .parrafo-butacas-h2 {
     font-family: var(--font-sans);
     font-size: 1.5rem;
     line-height: 1.4;
-    color: var(--color-secondary); 
+    color: var(--color-key-green); /* Párrafo clave en VERDE/GRIS */
     max-width: 900px;
     margin: 2rem auto;
     padding: 0 1rem;
@@ -315,7 +319,7 @@ header {
 .analisis-h1 {
     font-family: var(--font-serif);
     font-size: 4rem; 
-    color: var(--color-primary); 
+    color: var(--color-text-dark); /* Título de sección en negro */
     margin-bottom: 1rem;
     line-height: 1;
 }
@@ -324,7 +328,7 @@ header {
     font-family: var(--font-sans); 
     font-size: 1.5rem;
     line-height: 1.6;
-    color: var(--color-text-dark); 
+    color: var(--color-text-dark); /* Texto de cuerpo en negro */
     max-width: 900px;
     margin: 0 auto;
     font-weight: normal;
