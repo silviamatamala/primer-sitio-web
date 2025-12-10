@@ -76,7 +76,8 @@ document.addEventListener('DOMContentLoaded', function () {
         // HANDLERS DE HOVER
         $("#links_rrss a, #smooth a").hover(
             function() { $(this).animate({ color: "#f0781d" }, 300); },
-            function() { $(this).animate({ color: "#5A0F05" }, 300); }
+            // Mantenemos el color de salida como negro (var(--color-primary) en CSS)
+            function() { $(this).animate({ color: "#333" }, 300); } 
         );
 
         // SCROLL REVEAL

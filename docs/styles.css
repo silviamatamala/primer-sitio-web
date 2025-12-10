@@ -7,10 +7,13 @@
     --e: cubic-bezier(0.19, 1, 0.22, 1);
     --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --font-serif: 'Anton', sans-serif;
-    --color-primary: #5A0F05;       /* Rojo oscuro de títulos */
-    --color-background: #F6F4ED;    /* Beige claro/Fondo principal */
-    --color-accent: #f0781d;        /* Naranja/Ámbar para hover */
-    --color-secondary: #88937B;     /* NUEVO COLOR: Verde/Gris para el texto clave */
+    
+    /* MODIFICACIÓN: Todas las variables de texto a color negro o gris oscuro (#333) */
+    --color-text-dark: #333;        
+    --color-primary: #333;          
+    --color-background: #F6F4ED;    
+    --color-accent: #f0781d;        /* Se mantiene el acento naranja para hover */
+    --color-secondary: #333;        
 }
 
 /* 2. RESET Y BASE */
@@ -30,7 +33,7 @@ html {
 
 body {
     font-family: var(--font-sans);
-    color: #333;
+    color: var(--color-text-dark); 
     text-align: center;
     margin: 0;
     padding: 0;
@@ -42,7 +45,7 @@ body {
 
 h1, h2, h3 {
     font-family: var(--font-serif);
-    color: var(--color-primary);
+    color: var(--color-primary); 
 }
 
 .titulo_mayor {
@@ -172,7 +175,7 @@ header {
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    padding-top: 50px;
+    padding-top: 200px; 
 }
 
 #links_rrss {
@@ -183,7 +186,7 @@ header {
 }
 
 #links_rrss a {
-    color: var(--color-primary);
+    color: var(--color-primary); 
     text-decoration: none;
     font-weight: bold;
     margin: 0 5px;
@@ -200,7 +203,7 @@ header {
     font-family: var(--font-sans);
     font-size: 1.5rem;
     line-height: 1.4;
-    color: var(--color-secondary); /* Color #88937B */
+    color: var(--color-secondary); 
     max-width: 900px;
     margin: 2rem auto;
     padding: 0 1rem;
@@ -299,3 +302,30 @@ header {
 .right .row-6 .seat { transform: skew(-18deg); }
 .right .row-7 { transform: skew(15deg); }
 .right .row-7 .seat { transform: skew(-20deg); }
+
+
+/* 7. ESTILOS PARA SECCIONES DE ANÁLISIS Y PÁRRAFOS */
+#analisis-butacas {
+    padding: 3rem 1rem;
+    margin-top: 40px; 
+    margin-bottom: 40px; 
+    background-color: var(--color-background); 
+}
+
+.analisis-h1 {
+    font-family: var(--font-serif);
+    font-size: 4rem; 
+    color: var(--color-primary); 
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.analisis-h2 {
+    font-family: var(--font-sans); 
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: var(--color-text-dark); 
+    max-width: 900px;
+    margin: 0 auto;
+    font-weight: normal;
+}
