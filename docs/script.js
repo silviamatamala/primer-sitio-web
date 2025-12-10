@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // --- 3. LÓGICA DE BUTACAS (Asientos Aleatorios) ---
     (function() {
         const seats = Array.from(document.querySelectorAll(".seat"));
-        const totalToMark = 52;
+        const totalToMark = 52; // 52 butacas marcadas como activas
 
         if (seats.length === 0) return;
 
@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     })();
     
-    // --- 4. CÓDIGO DEPENDIENTE DE JQUERY (Aseguramos que $ exista) ---
+    // --- 4. CÓDIGO DEPENDIENTE DE JQUERY (Corrección para evitar errores de carga) ---
     if (typeof jQuery !== 'undefined') {
         
         // HANDLERS DE HOVER
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 
-// --- Código de posicionamiento de la pantalla de conteo (Robusto) ---
+// --- Código de posicionamiento de la pantalla de conteo ---
 (function() {
     const screen = document.querySelector('.cinema-count-screen');
     if (screen) {

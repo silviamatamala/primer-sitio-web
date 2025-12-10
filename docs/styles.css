@@ -7,9 +7,10 @@
     --e: cubic-bezier(0.19, 1, 0.22, 1);
     --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     --font-serif: 'Anton', sans-serif;
-    --color-primary: #5A0F05; /* Rojo oscuro de títulos */
-    --color-background: #F6F4ED; /* Beige claro/Fondo principal */
-    --color-accent: #f0781d; /* Naranja/Ámbar para hover */
+    --color-primary: #5A0F05;       /* Rojo oscuro de títulos */
+    --color-background: #F6F4ED;    /* Beige claro/Fondo principal */
+    --color-accent: #f0781d;        /* Naranja/Ámbar para hover */
+    --color-secondary: #88937B;     /* NUEVO COLOR: Verde/Gris para el texto clave */
 }
 
 /* 2. RESET Y BASE */
@@ -195,6 +196,18 @@ header {
     border-bottom: 2px solid var(--color-primary);
 }
 
+.parrafo-butacas-h2 {
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    line-height: 1.4;
+    color: var(--color-secondary); /* Color #88937B */
+    max-width: 900px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    text-align: center;
+    font-weight: normal; 
+}
+
 /* 6. VISUALIZACIÓN DE BUTACAS (CINEMA SEATS) */
 
 .theatre {
@@ -202,7 +215,6 @@ header {
     margin: 80px auto; 
     display: flex;
     justify-content: center;
-    /* Perspectiva y rotación para el efecto 3D */
     transform: perspective(1000px) rotateX(15deg);
     padding: 50px 0;
     width: fit-content;
@@ -221,13 +233,12 @@ header {
     width: 35px;
     height: 50px;
     border-radius: 7px;
-    /* Gradiente para simular textura/relieve */
     background: linear-gradient(to top, #761818, #761818, #761818, #B54041, #F3686A);
     
-    /* MODIFICACIONES PARA AUMENTAR EL ESPACIADO */
-    margin-bottom: 15px; /* Espaciado vertical entre filas (aumentado) */
-    margin-left: 5px;   /* Espaciado horizontal entre butacas */
-    margin-right: 5px;  /* Espaciado horizontal entre butacas */
+    /* ESPACIADO MEJORADO */
+    margin-bottom: 15px;
+    margin-left: 5px;   
+    margin-right: 5px;  
 
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     transition: background 0.3s ease;
@@ -250,7 +261,6 @@ header {
     top: 0;
     width: 100%;
     height: 100%;
-    /* Mantiene el color blanco/claro para simular la ocupación */
     background: rgba(255, 255, 255, 0.6); 
     border-radius: 7px;
 }
