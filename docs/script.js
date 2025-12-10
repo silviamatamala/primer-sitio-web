@@ -1,128 +1,65 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const screen = document.querySelector('.cinema-count-screen');
-    
-    // --- 1. FUNCIÓN PARA REVELAR Y ANIMAR LOGO ---
-    function revealLogos() {
-        const logo = document.getElementById('logo1');
-        if (!logo) return;
-        
-        const src = logo.getAttribute('data-gif-src') || 'elementos-web/logo-animado.gif';
-        logo.setAttribute('data-gif-src', src);
-        
-        // Forzar reinicio del GIF
-        logo.src = '';
-        setTimeout(() => {
-            logo.src = src;
-            logo.classList.add('show');
-        }, 60);
-    }
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. Contador de Pantalla de Carga (Cinema Count)
+    const splashScreen = document.querySelector('.cinema-count-screen');
+    const numberElement = document.getElementById('numbercnt');
+    const logo = document.getElementById('logo1');
+    let count = 10;
 
-    // --- 2. LÓGICA DEL CONTADOR (COUNTDOWN) ---
-    (function() {
-        if (window._cinemaCountdownRunning) return;
-        window._cinemaCountdownRunning = true;
-
-        function hideCinemaScreen() {
-            const s = document.querySelector('.cinema-count-screen');
-            if (!s) return;
-            s.style.opacity = '0';
+    const interval = setInterval(() => {
+        if (count > 0) {
+            numberElement.textContent = count;
+            count--;
+        } else {
+            clearInterval(interval);
+            // Ocultar la pantalla de inicio y mostrar el contenido
+            numberElement.textContent = '0';
             setTimeout(() => {
-                s.remove();
-                if (typeof revealLogos === 'function') revealLogos();
-            }, 600);
-        }
-
-        function initCountdown() {
-            const el = document.getElementById('numbercnt');
-            let sec = el ? parseInt(el.textContent.trim(), 10) : 10;
-            if (el) el.textContent = sec;
-
-            const id = setInterval(() => {
-                sec -= 1;
-                if (el) el.textContent = sec;
-                if (sec <= 0) {
-                    clearInterval(id);
-                    hideCinemaScreen();
-                }
-            }, 1000);
-
-            if (screen) {
-                screen.addEventListener('click', () => {
-                    clearInterval(id);
-                    hideCinemaScreen();
+                splashScreen.style.opacity = '0';
+                splashScreen.addEventListener('transitionend', () => {
+                    splashScreen.style.display = 'none';
+                    if (logo) {
+                        logo.classList.add('show');
+                    }
                 }, { once: true });
-            }
+
+            }, 500); 
+
+            // Iniciar la animación de butacas después de la carga
+            setTimeout(animateSeats, 1500);
         }
-        initCountdown();
-    })();
-    
-    // --- 3. LÓGICA DE BUTACAS (Asientos Aleatorios) ---
-    (function() {
-        const seats = Array.from(document.querySelectorAll(".seat"));
-        const totalToMark = 52; // 52 butacas marcadas como activas
+    }, 200);
 
-        if (seats.length === 0) return;
 
-        const shuffled = seats.sort(() => Math.random() - 0.5);
+    // 2. Animación y Asignación de Color de Butacas
+    const TOTAL_SEATS = 98; 
+    // 52.9% Documentales (Blancas)
+    const DOCUMENTARY_PERCENT = 0.529;
+    const NUM_DOCUMENTARIES = Math.round(TOTAL_SEATS * DOCUMENTARY_PERCENT); // = 52
 
-        shuffled.slice(0, totalToMark).forEach(seat => {
-            seat.classList.add("active");
-        });
-    })();
-    
-    // --- 4. CÓDIGO DEPENDIENTE DE JQUERY (Corrección para evitar errores de carga) ---
-    if (typeof jQuery !== 'undefined') {
-        
-        // HANDLERS DE HOVER
-        $("#links_rrss a, #smooth a").hover(
-            function() { $(this).animate({ color: "#f0781d" }, 300); },
-            // El color de salida es NEGRO (#333)
-            function() { $(this).animate({ color: "#333" }, 300); } 
-        );
+    function animateSeats() {
+        const seats = Array.from(document.querySelectorAll('.seat'));
 
-        // SCROLL REVEAL
-        $(window).scroll(function() {
-            $(".imagen, .flourish-embed").each(function() {
-                if ($(this).offset().top < $(window).scrollTop() + $(window).height() - 150) {
-                    $(this).animate({ opacity: 1, top: "0" }, 1000);
+        // Mezclar los asientos aleatoriamente
+        const shuffledSeats = seats.sort(() => Math.random() - 0.5);
+
+        // Identificar los 52 asientos que serán de color blanco (Documentales)
+        const seatsToColor = shuffledSeats.slice(0, NUM_DOCUMENTARIES);
+
+        shuffledSeats.forEach((seat, index) => {
+            setTimeout(() => {
+                // ASIGNACIÓN DE COLOR PERMANENTE
+                // Si el asiento está en la lista de los 52 seleccionados aleatoriamente, se vuelve blanco.
+                if (seatsToColor.includes(seat)) {
+                    seat.classList.add('blanca');
                 }
-            });
-        });
-        
-        // LÓGICA DE INTERSECTION OBSERVER PARA VIDEOS
-        const videos = $('video'); 
-        const options = { root: null, rootMargin: '0px', threshold: 0.5 };
 
-        const callback = (entries, observer) => {
-            entries.forEach(entry => {
-                const video = entry.target;
-                if (entry.isIntersecting) {
-                    video.play().catch(error => { console.error('Autoplay failed:', error); });
-                } else {
-                    video.pause();
-                    video.currentTime = 0;
-                }
-            });
-        };
-        const observer = new IntersectionObserver(callback, options);
-        videos.each(function() { observer.observe(this); });
-    }
+                // ANIMACIÓN DE BRILLO
+                seat.classList.add('active');
+                setTimeout(() => {
+                    seat.classList.remove('active');
+                }, 500);
 
-})();
-
-// --- Código de posicionamiento de la pantalla de conteo ---
-(function() {
-    const screen = document.querySelector('.cinema-count-screen');
-    if (screen) {
-        Object.assign(screen.style, {
-            position: 'fixed',
-            top: '0',
-            left: '0',
-            right: '0',
-            bottom: '0',
-            width: '100vw',
-            height: '100vh',
-            zIndex: '999999'
+            }, index * 20);
         });
     }
-})();
+});

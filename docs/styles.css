@@ -233,22 +233,27 @@ header {
     flex-direction: column;
 }
 
-/* Estilos de los Asientos Generales */
+/* Estilos de los Asientos Generales (Color de Ficción: Rojo/Burdeo) */
 .cinema-seats .seat {
     cursor: pointer;
     position: relative;
     width: 35px;
     height: 50px;
     border-radius: 7px;
-    background: linear-gradient(to top, #761818, #761818, #761818, #B54041, #F3686A);
+    background: linear-gradient(to top, #761818, #761818, #761818, #761818, #761818, #B54041, #F3686A);
     
-    /* ESPACIADO MEJORADO */
-    margin-bottom: 15px;
-    margin-left: 5px;   
-    margin-right: 5px;  
-
+    margin-bottom: 10px;
+    margin-left: 5px;    
+    margin-right: 5px;
+    
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     transition: background 0.3s ease;
+}
+
+/* >>> CLASE PARA DOCUMENTALES (BUTACAS BLANCAS) <<< */
+.cinema-seats .seat.blanca {
+    background: linear-gradient(to top, #e5e5e5, #ffffff, #f0f0f0, #e0e0e0); /* Tono Blanco/Gris claro */
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.7);
 }
 
 /* Efectos de Hover y Active */
@@ -302,7 +307,7 @@ header {
 .right .row-4 .seat { transform: skew(-15deg); }
 .right .row-5 { transform: skew(12deg); }
 .right .row-5 .seat { transform: skew(-16deg); }
-.right .row-6 { transform: skew(13deg); }
+    .right .row-6 { transform: skew(13deg); }
 .right .row-6 .seat { transform: skew(-18deg); }
 .right .row-7 { transform: skew(15deg); }
 .right .row-7 .seat { transform: skew(-20deg); }
@@ -319,7 +324,7 @@ header {
 .analisis-h1 {
     font-family: var(--font-serif);
     font-size: 4rem; 
-    color: var(--color-text-dark); /* Título de sección en negro */
+    color: var(--color-text-dark); 
     margin-bottom: 1rem;
     line-height: 1;
 }
@@ -328,7 +333,7 @@ header {
     font-family: var(--font-sans); 
     font-size: 1.5rem;
     line-height: 1.6;
-    color: var(--color-text-dark); /* Texto de cuerpo en negro */
+    color: var(--color-text-dark); 
     max-width: 900px;
     margin: 0 auto;
     font-weight: normal;
@@ -339,12 +344,15 @@ header {
     padding: 40px 1rem;
     margin-top: 50px;
     margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrado Horizontal */
 }
 
 .vis-titulo-secundario {
     font-family: var(--font-serif);
     font-size: 2.5rem;
-    color: var(--color-text-dark); /* Negro */
+    color: var(--color-text-dark); 
     margin-bottom: 2rem;
 }
 
@@ -352,6 +360,5 @@ header {
     width: 95%;
     max-width: 1000px;
     margin: 0 auto;
-    /* Asegura que el contenido del gráfico se centre */
     text-align: center; 
 }
