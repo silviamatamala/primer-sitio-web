@@ -28,6 +28,21 @@ document.addEventListener('DOMContentLoaded', function () {
   videos.each(function() {
       observer.observe(this);
   });
+  
+  // Código para marcar 52 asientos aleatoriamente
+  const seats = Array.from(document.querySelectorAll(".seat"));
+  const totalToMark = 52;
+  
+  if (seats.length > 0) {
+      // Mezclamos el array (aleatorio)
+      const shuffled = seats.sort(() => Math.random() - 0.5);
+      
+      // Marcamos los primeros 52 de la lista ya mezclada
+      shuffled.slice(0, totalToMark).forEach(seat => {
+          seat.classList.add("active");
+      });
+  }
+  // ✓ CAMBIO REALIZADO: Código para marcar 52 asientos aleatoriamente
  
   // Animar logos
   function revealLogos() {

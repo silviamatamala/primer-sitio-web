@@ -48,6 +48,182 @@ h1, h2, h3 {
     margin-top: 2rem;
     margin-bottom: 0.5rem;
 }
+
+/* Estilos para la sección de butacas */
+#butacas-section {
+    padding: 60px 20px;
+    background-color: #F6F4ED;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.theatre {
+    display: flex;
+    position: relative;
+    margin-top: 60px;
+    justify-content: center;
+}
+
+.cinema-seats {
+    display: flex;
+}
+
+.cinema-seats .seat {
+    position: relative;
+    width: 35px;
+    height: 50px;
+    border-radius: 7px;
+    background: linear-gradient(to top, #761818, #761818, #761818, #761818, #761818, #B54041, #F3686A);
+    margin-bottom: 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.cinema-seats .seat:hover:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 7px;
+}
+
+.cinema-seats .seat.active:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 7px;
+}
+
+/* Left Seats */
+.cinema-seats.left .cinema-row {
+    transform: skew(-15deg);
+    margin: 0 6px;
+}
+
+.cinema-seats.left .seat {
+    transform: skew(20deg);
+    margin-top: -32px;
+}
+
+.cinema-seats.left .row-2 {
+    transform: skew(-13deg);
+}
+
+.cinema-seats.left .row-2 .seat {
+    transform: skew(18deg);
+}
+
+.cinema-seats.left .row-3 {
+    transform: skew(-12deg);
+}
+
+.cinema-seats.left .row-3 .seat {
+    transform: skew(16deg);
+}
+
+.cinema-seats.left .row-4 {
+    transform: skew(-11deg);
+}
+
+.cinema-seats.left .row-4 .seat {
+    transform: skew(15deg);
+}
+
+.cinema-seats.left .row-5 {
+    transform: skew(-10deg);
+}
+
+.cinema-seats.left .row-5 .seat {
+    transform: skew(12deg);
+}
+
+.cinema-seats.left .row-6 {
+    transform: skew(-9deg);
+}
+
+.cinema-seats.left .row-6 .seat {
+    transform: skew(10deg);
+}
+
+.cinema-seats.left .row-7 {
+    transform: skew(-7deg);
+}
+
+.cinema-seats.left .row-7 .seat {
+    transform: skew(8deg);
+}
+
+/* Right Seats */
+.cinema-seats.right {
+    margin-left: 70px;
+}
+
+.cinema-seats.right .cinema-row {
+    transform: skew(7deg);
+    margin: 0 6px;
+}
+
+.cinema-seats.right .seat {
+    transform: skew(-8deg);
+    margin-top: -32px;
+}
+
+.cinema-seats.right .row-2 {
+    transform: skew(9deg);
+}
+
+.cinema-seats.right .row-2 .seat {
+    transform: skew(-10deg);
+}
+
+.cinema-seats.right .row-3 {
+    transform: skew(10deg);
+}
+
+.cinema-seats.right .row-3 .seat {
+    transform: skew(-12deg);
+}
+
+.cinema-seats.right .row-4 {
+    transform: skew(11deg);
+}
+
+.cinema-seats.right .row-4 .seat {
+    transform: skew(-15deg);
+}
+
+.cinema-seats.right .row-5 {
+    transform: skew(12deg);
+}
+
+.cinema-seats.right .row-5 .seat {
+    transform: skew(-16deg);
+}
+
+.cinema-seats.right .row-6 {
+    transform: skew(13deg);
+}
+
+.cinema-seats.right .row-6 .seat {
+    transform: skew(-18deg);
+}
+
+.cinema-seats.right .row-7 {
+    transform: skew(15deg);
+}
+
+.cinema-seats.right .row-7 .seat {
+    transform: skew(-20deg);
+}
+/* ✓ CAMBIO REALIZADO: Estilos para butacas de cine */
  
 /* 3. HEADER Y LOGO */
 header {
