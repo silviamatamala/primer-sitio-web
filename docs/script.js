@@ -1,65 +1,65 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Contador de Pantalla de Carga (Cinema Count)
-    const splashScreen = document.querySelector('.cinema-count-screen');
-    const numberElement = document.getElementById('numbercnt');
-    const logo = document.getElementById('logo1');
-    let count = 10;
+    // 1. Contador de Pantalla de Carga (Cinema Count)
+    const splashScreen = document.querySelector('.cinema-count-screen');
+    const numberElement = document.getElementById('numbercnt');
+    const logo = document.getElementById('logo1');
+    let count = 10;
 
-    const interval = setInterval(() => {
-        if (count > 0) {
-            numberElement.textContent = count;
-            count--;
-        } else {
-            clearInterval(interval);
-            // Ocultar la pantalla de inicio y mostrar el contenido
-            numberElement.textContent = '0';
-            setTimeout(() => {
-                splashScreen.style.opacity = '0';
-                splashScreen.addEventListener('transitionend', () => {
-                    splashScreen.style.display = 'none';
-                    if (logo) {
-                        logo.classList.add('show');
-                    }
-                }, { once: true });
+    const interval = setInterval(() => {
+        if (count > 0) {
+            numberElement.textContent = count;
+            count--;
+        } else {
+            clearInterval(interval);
+            // Ocultar la pantalla de inicio y mostrar el contenido
+            numberElement.textContent = '0';
+            setTimeout(() => {
+                splashScreen.style.opacity = '0';
+                splashScreen.addEventListener('transitionend', () => {
+                    splashScreen.style.display = 'none';
+                    if (logo) {
+                        logo.classList.add('show');
+                    }
+                }, { once: true });
 
-            }, 500); 
+            }, 500); 
 
-            // Iniciar la animación de butacas después de la carga
-            setTimeout(animateSeats, 1500);
-        }
-    }, 200);
+            // Iniciar la animación de butacas después de la carga
+            setTimeout(animateSeats, 1500);
+        }
+    }, 200);
 
 
-    // 2. Animación y Asignación de Color de Butacas
-    const TOTAL_SEATS = 98; 
-    // 52.9% Documentales (Blancas)
-    const DOCUMENTARY_PERCENT = 0.529;
-    const NUM_DOCUMENTARIES = Math.round(TOTAL_SEATS * DOCUMENTARY_PERCENT); // = 52
+    // 2. Animación y Asignación de Color de Butacas
+    const TOTAL_SEATS = 98; 
+    // 52.9% Documentales (Blancas)
+    const DOCUMENTARY_PERCENT = 0.529;
+    const NUM_DOCUMENTARIES = Math.round(TOTAL_SEATS * DOCUMENTARY_PERCENT); // = 52
 
-    function animateSeats() {
-        const seats = Array.from(document.querySelectorAll('.seat'));
+    function animateSeats() {
+        const seats = Array.from(document.querySelectorAll('.seat'));
 
-        // Mezclar los asientos aleatoriamente
-        const shuffledSeats = seats.sort(() => Math.random() - 0.5);
+        // Mezclar los asientos aleatoriamente
+        const shuffledSeats = seats.sort(() => Math.random() - 0.5);
 
-        // Identificar los 52 asientos que serán de color blanco (Documentales)
-        const seatsToColor = shuffledSeats.slice(0, NUM_DOCUMENTARIES);
+        // Identificar los 52 asientos que serán de color blanco (Documentales)
+        const seatsToColor = shuffledSeats.slice(0, NUM_DOCUMENTARIES);
 
-        shuffledSeats.forEach((seat, index) => {
-            setTimeout(() => {
-                // ASIGNACIÓN DE COLOR PERMANENTE
-                // Si el asiento está en la lista de los 52 seleccionados aleatoriamente, se vuelve blanco.
-                if (seatsToColor.includes(seat)) {
-                    seat.classList.add('blanca');
-                }
+        shuffledSeats.forEach((seat, index) => {
+            setTimeout(() => {
+                // ASIGNACIÓN DE COLOR PERMANENTE
+                // Si el asiento está en la lista de los 52 seleccionados aleatoriamente, se vuelve blanco.
+                if (seatsToColor.includes(seat)) {
+                    seat.classList.add('blanca');
+                }
 
-                // ANIMACIÓN DE BRILLO
-                seat.classList.add('active');
-                setTimeout(() => {
-                    seat.classList.remove('active');
-                }, 500);
+                // ANIMACIÓN DE BRILLO
+                seat.classList.add('active');
+                setTimeout(() => {
+                    seat.classList.remove('active');
+                }, 500);
 
-            }, index * 20);
-        });
-    }
+            }, index * 20);
+        });
+    }
 });
